@@ -265,6 +265,11 @@ class Free_Template{
 
 		// This theme styles the visual editor to resemble the theme style, specifically font, colors, and column width.
 		add_editor_style( 'assets/css/editor-style.css' );
+		if(is_rtl()){
+			add_editor_style( 'rtl.css' );
+		} else {
+			add_editor_style( 'style.css' );
+		}
 
 	}
 	
@@ -327,7 +332,7 @@ class Free_Template{
 			'name'          		=> esc_html__( 'Footer Column 1', 'free-template' ),
 			'id'            		=> 'footer-column-1',
 			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 1.', 'free-template' ),
-			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="zoom-in">',
+			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="fade-up">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
 			'after_title'   		=> '</h4>',
@@ -337,7 +342,7 @@ class Free_Template{
 			'name'          		=> esc_html__( 'Footer Column 2', 'free-template' ),
 			'id'            		=> 'footer-column-2',
 			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 2.', 'free-template' ),
-			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="zoom-in">',
+			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="fade-up">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
 			'after_title'   		=> '</h4>',
@@ -347,7 +352,7 @@ class Free_Template{
 			'name'          		=> esc_html__( 'Footer Column 3', 'free-template' ),
 			'id'            		=> 'footer-column-3',
 			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 3.', 'free-template' ),
-			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="zoom-in">',
+			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="fade-up">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
 			'after_title'   		=> '</h4>',
@@ -357,7 +362,7 @@ class Free_Template{
 			'name'          		=> esc_html__( 'Footer Column 4', 'free-template' ),
 			'id'            		=> 'footer-column-4',
 			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 4.', 'free-template' ),
-			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="zoom-in">',
+			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="fade-up">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
 			'after_title'   		=> '</h4>',

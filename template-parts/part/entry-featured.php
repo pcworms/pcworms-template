@@ -1,7 +1,7 @@
 <?php
 
 if ( has_post_thumbnail() ) { ?>
-<div class="featured-image" data-aos="zoom-in"><?php
+<div class="featured-image" data-aos="fade"><?php
 	$featured_image_array = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 	if ( ! is_single() ) { ?>
 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php

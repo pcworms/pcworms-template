@@ -8,7 +8,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: free-template
 Tags: one-column, two-columns, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments
-Version: 4.0.0
+Version: 4.0.1
 */
 
 /* =Global
@@ -1867,4 +1867,22 @@ z-index: 999999!important;
 	-moz-box-shadow: none;
 	box-shadow: none;
 	padding: 0 10px !important;
+}
+.red-box {
+    border-left: 2px solid red;
+}
+.green-box {
+    border-left: 2px solid green;
+}
+.blue-box {
+    border-left: 2px solid blue;
+}
+.gray-box {
+    border-left: 2px solid gray;
+}
+.yellow-box {
+    border-left: 2px solid yellow;
+}
+.orange-box {
+    border-left: 2px solid orange;
 }

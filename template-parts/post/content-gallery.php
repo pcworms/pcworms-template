@@ -7,7 +7,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'panel box'); ?> data-aos="fade">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'panel box'); ?> data-aos="zoom-in-up">
 	<?php get_template_part( 'template-parts/part/entry-header' ); ?>
 
 	<div class="entry-content panel-body">

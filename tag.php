@@ -15,7 +15,7 @@
 			dynamic_sidebar( 'content-top' );
 			
 			if(is_tag()){
-				echo '<div class="box">
+				echo '<div class="box panel">
 							<h1 class="tag-title text-center">';
 				single_tag_title();
 				echo '</h1>';

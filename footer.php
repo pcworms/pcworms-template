@@ -19,11 +19,13 @@
 		<?php get_template_part( 'template-parts/part/bottom-nav' ); ?>
 		<div class="footer-bottom">
 			<div class="container">
+				<?php if(is_front_page()){ ?>
 				<div class="pull-left col-xs-12 col-sm-6">
-					<a href="<?php echo esc_url( __('https://dedidata.com', 'free-template') ); ?>" title="<?php esc_attr_e('Web Design by DediData', 'free-template'); ?>" target="_blank">
-						<img width="25" height="25" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/' . ((get_locale()==='fa_IR') ? 'pm' : 'dd') . 'logo.png'; // xss ok ?>" alt="<?php esc_attr_e('Web Design by DediData', 'free-template'); ?>" />
+					<a href="<?php echo esc_url( __('https://dedidata.com', 'free-template') ); ?>" title="<?php esc_attr_e('Free Theme by DediData', 'free-template'); ?>" target="_blank">
+						<?php esc_attr_e('Theme Design by DediData', 'free-template'); ?>
 					</a>
 				</div>
+				<?php } ?>
 				<div class="pull-right col-xs-12 col-sm-6">
 					<p><?php echo esc_html( __('Copyright', 'free-template') . ' &copy; ' . date('Y ') . get_bloginfo( 'name' ) . '. ' .  __('All right reserved.', 'free-template') ); ?></p>
 				</div>

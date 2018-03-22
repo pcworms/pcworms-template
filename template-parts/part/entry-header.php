@@ -1,4 +1,4 @@
-<header class="entry-header" data-aos="zoom-in">
+<header class="entry-header">
 	<div class="row">
 		<div class="col <?php echo ((current_user_can( 'edit_post', get_the_ID() ) or is_archive()) ? 'pull-left' : 'col-xs-12'); ?>"><?php
 			$sticky = is_sticky() ? '<i class="sticky-icon fa fa-thumb-tack fa-lg"></i>' : '';

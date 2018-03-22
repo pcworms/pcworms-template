@@ -1876,3 +1876,21 @@ z-index: 999999!important;
 	box-shadow: none;
 	padding: 0 10px !important;
 }
+.red-box {
+    border-right: 2px solid red;
+}
+.green-box {
+    border-right: 2px solid green;
+}
+.blue-box {
+    border-right: 2px solid blue;
+}
+.gray-box {
+    border-right: 2px solid gray;
+}
+.yellow-box {
+    border-right: 2px solid yellow;
+}
+.orange-box {
+    border-right: 2px solid orange;
+}
