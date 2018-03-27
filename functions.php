@@ -153,7 +153,7 @@ class Free_Template{
 		add_theme_support( 'starter-content', $starter_content );
 
 		$background_defaults = array(
-			'default-color'          => 'fff',
+			'default-color'          => 'ffffff',
 			'default-image'          => '',
 			'default-repeat'         => '',
 			'default-position-x'     => '',
@@ -171,7 +171,7 @@ class Free_Template{
 			'random-default'         => false,
 			'flex-width'             => true,
 			'flex-height'            => true,
-			'default-text-color'     => '#fdd',
+			'default-text-color'     => 'ffffff',
 			'header-text'            => true,
 			'uploads'                => true,
 			'wp-head-callback'       => '',

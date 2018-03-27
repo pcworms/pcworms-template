@@ -59,6 +59,21 @@ if( (is_home() or is_front_page()) and $attachments ) { ?>
 	
 	</div><!-- /.carousel -->
 </section><?php
+} elseif( (is_home() or is_front_page()) and get_header_image()) { ?>
+<section class="main-slider">
+	<div id="HeaderCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="8000">
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<div class="overlay"></div>
+				<img class="item-image slide-1" src="<?php echo esc_url(get_header_image()); ?>" title="<?php echo esc_attr(get_bloginfo()); ?>" alt="<?php echo esc_attr(get_bloginfo()); ?>" />
+				<div class="carousel-caption">
+					<h3><?php echo esc_html( get_bloginfo() ); ?></h3>
+					<h4><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h4>
+				</div>
+			</div>
+		</div>
+	</div><!-- /.carousel -->
+</section><?php
 } else {
 	if(display_header_text()){ ?>
 	<div id="header" class="container"><?php

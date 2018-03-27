@@ -44,6 +44,11 @@ jQuery(document).ready(function($){
 	$('.page-footer').css('color',$('.navbar-inverse .navbar-nav>li>a').css('color'));
 	$('.page-footer a').css('color',$('.navbar-inverse .navbar-nav>li>a').css('color'));
 	$('.dropdown-menu li a').css('font-weight',$('.dropdown-menu>li>a').css('font-weight'));
+	$('.page-footer button').css('color',$('body').css('color'));
+	$('.page-footer input').css('color',$('body').css('color'));
+	$('.page-footer optgroup').css('color',$('body').css('color'));
+	$('.page-footer select').css('color',$('body').css('color'));
+	$('.page-footer textarea').css('color',$('body').css('color'));
 
 	// gallery
 	$('a[href$=".jpg"], a[href$=".jpeg"], a[href$=".gif"], a[href$=".png"]').attr('data-fancybox', 'separate').attr('data-caption',  $(this).find('img').attr('alt'));
