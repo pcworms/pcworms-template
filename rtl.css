@@ -47,7 +47,9 @@ blockquote small{
 	letter-spacing: 0 !important;
 	direction: rtl;
 }
-
+mark, .mark{
+	background-color: inherit;
+}
 .main-navigation,
 .post-navigation,
 .widget .widget-title,
@@ -786,8 +788,10 @@ th {
 }
 /****** DEDIDATA ********/
 body {padding-top: 51px !important;}
+body.non-top-menu {padding-top: 0 !important;}
 body.admin-bar .navbar-fixed-top{ top: 28px !important; }
 body.admin-bar { padding-top: 47px !important; }
+body.admin-bar.non-top-menu { padding-top: 0 !important; }
 #nprogress .spinner-icon {
 	border-top-color: red;
 	border-left-color: red;
@@ -932,7 +936,7 @@ body ::-webkit-scrollbar-thumb:active{background: rgba(255,0,0,0.4);}
 		right: auto;
 		display: table;
 		border-right: 2px solid red;
-		max-width: 70%;
+		max-width: 85%;
 	}
 	.megamenu .menu-col {
 		display: table;
@@ -1045,7 +1049,6 @@ span a .fa {vertical-align: middle;}
 #HeaderCarousel {
 	padding-left: 0;
 	padding-right: 0;
-	background-color: red;
 }
 #HeaderCarousel .carousel-inner > .item > img,
 #HeaderCarousel .carousel-inner > .item > a > img {
@@ -1326,32 +1329,6 @@ span a .fa {vertical-align: middle;}
 #primary .widget {
 	padding: 15px !important;
 }
-@media (min-width:768px) {
-	.side-column.affix-top {}
-
-	.side-column.affix {top: 55px;}
-
-	.side-column.affix, 
-	.side-column.affix-bottom {}
-
-	.side-column.affix-bottom {position: absolute;}
-}
-@media (max-width:768px) {
-	.side-column.affix {position: static;}
-}
-@media (min-width:768px) {
-	.side-column.affix, 
-	.side-column.affix-bottom {width: 187px;}
-}
-@media (min-width:992px) {
-	.side-column.affix, 
-	.side-column.affix-bottom {width: 242px;}
-}
-@media (min-width:1200px) {
-	.side-column.affix, 
-	.side-column.affix-bottom {width: 293px;}
-}
-
 
 #primary .entry-header{padding: 5px 15px 0;}
 #primary .panel-footer{padding: 0px 5px;}
@@ -1503,6 +1480,11 @@ span a .fa {vertical-align: middle;}
 	margin-left: 0.66%;
 	margin-right: 0.66%;
 	min-width: 170px;
+}
+.woocommerce-Reviews .comment-form-author,
+.woocommerce-Reviews .comment-form-email,
+.woocommerce-Reviews .comment-form-url {
+    width: auto;
 }
 .nav-links,
 .link-pages-nav{text-align: center;}
@@ -1893,4 +1875,26 @@ z-index: 999999!important;
 }
 .orange-box {
     border-right: 2px solid orange;
+}
+/* Woocommerce */
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"]{
+	position: inherit;
+}
+#billing_postcode,
+#shipping_postcode,
+#billing_phone,
+#billing_email{
+	font-family: Tahoma, Arial;
+	direction: ltr;
+}
+
+.cyborg-theme button,
+.cyborg-theme input,
+.cyborg-theme optgroup,
+.cyborg-theme select,
+.cyborg-theme textarea{
+	color: black;
 }

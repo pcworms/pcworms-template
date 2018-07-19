@@ -212,7 +212,7 @@ class Free_Template_Customizer {
 	}
 
 	static function sanitize_text($input) {
-		return (strval($input));
+		return (sanitize_text_field($input));
 	}
 
 	

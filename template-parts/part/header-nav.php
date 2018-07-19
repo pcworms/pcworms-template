@@ -1,7 +1,7 @@
 <?php
 if (has_nav_menu( 'header' ) or has_nav_menu( 'header-right' )){ ?>
-<nav id="header-menu" class="megamenu navbar navbar-default">
-	<div class="container">
+<nav id="header-menu" class="megamenu navbar navbar-default<?php echo !(is_home() or is_front_page()) ? ' container' : ''; ?>">
+<div<?php echo (is_home() or is_front_page()) ? ' class="container' : ''; ?>">
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
 	  <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false" aria-controls="header-menu">
@@ -14,7 +14,6 @@ if (has_nav_menu( 'header' ) or has_nav_menu( 'header-right' )){ ?>
 	<div id="header-navbar-collapse" class="collapse navbar-collapse"><?php
 
 		wp_nav_menu( array(
-			'menu'              	=> 'header',
 			'theme_location'		=> 'header',
 			'depth'					=> 3,
 			'menu_class'			=> 'nav navbar-nav megamenu',
@@ -28,7 +27,6 @@ if (has_nav_menu( 'header' ) or has_nav_menu( 'header-right' )){ ?>
 		);
 		
 		wp_nav_menu( array(
-			'menu'              	=> 'header-right',
 			'theme_location'		=> 'header-right',
 			'depth'					=> 3,
 			'menu_class'			=> 'nav navbar-nav navbar-right megamenu',

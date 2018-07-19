@@ -12,7 +12,6 @@ if (has_nav_menu( 'bottom' )){ ?>
 		</div>
 		<div id="bottom-navbar-collapse" class="collapse navbar-collapse"><?php
 			wp_nav_menu( array(
-				'menu'              	=> 'bottom',
 				'theme_location'		=> 'bottom',
 				'depth'					=> 1,
 				'menu_class'			=> 'nav navbar-nav megamenu',

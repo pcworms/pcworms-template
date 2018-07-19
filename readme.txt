@@ -23,6 +23,7 @@ For more information about Free Template please go to https://dedidata.com/free-
 == Copyright ==
 
 Free Template WordPress Theme, Copyright 2018 DediData.com
+
 Free Template is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -34,6 +35,8 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Images and image assets shown within screenshot.png are taken by me (Farhad Sakhaei) and are under CC0 licence.
 
 Free Template bundles the following third-party resources:
 
@@ -91,11 +94,34 @@ https://github.com/HubSpot/tether
 
 == Changelog ==
 
+= 4.1.3 =
+* Released: July 18, 2018
+* Fixed styles & auto hide header nav bar
+
+= 4.1.1 =
+* Released: May 1, 2018
+* fixed comments walker class
+* fixed array usage
+* changed screenshot
+* Update readme file
+
+= 4.1.0 =
+* Released: April 20, 2018
+* fixed scaping string
+* Update readme file
+
+= 4.0.9 =
+* Released: April 20, 2018
+* Bug fix
+* Update readme file
+
 = 3.8 =
 * Released: March 13, 2018
-
+* Bug Fixed
+* Update readme file
 
 = 1.0 =
 * Released: December 6, 2017
-
-Initial release
+* Update readme file
+* Update copyright in stylesheet
+* Initial release

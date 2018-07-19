@@ -368,15 +368,6 @@ class Free_Template{
 			'after_title'   		=> '</h4>',
 		) );
 
-		register_sidebar( array(
-			'name'          		=> esc_html__( 'Popup Window', 'free-template' ),
-			'id'            		=> 'popup-modal',
-			'description'   		=> esc_html__( 'Add widgets here to appear in automatic popup window when your site loads in first view.', 'free-template' ),
-			'before_widget' 	=> '<div class="modal-body">',
-			'after_widget'  	=> '</div>',
-			'before_title'  	=> '<div class="modal-header"><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="widgetModalLabel">',
-			'after_title'   		=> '</h4></div>',
-		) );
 
 	}
 
@@ -432,8 +423,16 @@ class Free_Template{
 		wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/assets/js/custom.js', array('jquery'), wp_get_theme()->get( 'Version' ), true);
 
 		// aos : animate on scroll
-		wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.2.0', 'all');
-		wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.2.0', true);
+		if ( function_exists( 'is_woocommerce' ) ){
+			// woocommerce is enabled
+			if( ! is_woocommerce() ){
+				wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.2.0', 'all');
+				wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.2.0', true);
+			}
+		}else{
+			wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.2.0', 'all');
+			wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.2.0', true);
+		}
 
 		// html5shiv js
 		wp_enqueue_script( 'html5shiv', get_stylesheet_directory_uri() . '/assets/html5shiv/html5shiv.min.js', array(), '3.7.3', true);
@@ -597,7 +596,13 @@ class Free_Template{
 		if ( is_customize_preview() ) {
 			$classes[] = 'free-template' . '-customizer';
 		}
+		
+		$classes[] = esc_html( get_theme_mod( 'bootstrap_theme_name' ) ) . '-theme';
 
+		if( ! (has_nav_menu( 'primary' ) or get_theme_mod('display_login_link') ) ) {
+			$classes[] = 'non-top-menu';
+		}
+		
 		return $classes;
 	}
 
@@ -687,7 +692,7 @@ class Free_Template{
 			#HeaderCarousel .carousel-caption h4,
 			#HeaderCarousel .carousel-caption h4 a,
 			#HeaderCarousel .carousel-caption p{
-				color: #<?php echo $head_txt_color; // xss ok ?>;
+				color: #<?php echo esc_html($head_txt_color); // xss ok ?>;
 			}
 		</style>
 		<?php

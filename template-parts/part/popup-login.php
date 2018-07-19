@@ -1,11 +1,13 @@
 <?php
-if(get_theme_mod('display_login_link')){ ?>
+if(get_theme_mod('display_login_link')){
+	$login_link_texts = Free_Template::login_link_texts();
+	?>
 		<div class="mainbox modal fade" id="myModal" role="dialog">
 			<div class="modal-dialog" role="document" style="width: 400px;">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="<?php esc_html_e('Close', 'free-template'); ?>"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel"><?php echo Free_Template::login_link_texts()[ get_theme_mod('login_link_text') ]; // xss ok ?></h4>
+						<h4 class="modal-title" id="myModalLabel"><?php echo $login_link_texts[ get_theme_mod('login_link_text') ]; // xss ok ?></h4>
 					</div>
 					<div class="modal-body">
 						<form id="loginform" data-toggle="validator" method="post" action="<?php echo esc_url( get_site_url() . '/wp-login.php' ); ?>">

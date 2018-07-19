@@ -1,5 +1,6 @@
 <?php
 $attachments = get_uploaded_header_images();
+if (has_nav_menu( 'primary' ) or get_theme_mod('display_login_link')){
 ?>
 <!--nav class="megamenu navbar navbar-default navbar-toggleable-md navbar-fixed-top navbar-inverse bg-inverse  navbar-toggleable-md navbar-light"-->
 <nav id="top-menu" class="megamenu navbar navbar-default navbar-fixed-top navbar-inverse bg-inverse">
@@ -16,7 +17,6 @@ $attachments = get_uploaded_header_images();
 		</div>
 		<div id="top-navbar-collapse" class="collapse navbar-collapse"><?php
 			wp_nav_menu( array(
-				'menu'              	=> 'primary',
 				'theme_location'		=> 'primary',
 				'depth'					=> 3,
 				'menu_class'			=> 'nav navbar-nav megamenu',
@@ -29,9 +29,12 @@ $attachments = get_uploaded_header_images();
 				)
 			); ?>
 			<ul id="top-menu-side" class="nav navbar-nav navbar-right">
-				<?php if(get_theme_mod('display_login_link')){ ?>
+				<?php
+					if(get_theme_mod('display_login_link')){
+						$login_link_texts = Free_Template::login_link_texts();
+					?>
 				<li  itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item pull-right" id="login-menu-item">
-					<a data-toggle="modal" title="<?php echo Free_Template::login_link_texts()[ get_theme_mod('login_link_text') ]; // xss ok ?>" id="login-button" data-target="#myModal" aria-haspopup="true" role="button"><i class="fa fa-lg fa-user"></i>&nbsp;<?php echo Free_Template::login_link_texts()[ get_theme_mod('login_link_text') ]; // xss ok ?></a>
+					<a data-toggle="modal" title="<?php echo $login_link_texts[ get_theme_mod('login_link_text') ]; // xss ok ?>" id="login-button" data-target="#myModal" aria-haspopup="true" role="button"><i class="fa fa-lg fa-user"></i>&nbsp;<?php echo $login_link_texts[ get_theme_mod('login_link_text') ]; // xss ok ?></a>
 				</li>
 				<?php } ?>
 			</ul>
@@ -39,3 +42,5 @@ $attachments = get_uploaded_header_images();
 	</div>
 	</div>
 </nav>
+<?php
+}

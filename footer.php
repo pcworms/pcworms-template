@@ -10,10 +10,10 @@
 	<footer class="page-footer navbar-inverse text-warning">
 		<div class="container">
 			<div class="row">            
-				<div class="col-xs-12 col-sm-3"><?php dynamic_sidebar( 'footer-column-1' ); ?></div>
-				<div class="col-xs-12 col-sm-3"><?php dynamic_sidebar( 'footer-column-2' ); ?></div>
-				<div class="col-xs-12 col-sm-3"><?php dynamic_sidebar( 'footer-column-3' ); ?></div>
-				<div class="col-xs-12 col-sm-3"><?php dynamic_sidebar( 'footer-column-4' ); ?></div>
+				<div class="footer-widget col-xs-12 col-sm-3"><?php dynamic_sidebar( 'footer-column-1' ); ?></div>
+				<div class="footer-widget col-xs-12 col-sm-3"><?php dynamic_sidebar( 'footer-column-2' ); ?></div>
+				<div class="footer-widget col-xs-12 col-sm-3"><?php dynamic_sidebar( 'footer-column-3' ); ?></div>
+				<div class="footer-widget col-xs-12 col-sm-3"><?php dynamic_sidebar( 'footer-column-4' ); ?></div>
 			</div>
 		</div>
 		<?php get_template_part( 'template-parts/part/bottom-nav' ); ?>
