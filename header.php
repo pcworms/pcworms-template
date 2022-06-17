@@ -30,7 +30,4 @@ window.onload = function() {
 </a>
 <?php get_template_part( 'template-parts/part/popup-login' ); ?>
 <?php get_template_part( 'template-parts/part/header-top-nav' ); ?>
-<header id="masthead" class="site-header">
-	<?php get_template_part( 'template-parts/part/header-carousel' ); ?>
-	<?php get_template_part( 'template-parts/part/header-nav' ); ?>
-</header><!-- #masthead -->
+<?php get_template_part( 'template-parts/part/header-carousel' ); ?>

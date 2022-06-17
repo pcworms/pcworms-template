@@ -240,8 +240,8 @@ class Free_Template{
 		//https://make.wordpress.org/core/2016/03/10/custom-logo/
 		//https://codex.wordpress.org/Theme_Logo
 		add_theme_support( 'custom-logo', array(
-			'width'       => 80,
-			'height'      => 80,
+			'width'       => 150,
+			'height'      => 150,
 			'flex-width'  => true,
 			'flex-height' => false,
 			// Classes(s) of elements to hide.
@@ -378,7 +378,7 @@ class Free_Template{
 		wp_enqueue_style( 'nprogress', get_stylesheet_directory_uri() . '/assets/nprogress/css/nprogress.min.css', array(), '0.2.0', 'all');
 
 		// nprogress js load in header
-		wp_enqueue_script( 'nprogress', get_stylesheet_directory_uri() . '/assets/nprogress/js/nprogress.min.js', array(), '0.2.0', false);
+		wp_enqueue_script( 'nprogress', get_stylesheet_directory_uri() . '/assets/nprogress/js/nprogress.js', array(), '0.2.0', false);
 
 		// tether js (for tooltips , should before bootstrap) load in footer
 		wp_enqueue_script( 'tether', get_stylesheet_directory_uri() . '/assets/tether/js/tether.min.js', array(), '1.4.0', true);
