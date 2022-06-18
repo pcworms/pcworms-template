@@ -58,61 +58,48 @@
 	</div><!-- /.carousel -->
 </section> */?>
 <?php
-
-$attachments = get_uploaded_header_images();
-$args = array(
-	'posts_per_page' => 5,
+function Console_log($output) {
+    $js_code = 'console.log( `' . json_encode($output, JSON_PRETTY_PRINT) . '`);';
+    echo '<script>' . $js_code . '</script>';
+}
+$args=array(
+	'post_type' => 'post',
 	'post_status' => 'publish',
-	'post_type' => 'post'
-);
-$query = new WP_Query($args);
-if((is_home() or is_front_page()) and $query->have_posts() ) {?>
+	'posts_per_page' => 10,
+	'caller_get_posts'=> 1
+  );
+$my_query = null;
+$my_query = new WP_Query($args);
+if((is_home() or is_front_page()) and $my_query->have_posts() ) {?>
 	<div id="header" class="container-fluid">
+		<div class="container">
 		<div id="header-content" class="row">
 			<div id="header-title" class="col-xs-6 text-center">
 				<div class="row"><div class="col-xs-12"><div id="header-logo"><?php the_custom_logo(); ?></div></div></div>
-				<div class="row"><div class="col-xs-12"><h3 class="site-title"><a href="<?php echo home_url( '/' ); // xss ok ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3></div></div>
-				<div class="row"><div class="col-xs-12"><h6 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h6></div></div>
+				<div class="row"><div class="col-xs-12"><h2 class="site-title"><a href="<?php echo home_url( '/' ); // xss ok ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2></div></div>
+				<div class="row"><div class="col-xs-12"><h4 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h4></div></div>
 			</div>
 			<div class="col-md-6">
-				<h3 class="text-center">جدیدترین مطالب</h3>
+				<h2 class="text-center">جدیدترین مطالب</h2>
 				<div id="last-posts-carousel" class="carousel slide" data-ride="carousel" data-interval="8000">
 					<ol class="carousel-indicators"><?php
-						$posts = $query->posts;
-						for($counter=0; $counter < count($posts) ; $counter++){ ?>
+						for($counter=0; $counter < $my_query->post_count ; $counter++){ ?>
 							<li data-target="#last-posts-carousel" data-slide-to="<?php echo esc_attr($counter); ?>"<?php echo ($counter == 0) ? ' class="active"' : ''; ?>></li><?php
 						} ?>
 					</ol>
 					<div class="carousel-inner">
 						<?php
-						for($counter=0; $counter < count($posts) ; $counter++){
-							$post = $posts[$counter];
-							$post_id = $post->ID;
-							$post_title = $post->post_title;
-							$post_content = $post->post_content;
-							$summery = substr( $post_content, strpos( $post_content, '<p>' ), strpos( $post_content, '</p>' ) - strpos( $post_content, '<p>' ) +4 );
-							?>
-							<div class="item<?php echo ($counter == 0) ? ' active' : ''; ?>">
-								<div class="post-slide">
-									<a href="#<?php echo $post_id;?>"><h3><?php echo $post_title;?></h3></a>
-									<?php echo $summery;?>
-								</div>
-							</div><?php
-							}
+						$counter=0;
+						while($my_query->have_posts()){
+							$my_query->the_post();
+							get_template_part( 'template-parts/part/post-slide', get_post_format(), ['counter'=>$counter] );
+							$counter++;
+						}
 						?>
-					</div>
-					<div class="control-box">
-						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
-					</div>
-			</div><!-- /.carousel -->
+					</div><!-- /.carousel -->
 			</div>
+			</div>
+		</div>
 		</div>
 	</div>
 <?php

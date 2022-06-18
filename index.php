@@ -4,8 +4,8 @@
  */
 ?>
  
-<?php get_header(); ?>
-<?php $sidebar_condition = is_active_sidebar( 'sidebar-1' ); ?>
+<?php get_header();
+$sidebar_condition = is_active_sidebar( 'sidebar-1' ); ?>
 <main id="main" class="site-main">
 	<div class="container"><?php
 		if ( $sidebar_condition ) { ?>

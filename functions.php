@@ -257,8 +257,8 @@ class Free_Template{
 			'bottom'		=> esc_html__( 'Bottom of Site', 'free-template' ),
 		) );
 
-		add_image_size( 'free-template' . '-featured-image', 2000, 1200, true );
-		add_image_size( 'free-template' . '-thumbnail-avatar', 90, 90, true );
+		//add_image_size( 'free-template' . '-featured-image', 2000, 1200, true );
+		//add_image_size( 'free-template' . '-thumbnail-avatar', 90, 90, true );
 
 		// Set the default content width.
 		$GLOBALS['content_width'] = 525;
@@ -834,11 +834,6 @@ class Free_Template{
 			$image_url = (isset($matches [1][0]))? $matches [1][0] : get_template_directory_uri() . "/assets/images/content-image.png";
 		}
 		return esc_url($image_url);
-	}
-
-	function console_log(...$output) {
-		$js_code = 'console.log( "server log' . json_encode($output, JSON_HEX_TAG) . '");';
-		echo '<script>' . $js_code . '</script>';
 	}
 
 }
