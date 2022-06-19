@@ -14,10 +14,10 @@
 			
 				<section class="error-404 not-found panel box" style="padding: 10px;">
 					<header>
-						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'free-template' ); ?></h1>
+						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'free-template-pcworms' ); ?></h1>
 					</header><!-- .page-header -->
 					<div class="page-content">
-						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'free-template' ); ?></p>
+						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'free-template-pcworms' ); ?></p>
 
 						<?php get_search_form(); ?>
 

@@ -47,8 +47,8 @@
 				</div>
 				<?php
 				Free_Template::posts_pagination( array(
-					'prev_text' => '<span>' . esc_html__( 'Previous', 'free-template' ) . '</span>',
-					'next_text' => '<span>' . esc_html__( 'Next', 'free-template' ) . '</span>',
+					'prev_text' => '<span>' . esc_html__( 'Previous', 'free-template-pcworms' ) . '</span>',
+					'next_text' => '<span>' . esc_html__( 'Next', 'free-template-pcworms' ) . '</span>',
 					'type'						=> 'list',
 					'end_size'					=> 3,
 					'mid_size'					=> 3,
