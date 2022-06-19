@@ -44,15 +44,15 @@
 			$cat_data 	= get_option("taxonomy_$cat_id");
 		}
 		$options_values = array(
-			'date-desc' 					=> esc_html__('New Items', 'free-template-pcworms'),
-			'date-asc' 						=> esc_html__('Old Items', 'free-template-pcworms'),
-			'comment-count'		 	=> esc_html__('Most Comments', 'free-template-pcworms'),
-			'title' 							=> esc_html__('Title', 'free-template-pcworms'),
-			'author' 						=> esc_html__('Author', 'free-template-pcworms'),
-			'modified' 						=> esc_html__('New Modifications', 'free-template-pcworms'),
+			'date-desc' 					=> esc_html__('New Items', 'free-template'),
+			'date-asc' 						=> esc_html__('Old Items', 'free-template'),
+			'comment-count'		 	=> esc_html__('Most Comments', 'free-template'),
+			'title' 							=> esc_html__('Title', 'free-template'),
+			'author' 						=> esc_html__('Author', 'free-template'),
+			'modified' 						=> esc_html__('New Modifications', 'free-template'),
 		);
 		if(function_exists( 'wp_statistics_pages' )){
-			$options_values['visit'] = esc_html__('Most Visits', 'free-template-pcworms');
+			$options_values['visit'] = esc_html__('Most Visits', 'free-template');
 		}
 		if( isset($_GET['orderedby']) and array_key_exists(wp_unslash($_GET['orderedby']), $options_values) ){ // sanitization ok
 			$orderby_value = wp_unslash($_GET['orderedby']); // sanitization ok

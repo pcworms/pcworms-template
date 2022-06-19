@@ -29,7 +29,7 @@ class Free_Template_Customizer {
 				'title'       		=> esc_html__( 'Theme Options', 'free-template-pcworms' ),										//Visible title of section
 				'priority'    		=> 20,																										//Determines what order this appears in
 				'capability'  	=> 'edit_theme_options',																			//Capability needed to tweak
-				'description'	=> esc_html__('Allows you to customize settings for Theme.', 'free-template-pcworms'),	//Descriptive tooltip
+				'description'	=> esc_html__('Allows you to customize settings for Theme.', 'free-template'),	//Descriptive tooltip
 			)
 		);
  		$wp_customize->add_setting( 'bootstrap_theme_name',								//No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
@@ -122,7 +122,7 @@ class Free_Template_Customizer {
 				'title'				=> esc_html__( 'Popup Login Form', 'free-template-pcworms' ),												//Visible title of section
 				'priority'			=> 22,																												//Determines what order this appears in
 				'capability'		=> 'edit_theme_options',																					//Capability needed to tweak
-				'description'	=> esc_html__('Allows you to customize login link and login form.', 'free-template-pcworms'),	//Descriptive tooltip
+				'description'	=> esc_html__('Allows you to customize login link and login form.', 'free-template'),	//Descriptive tooltip
 			)
 		);
 		$wp_customize->add_setting( 'display_login_link',		//No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record

@@ -50,7 +50,7 @@ class Free_Template{
 
 	public function setup() {
 		// Make theme available for translation.
-		load_theme_textdomain( 'free-template-pcworms', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'free-template', get_template_directory() . '/languages' );
 		
 		// Define and register starter content to showcase the theme on new sites.
 		$starter_content = array(
@@ -535,7 +535,7 @@ class Free_Template{
 			'author' => '<div class="form-group has-feedback comment-form-author">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
-									<input placeholder="' . esc_attr__( 'Name', 'free-template-pcworms' ) .( $req ? ' *' : '' ) . '" class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your name!', 'free-template-pcworms') . '"' . $aria_req . ' />
+									<input placeholder="' . esc_attr__( 'Name', 'free-template-pcworms' ) .( $req ? ' *' : '' ) . '" class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your name!', 'free-template') . '"' . $aria_req . ' />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 								<div class="help-block with-errors"></div>
@@ -543,7 +543,7 @@ class Free_Template{
 			'email'  => '<div class="form-group has-feedback comment-form-email">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-at fa-lg"></i></span>
-									<input placeholder="' . esc_attr__( 'Email', 'free-template-pcworms' ) . ( $req ? ' *' : '' ) . '" style="direction: ltr;" class="form-control" id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your email address!', 'free-template-pcworms') . '"' . $aria_req . ' />
+									<input placeholder="' . esc_attr__( 'Email', 'free-template-pcworms' ) . ( $req ? ' *' : '' ) . '" style="direction: ltr;" class="form-control" id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your email address!', 'free-template') . '"' . $aria_req . ' />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 								<div class="help-block with-errors"></div>
@@ -551,7 +551,7 @@ class Free_Template{
 			'url'    => '<div class="form-group has-feedback comment-form-url">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-globe fa-lg"></i></span>
-									<input placeholder="' . esc_attr__( 'Website', 'free-template-pcworms' ) . '" style="direction: ltr;" class="form-control" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" data-error="' . esc_html__('Please enter a valid website starting with http:// on nothing!', 'free-template-pcworms') . '" />
+									<input placeholder="' . esc_attr__( 'Website', 'free-template-pcworms' ) . '" style="direction: ltr;" class="form-control" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" data-error="' . esc_html__('Please enter a valid website starting with http:// on nothing!', 'free-template') . '" />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 								<div class="help-block with-errors"></div>
@@ -566,7 +566,7 @@ class Free_Template{
 											<div class="form-group has-feedback comment-form-comment">
 												<div class="input-group">
 													<span class="input-group-addon"><i class="fa fa-comments fa-lg"></i></span>
-													<textarea placeholder="' . esc_attr__( 'Comment', 'free-template-pcworms' ) . '" class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required" data-error="' . esc_html__('Please enter your comment!', 'free-template-pcworms') . '"></textarea>
+													<textarea placeholder="' . esc_attr__( 'Comment', 'free-template-pcworms' ) . '" class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required" data-error="' . esc_html__('Please enter your comment!', 'free-template') . '"></textarea>
 												</div>
 												<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 												<div class="help-block with-errors"></div>
@@ -708,11 +708,11 @@ class Free_Template{
 	
 	static function login_link_texts(){
 		return array(
-			'Login'				=> esc_html__('Login', 'free-template-pcworms'),
-			'Customer Panel'	=> esc_html__('Customer Panel', 'free-template-pcworms'),
-			'Customer Login'	=> esc_html__('Customer Login', 'free-template-pcworms'),
-			'Management'		=> esc_html__('Management', 'free-template-pcworms'),
-			'Administration'	=> esc_html__('Administration', 'free-template-pcworms'),
+			'Login'				=> esc_html__('Login', 'free-template'),
+			'Customer Panel'	=> esc_html__('Customer Panel', 'free-template'),
+			'Customer Login'	=> esc_html__('Customer Login', 'free-template'),
+			'Management'		=> esc_html__('Management', 'free-template'),
+			'Administration'	=> esc_html__('Administration', 'free-template'),
 		);
 	}
 
@@ -789,7 +789,7 @@ class Free_Template{
 	
 	// Prints HTML with meta information for the current post-date/time and author.
 	public static function posted_on() {
-		$time_string = '<time class="entry-date published" title="'. esc_html__('Posted on', 'free-template-pcworms') .'" data-toggle="tooltip" data-placement="bottom" datetime="%1$s">%2$s</time>';
+		$time_string = '<time class="entry-date published" title="'. esc_html__('Posted on', 'free-template') .'" data-toggle="tooltip" data-placement="bottom" datetime="%1$s">%2$s</time>';
 
 		$time_string = sprintf( $time_string,
 			get_the_date( DATE_W3C ),
@@ -807,7 +807,7 @@ class Free_Template{
 
 	// Prints HTML with meta information for the current post-date/time and author.
 	public static function modified_on() {
-		$time_string = '<time class="entry-date updated" title="' . esc_html__('Updated on', 'free-template-pcworms') .'" data-toggle="tooltip" data-placement="bottom" datetime="%1$s">%2$s</time>';
+		$time_string = '<time class="entry-date updated" title="' . esc_html__('Updated on', 'free-template') .'" data-toggle="tooltip" data-placement="bottom" datetime="%1$s">%2$s</time>';
 		$time_string = sprintf( $time_string,
 			get_the_modified_date( DATE_W3C ),
 			get_the_modified_date()
