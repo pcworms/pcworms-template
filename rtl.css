@@ -633,6 +633,11 @@ th {
     text-align: center;
 }
 
+ol.wp-block-latest-comments {
+    list-style: none;
+    padding: 10px;
+}
+
 
 /* Media Elements */
 
@@ -1108,6 +1113,10 @@ body ::-webkit-scrollbar-thumb:active {
     color: white;
 }
 
+.icon-bar {
+    background-color: white;
+}
+
 .navbar-brand {
     height: 50px;
     padding: 15px 15px;
@@ -1352,7 +1361,8 @@ span a .fa {
 }
 
 .btn {
-    padding-left: ;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .btn.dark-blue {
@@ -1403,23 +1413,18 @@ span a .fa {
 
 #header {
     margin-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 85px;
     padding-bottom: 10px;
     background: rgb(208, 68, 69);
     background: -moz-linear-gradient(146deg, rgba(208, 68, 69, 1) 0%, rgba(153, 0, 30, 1) 24%, rgba(0, 68, 81, 1) 74%, rgba(0, 29, 41, 1) 100%);
     background: -webkit-linear-gradient(146deg, rgba(208, 68, 69, 1) 0%, rgba(153, 0, 30, 1) 24%, rgba(0, 68, 81, 1) 74%, rgba(0, 29, 41, 1) 100%);
     background: linear-gradient(146deg, rgba(208, 68, 69, 1) 0%, rgba(153, 0, 30, 1) 24%, rgba(0, 68, 81, 1) 74%, rgba(0, 29, 41, 1) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#d04445", endColorstr="#001d29", GradientType=1);
-    min-height: 500px;
+    min-height: 50vh;
     color: white;
 }
 
-#header-content {
-    margin-top: 75px;
-}
-
 #header-logo {
-    padding-top: 15px;
     min-width: 80px;
     min-height: 80px;
     margin: 0 10px;

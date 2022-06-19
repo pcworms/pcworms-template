@@ -71,15 +71,15 @@ $args=array(
 $my_query = null;
 $my_query = new WP_Query($args);
 if((is_home() or is_front_page()) and $my_query->have_posts() ) {?>
-	<div id="header" class="container-fluid">
+	<div id="header" class="container-fluid full-header">
 		<div class="container">
 		<div id="header-content" class="row">
-			<div id="header-title" class="col-xs-6 text-center">
-				<div class="row"><div class="col-xs-12"><div id="header-logo"><?php the_custom_logo(); ?></div></div></div>
-				<div class="row"><div class="col-xs-12"><h2 class="site-title"><a href="<?php echo home_url( '/' ); // xss ok ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2></div></div>
-				<div class="row"><div class="col-xs-12"><h4 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h4></div></div>
+			<div id="header-title" class="col-sm-6 text-center align-middle">
+				<div class="row"><div class="col-md-12"><div id="header-logo"><?php the_custom_logo(); ?></div></div></div>
+				<div class="row"><div class="col-md-12"><h2 class="site-title"><a href="<?php echo home_url( '/' ); // xss ok ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2></div></div>
+				<div class="row"><div class="col-md-12"><h4 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h4></div></div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-sm-6 hidden-xs">
 				<h2 class="text-center">جدیدترین مطالب</h2>
 				<div id="last-posts-carousel" class="carousel slide" data-ride="carousel" data-interval="8000">
 					<ol class="carousel-indicators"><?php

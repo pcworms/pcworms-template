@@ -12,11 +12,19 @@
 			<div id="primary" class="site-content content-area col-xs-12<?php if( is_active_sidebar( 'sidebar-1' ) ) { echo ' pull-right col-sm-9'; } ?>"><?php
 			
 			dynamic_sidebar( 'content-top' );
-
-			$archive_title = get_the_archive_title();
-			$archive_title = str_replace(substr($archive_title, 0, strpos($archive_title, ':') + 1 ),'',$archive_title);
+			if (is_category()) {
+				$title = single_cat_title('', false);
+			} elseif (is_tag()) {
+				$title = single_tag_title('', false);
+			} elseif (is_author()) {
+				$title = '<span class="vcard">' . get_the_author() . '</span>';
+			} elseif (is_tax()) { //for custom post types
+				$title = sprintf(__('%1$s'), single_term_title('', false));
+			} elseif (is_post_type_archive()) {
+				$title = post_type_archive_title('', false);
+			}
 			?>
-			<h1 class="text-center"><?php echo esc_html($archive_title); ?></h1>
+			<h1 class="text-center"><?php echo esc_html($title); ?></h1>
 			<?php
 			the_archive_description('<div class="text-justify">', '</div>');
 
