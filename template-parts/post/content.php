@@ -14,7 +14,7 @@
 	<?php get_template_part( 'template-parts/part/entry-featured' ); ?>
 	<?php
 		/* translators: %s: Name of current post */
-		the_content( '<button class="btn pink"><span class="fa fa-eye"></span> ' . esc_html__( 'Continue reading', 'free-template-pcworms' ) . '</button>');
+		the_content( '<button class="btn pink"><span class="fa fa-eye"></span> ' . esc_html__( 'Continue reading', 'free-template' ) . '</button>');
 	
 		get_template_part( 'template-parts/part/entry-pagination' ); ?>
 	
