@@ -5,7 +5,7 @@ if (has_nav_menu( 'header' ) or has_nav_menu( 'header-right' )){ ?>
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
 	  <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false" aria-controls="header-menu">
-		<span class="sr-only"><?php esc_html_e('Toggle navigation', 'free-template-pcworms'); ?></span>
+		<span class="sr-only"><?php esc_html_e('Toggle navigation', 'free-template'); ?></span>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>

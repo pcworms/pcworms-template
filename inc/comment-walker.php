@@ -35,7 +35,7 @@ class BS_Walker_Comment extends Walker_Comment {
 									<time datetime="<?php comment_time( 'c' ); ?>">
 										<?php
 											/* translators: 1: comment date, 2: comment time */
-											printf( esc_html__( '%1$s at %2$s', 'free-template-pcworms' ), get_comment_date( '', $comment ), get_comment_time() );
+											printf( esc_html__( '%1$s at %2$s', 'free-template' ), get_comment_date( '', $comment ), get_comment_time() );
 										?>
 									</time>
 								</a>
@@ -43,7 +43,7 @@ class BS_Walker_Comment extends Walker_Comment {
 						</div><!-- .comment-metadata -->
 	 
 						<?php if ( '0' == $comment->comment_approved ) : ?>
-						<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'free-template-pcworms' ); ?></p>
+						<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'free-template' ); ?></p>
 						<?php endif; ?>
 	                </footer><!-- .comment-meta -->
 					<div class="panel-body">
@@ -60,7 +60,7 @@ class BS_Walker_Comment extends Walker_Comment {
 						) ) );
 						?>
 						<div class="pull-right">
-							<?php edit_comment_link( esc_html__( 'Edit', 'free-template-pcworms' ), '<div class="btn btn-default comment-edit-btn btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;<span class="edit-link">', '</span></div>' ); ?>
+							<?php edit_comment_link( esc_html__( 'Edit', 'free-template' ), '<div class="btn btn-default comment-edit-btn btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;<span class="edit-link">', '</span></div>' ); ?>
 						</div>
 					</div>
                 </div><!-- .comment-content -->

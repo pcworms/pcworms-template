@@ -430,7 +430,7 @@ if ( ! class_exists( 'WP_Bootstrap_Widget_Navwalker' ) ) {
 				if ( $menu_class ) {
 					echo ' class="' . esc_attr( $menu_class ) . '"'; }
 				echo '>';
-				echo "\n<li>". "\n\t" .'<a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="">' . esc_html__( 'Add a menu', 'free-template-pcworms' ) . '</a>'. "\n" .'</li>';
+				echo "\n<li>". "\n\t" .'<a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="">' . esc_html__( 'Add a menu', 'free-template' ) . '</a>'. "\n" .'</li>';
 				echo "\n</ul>";
 				if ( $container ) {
 					echo "\n" . '</' . esc_attr( $container ) . '>'; }

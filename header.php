@@ -25,7 +25,7 @@ window.onload = function() {
 }
 </script>
 <div id="loading-bar"></div>
-<a id="back-to-top" href="#" class="btn btn-default back-to-top" role="button" title="<?php esc_attr_e('Go to top', 'free-template-pcworms'); ?>" data-toggle="tooltip" data-placement="top" >
+<a id="back-to-top" href="#" class="btn btn-default back-to-top" role="button" title="<?php esc_attr_e('Go to top', 'free-template'); ?>" data-toggle="tooltip" data-placement="top" >
 	<span class="glyphicon glyphicon-chevron-up"></span>
 </a>
 <?php get_template_part( 'template-parts/part/popup-login' ); ?>
