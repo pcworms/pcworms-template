@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Themes - Free Template pcworms\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-20 16:30+0000\n"
-"PO-Revision-Date: 2022-06-20 21:07+0430\n"
+"PO-Revision-Date: 2022-06-20 21:49+0430\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -16,186 +16,159 @@ msgstr ""
 "X-Generator: Poedit 3.1\n"
 "X-Loco-Version: 2.6.2; wp-6.0\n"
 
-#. Description of the theme
-msgid ""
-"WordPress Free Template is an Advanced Responsive Theme, Multi Colors, "
-"Lightweight, Extendable developed by DediData. You can create any type of "
-"web sites using Free Template including Business sites, WooCommerce powered "
-"site (eshop). Free Template supports RTL (Right To Left) Direction which "
-"means it supports all languages and also RTL languages like Persian, Arabic "
-"& Hebrew. Free Template is not just a theme but it is a framework for "
-"creating any WordPress themes. Features: Built-in Top Slider & Mega Menu, "
-"Multi Colors, Popup Login form, Bootstrap Ready, Mobile & Tablet Friendly, "
-"FontAwesome, 4 Columns Bottom Widgets, Auto Side Column, Content Top|Bottom "
-"[Home Page] Widgets Area, Add Logo, Favorite Icon, Full Customizable "
-"Background, HTML 5 & SEO Friendly, Custom CSS, Block Editor, ..."
-msgstr ""
-"قالب رایگان وردپرس یک قالب واکنشگرای حرفه ای، چند رنگی، سبک، قابل گسترش است "
-"و شما می توانید هر نوع وب سایتی را با استفاده از قالب رایگان از جمله سایت "
-"تجاری، سایت های قدرت گرفته توسط ووکامرس (فروشگاه اینترنتی) ایجاد نمایید. "
-"قالب رایگان از جهت راست به چپ پشتیبانی می کند که به این معناست که آن از "
-"تمامی زبان ها و همچنین زبان های راست به چپ مانند فارسی، عربی، عبری پشتیبانی "
-"می کند. قالب رایگان فقط یک قالب نیست بلکه یک چهارچوب برای ایجاد هر قالب "
-"وردپرس نیز می باشد.\n"
-"ویژگی ها: اسلایدر بالا به صورت داخلی، مگا منو، چند رنگی، فرم ورود پاپ آپ، "
-"آماده برای Bootstrap، موافق با تبلت و موبایل، FontAwesome و ۴ ستون ابزارک "
-"زیر، ستون اتوماتیک کناری، ناحیه ابزارک بالا|پایین|صفحه خانه و غیره، افزودن "
-"لوگو و آرم، آیکون مورد علاقه، زمینه قابل سفارشی سازی کامل، HTML 5 و بهینه "
-"شده برای موتورهای جستجو، CSS سفارشی و ..."
+#. 1: comment date, 2: comment time
+#: inc/comment-walker.php:38
+msgid "%1$s at %2$s"
+msgstr "%1$s در %2$s"
 
-#. Theme Name of the theme
-msgid "Free Template - PCworms forked"
-msgstr "قالب رایگان - نسخه کرم&zwnj;های کامپیوتر"
-
-#. Template Name of the theme
-msgid "No Header"
-msgstr "بدون سرصفحه"
-
-#: inc/customizer.php:277
-msgid ""
-"if you like to change default header background image for all pages, you can "
-"select an image here."
-msgstr ""
-"در صورتی که می‌خواهید تا تصویر زمینه سرصفحه پیشفرض را برای همه صفحات تغییر "
-"دهید، می‌توانید در اینجا یک تصویر انتخاب نمایید."
-
-#: inc/customizer.php:276
-msgid "Default header background image"
-msgstr "تصویر زمینه سرصفحه پیشفرض"
-
-#: inc/customizer.php:257
-msgid "Yes"
-msgstr "بله"
-
-#: inc/customizer.php:256
-msgid "No"
-msgstr "خیر"
-
-#: inc/customizer.php:250
-msgid ""
-"To display the featured image of the post/page in header area, Select this "
-"option to Yes! So your selected image will be display in header area as "
-"background for that post/page"
-msgstr ""
-"جهت نمایش تصویر ویژه نوشته/صفحه در ناحیه سرصفحه، این گزینه را به بله تغییر "
-"دهید! بنابراین تصویر انتخاب شده شما در ناحیه سرصفحه نمایش داده، به عنوان "
-"زمینه برای آن نوشته/صفحه نمایش داده خواهد شد"
-
-#: inc/customizer.php:249
-msgid "Display featured image in header"
-msgstr "نمایش تصویر ویژه در سرصفحه"
-
-#: inc/customizer.php:217
-msgid "How to modify frontpage header texts?"
-msgstr "چگونه متن‌های سرصفحه صفحه اصلی را ویرایش نماییم؟"
-
-#. translators: %1$s: Relaces with link tag, %2$s: Relaces with link tag
-#: inc/customizer.php:225
-msgid ""
-"If you cropped your image while uploading the file, So you need to use "
-"%1$sMedia Manager/List Mode%2$s to find those cropped images."
-msgstr ""
-"در صورتی که شما در طول آپلود فایل، تصویر را بریده‌اید، بنابراین نیاز به "
-"استفاده از %1$sمدیریت رسانه/حالت لیستی%2$s جهت پیدا کردن آن تصاویر بریده شده "
-"دارید."
-
-#. translators: %1$s: Relaces with link tag, %2$s: Relaces with link tag
-#: inc/customizer.php:220
-msgid "You can also modify them via %1$sMedia Manager%2$s. "
-msgstr ""
-"شما همچنین می‌توانید آنها را از طریق %1$sمدیریت رسانه%2$s اصلاح نمایید. "
-
-#: inc/customizer.php:218
-msgid ""
-"You can modify texts of header images when you are uploading them by "
-"modifing Title, Description and Alt fields. "
-msgstr ""
-"شما می‌توانید متن‌های تصاویر سرصفحه را با اصلاح فیلدهای عنوان، توضیح و متن "
-"جایگزین، در هنگامی که آنها را آپلود می‌نمایید، اصلاح نمایید. "
-
-#. Template Name of the theme
-msgid "Full width"
-msgstr "پهنای کامل"
-
-#: template-parts/part/header-carousel.php:83
-msgid "Last posts"
-msgstr "آخرین نوشته&zwnj;ها"
-
-#: template-parts/part/popup-login.php:37
-msgid "Forgot Password?"
-msgstr "کلمه عبور را فراموش کرده‌اید؟"
-
-#: template-parts/part/popup-login.php:35
-msgid "Register!"
-msgstr "عضویت!"
-
-#: template-parts/part/popup-login.php:27
-msgid "Please enter your password!"
-msgstr "لطفا کلمه عبور خود را وارد نمائید!"
-
-#: template-parts/part/popup-login.php:27
-msgid "Password"
-msgstr "کلمه عبور"
-
-#: template-parts/part/popup-login.php:18
-msgid "Please enter your valid email address!"
-msgstr "لطفا آدرس ایمیل معتبر خود را وارد نمائید!"
-
-#: template-parts/part/popup-login.php:18
-msgid "Email Address"
-msgstr "آدرس ایمیل"
-
-#: template-parts/part/popup-login.php:9 template-parts/part/popup-login.php:42
-msgid "Close"
-msgstr "بستن"
-
-#: template-parts/part/nav-header.php:7
-msgid "Toggle navigation"
-msgstr "تعویض ناوبری"
-
-#: template-parts/part/entry-footer.php:47
-#: template-parts/part/entry-footer.php:48
-msgid "Comments Number"
-msgstr "تعداد نظرات"
-
-#: template-parts/part/entry-footer.php:38
-#: template-parts/part/entry-footer.php:39
-msgid "Total Hits"
-msgstr "مجموع بازدیدها"
-
-#: template-parts/part/entry-footer.php:23
-#: template-parts/part/entry-footer.php:24
-msgid "Author"
-msgstr "نویسنده"
-
-#: template-parts/part/entry-footer.php:17
-msgid "Categories"
-msgstr "دسته‌ها"
+#. 1: number of comments, 2: post title
+#: comments.php:38
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s دیدگاه برای &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s دیدگاه برای &ldquo;%2$s&rdquo;"
 
 #: template-parts/part/entry-footer.php:14
 msgid ", "
 msgstr "، "
 
-#: template-parts/part/entry-footer.php:7
-msgid "Tags"
-msgstr "تگ‌ها"
-
-#: searchform.php:13
-msgid "Search &hellip;"
-msgstr "جستجو &hellip;"
-
-#: inc/megamenu-bottom-nav-walker.php:432 inc/megamenu-nav-walker.php:433
-#: inc/megamenu-widget-nav-walker.php:434
+#: inc/megamenu-bottom-nav-walker.php:432 inc/megamenu-nav-walker.php:432
+#: inc/megamenu-widget-nav-walker.php:433
 msgid "Add a menu"
 msgstr "افزودن یک فهرست"
 
-#: inc/customizer.php:185
-msgid "Please select the login link text"
-msgstr "لطفا متن لینک ورود را انتخاب نمائید"
+#: functions.php:304
+msgid "Add widgets here to appear in your bottom of content in Frontpage."
+msgstr ""
+"ابزارک‌ها را به اینجا اضافه کنید تا در پایین محتوای صفحه اصلی شما ظاهر شوند."
 
-#: inc/customizer.php:184
-msgid "Login link text"
-msgstr "متن لینک ورود"
+#: functions.php:324
+msgid "Add widgets here to appear in your bottom of content."
+msgstr "ابزارک‌ها را به اینجا اضافه کنید تا در پایین محتوای شما ظاهر شوند."
+
+#: functions.php:334
+msgid "Add widgets here to appear in your footer column 1."
+msgstr "ابزارک‌ها را به اینجا اضافه کنید تا در ستون پایین 1 شما ظاهر شوند."
+
+#: functions.php:344
+msgid "Add widgets here to appear in your footer column 2."
+msgstr "ابزارک‌ها را به اینجا اضافه کنید تا در ستون پایین 2 شما ظاهر شوند."
+
+#: functions.php:354
+msgid "Add widgets here to appear in your footer column 3."
+msgstr "ابزارک‌ها را به اینجا اضافه کنید تا در ستون پایین 3 شما ظاهر شوند."
+
+#: functions.php:364
+msgid "Add widgets here to appear in your footer column 4."
+msgstr "ابزارک‌ها را به اینجا اضافه کنید تا در ستون پایین 4 شما ظاهر شوند."
+
+#: functions.php:284
+msgid "Add widgets here to appear in your sidebar."
+msgstr "ابزارک‌ها را به اینجا اضافه کنید تا در نوارکناری شما ظاهر شوند."
+
+#: functions.php:294
+msgid "Add widgets here to appear in your top of content in Frontpage."
+msgstr ""
+"ابزارک‌ها را به اینجا اضافه کنید تا بالای محتوای صفحه اصلی شما ظاهر شوند."
+
+#: functions.php:314
+msgid "Add widgets here to appear in your top of content."
+msgstr "ابزارک‌ها را به اینجا اضافه کنید تا بالای محتوای شما ظاهر شوند."
+
+#: functions.php:715
+msgid "Administration"
+msgstr "مدیریت"
+
+#: footer.php:30
+msgid "All right reserved."
+msgstr "کلیه حقوق محفوظ می‌باشد."
+
+#: inc/customizer.php:125
+msgid "Allows you to customize login link and login form."
+msgstr "به شما اجازه می‌دهد تا لینک ورود و فرم ورود را سفارشی نمائید."
+
+#: inc/customizer.php:32
+msgid "Allows you to customize settings for Theme."
+msgstr "به شما اجازه می‌دهد تا تنظیمات قالب را سفارشی نمائید."
+
+#: template-parts/part/entry-footer.php:23
+#: template-parts/part/entry-footer.php:24
+#: template-parts/part/entry-header.php:51
+#: template-parts/part/entry-header.php:91
+#: template-parts/part/entry-header.php:92
+msgid "Author"
+msgstr "نویسنده"
+
+#: functions.php:131 functions.php:255
+msgid "Bottom of Header"
+msgstr "پایین سرصفحه"
+
+#: functions.php:142 functions.php:256
+msgid "Bottom of Header - Right"
+msgstr "پایین سرصفحه - چپ"
+
+#: functions.php:119 functions.php:257
+msgid "Bottom of Site"
+msgstr "پایین سایت"
+
+#: template-parts/part/entry-footer.php:17
+msgid "Categories"
+msgstr "دسته‌ها"
+
+#: template-parts/part/popup-login.php:9 template-parts/part/popup-login.php:42
+msgid "Close"
+msgstr "بستن"
+
+#: functions.php:569
+msgid "Comment"
+msgstr "نظر"
+
+#: comments.php:84
+msgid "Comments are closed."
+msgstr "نظرات بسته شده‌اند."
+
+#: template-parts/part/entry-footer.php:47
+#: template-parts/part/entry-footer.php:48
+#: template-parts/part/entry-header.php:100
+#: template-parts/part/entry-header.php:101
+msgid "Comments Number"
+msgstr "تعداد نظرات"
+
+#: functions.php:322
+msgid "Content Bottom"
+msgstr "پایین محتوا"
+
+#: functions.php:312
+msgid "Content Top"
+msgstr "بالای محتوا"
+
+#. %s: Name of current post
+#: functions.php:479 template-parts/post/content-audio.php:37
+#: template-parts/post/content-gallery.php:28
+#: template-parts/post/content-image.php:17
+#: template-parts/post/content-video.php:37 template-parts/post/content.php:17
+msgid "Continue reading"
+msgstr "ادامه مطلب"
+
+#: footer.php:30
+msgid "Copyright"
+msgstr "حق انحصاری"
+
+#: functions.php:713
+msgid "Customer Login"
+msgstr "ورود مشتریان"
+
+#: functions.php:712
+msgid "Customer Panel"
+msgstr "پنل مشتریان"
+
+#. Author of the theme
+msgid "DediData, BSimjoo"
+msgstr ""
+
+#: inc/customizer.php:57
+msgid "Default"
+msgstr "پیشفرض"
 
 #: inc/customizer.php:149
 msgid "Display a link on topmenu for login user"
@@ -205,14 +178,6 @@ msgstr "نمایش یک لینک در منوی بالا برای ورود کار
 msgid "Display login link?"
 msgstr "نمایش لینک ورود؟"
 
-#: inc/customizer.php:125
-msgid "Allows you to customize login link and login form."
-msgstr "به شما اجازه می‌دهد تا لینک ورود و فرم ورود را سفارشی نمائید."
-
-#: inc/customizer.php:122
-msgid "Popup Login Form"
-msgstr "فرم ورود پاپ آپ"
-
 #: inc/customizer.php:103
 msgid "Display number of visits in pages and posts"
 msgstr "نمایش تعداد بازدیدها در صفحات و نوشته‌ها"
@@ -221,269 +186,261 @@ msgstr "نمایش تعداد بازدیدها در صفحات و نوشته‌�
 msgid "Display visits?"
 msgstr "نمایش بازدیدها؟"
 
-#: inc/customizer.php:57
-msgid "Default"
-msgstr "پیشفرض"
-
-#: inc/customizer.php:51
-msgid "Using this option you can change the theme colors"
-msgstr "با استفاده از این گزینه می‌توانید رنگ‌های قالب را تغییر دهید"
-
-#: inc/customizer.php:50
-msgid "Select Theme Name"
-msgstr "نام قالب را انتخاب نمائید"
-
-#: inc/customizer.php:32
-msgid "Allows you to customize settings for Theme."
-msgstr "به شما اجازه می‌دهد تا تنظیمات قالب را سفارشی نمائید."
-
-#: inc/customizer.php:29
-msgid "Theme Options"
-msgstr "گزینه‌های قالب"
-
-#: inc/comment-walker.php:71
+#: inc/comment-walker.php:63
 msgid "Edit"
 msgstr "ویرایش"
 
-#: inc/comment-walker.php:54
-msgid "Your comment is awaiting moderation."
-msgstr "نظر شما منتظر تایید می‌باشد."
-
-#. translators: 1: comment date, 2: comment time
-#: inc/comment-walker.php:46
-msgid "%1$s at %2$s"
-msgstr "%1$s در %2$s"
-
-#: header.php:23 template-no-header.php:19
-msgid "Go to top"
-msgstr "برو به بالا"
-
-#: functions.php:1118 functions.php:1127
-msgid "Updated on"
-msgstr "بروزشده در"
-
-#: functions.php:1093 functions.php:1110
-msgid "Posted on"
-msgstr "ارسال شده در"
-
-#: functions.php:1082
+#. %s: Name of current post
+#: functions.php:782
 msgid "Edit "
 msgstr "ویرایش "
 
-#: functions.php:1015
-msgid "Administration"
-msgstr "مدیریت"
-
-#: functions.php:1014
-msgid "Management"
-msgstr "مدیریت"
-
-#: functions.php:1013
-msgid "Customer Login"
-msgstr "ورود مشتریان"
-
-#: functions.php:1012
-msgid "Customer Panel"
-msgstr "پنل مشتریان"
-
-#: functions.php:1011 template-parts/part/popup-login.php:33
-msgid "Login"
-msgstr "ورود"
-
-#: functions.php:859
-msgid "Please enter your comment!"
-msgstr "لطفا نظر خود را وارد نمائید!"
-
-#: functions.php:859
-msgid "Comment"
-msgstr "نظر"
-
-#: functions.php:844
-msgid "Please enter a valid website starting with http:// on nothing!"
-msgstr ""
-"لطفا یک وب سایت معتبر که با //:http شروع می‌شود وارد نمائید و یا آن را خالی "
-"بگذارید!"
-
-#: functions.php:844
-msgid "Website"
-msgstr "وب سایت"
-
-#: functions.php:836
-msgid "Please enter your email address!"
-msgstr "لطفا آدرس ایمیل خود را وارد نمائید!"
-
-#: functions.php:836
+#: functions.php:546
 msgid "Email"
 msgstr "ایمیل"
 
-#: functions.php:828
-msgid "Please enter your name!"
-msgstr "لطفا نام خود را وارد نمائید!"
+#: template-parts/part/popup-login.php:18
+msgid "Email Address"
+msgstr "آدرس ایمیل"
 
-#: functions.php:828
-msgid "Name"
-msgstr "نام"
-
-#. translators: %s: Name of current post
-#. translators: %s: Name of current post
-#. translators: %s: Name of current post
-#. translators: %s: Name of current post
-#. translators: %s: Name of current post
-#: functions.php:769 template-parts/post/content-audio.php:37
-#: template-parts/post/content-gallery.php:28
-#: template-parts/post/content-image.php:17
-#: template-parts/post/content-video.php:37 template-parts/post/content.php:17
-msgid "Continue reading"
-msgstr "ادامه مطلب"
-
-#: functions.php:374
-msgid "Add widgets here to appear in your footer column 4."
-msgstr "ابزارک‌ها را به اینجا اضافه کنید تا در ستون پایین 4 شما ظاهر شوند."
-
-#: functions.php:372
-msgid "Footer Column 4"
-msgstr "ستون پایین 4"
-
-#: functions.php:364
-msgid "Add widgets here to appear in your footer column 3."
-msgstr "ابزارک‌ها را به اینجا اضافه کنید تا در ستون پایین 3 شما ظاهر شوند."
-
-#: functions.php:362
-msgid "Footer Column 3"
-msgstr "ستون پایین 3"
-
-#: functions.php:354
-msgid "Add widgets here to appear in your footer column 2."
-msgstr "ابزارک‌ها را به اینجا اضافه کنید تا در ستون پایین 2 شما ظاهر شوند."
-
-#: functions.php:352
-msgid "Footer Column 2"
-msgstr "ستون پایین 2"
-
-#: functions.php:344
-msgid "Add widgets here to appear in your footer column 1."
-msgstr "ابزارک‌ها را به اینجا اضافه کنید تا در ستون پایین 1 شما ظاهر شوند."
-
-#: functions.php:342
+#: functions.php:332
 msgid "Footer Column 1"
 msgstr "ستون پایین 1"
 
-#: functions.php:334
-msgid "Add widgets here to appear in your bottom of content."
-msgstr "ابزارک‌ها را به اینجا اضافه کنید تا در پایین محتوای شما ظاهر شوند."
+#: functions.php:342
+msgid "Footer Column 2"
+msgstr "ستون پایین 2"
 
-#: functions.php:332
-msgid "Content Bottom"
-msgstr "پایین محتوا"
+#: functions.php:352
+msgid "Footer Column 3"
+msgstr "ستون پایین 3"
 
-#: functions.php:324
-msgid "Add widgets here to appear in your top of content."
-msgstr "ابزارک‌ها را به اینجا اضافه کنید تا بالای محتوای شما ظاهر شوند."
+#: functions.php:362
+msgid "Footer Column 4"
+msgstr "ستون پایین 4"
 
-#: functions.php:322
-msgid "Content Top"
-msgstr "بالای محتوا"
+#: template-parts/part/popup-login.php:37
+msgid "Forgot Password?"
+msgstr "کلمه عبور را فراموش کرده‌اید؟"
 
-#: functions.php:314
-msgid "Add widgets here to appear in your bottom of content in Frontpage."
-msgstr ""
-"ابزارک‌ها را به اینجا اضافه کنید تا در پایین محتوای صفحه اصلی شما ظاهر شوند."
-
-#: functions.php:312
-msgid "Frontend Content Bottom"
-msgstr "پایین محتوای صفحه اصلی"
-
-#: functions.php:304
-msgid "Add widgets here to appear in your top of content in Frontpage."
-msgstr ""
-"ابزارک‌ها را به اینجا اضافه کنید تا بالای محتوای صفحه اصلی شما ظاهر شوند."
-
-#: functions.php:302
-msgid "Frontend Content Top"
-msgstr "بالای محتوا صفحه اصلی"
-
-#: functions.php:294
-msgid "Add widgets here to appear in your sidebar."
-msgstr "ابزارک‌ها را به اینجا اضافه کنید تا در نوارکناری شما ظاهر شوند."
-
-#: functions.php:292
-msgid "Sidebar"
-msgstr "نوارکناری"
-
-#: functions.php:143 functions.php:266
-msgid "Bottom of Header - Right"
-msgstr "پایین سرصفحه - چپ"
-
-#: functions.php:132 functions.php:265
-msgid "Bottom of Header"
-msgstr "پایین سرصفحه"
-
-#: functions.php:120 functions.php:267
-msgid "Bottom of Site"
-msgstr "پایین سایت"
-
-#: functions.php:109 functions.php:264
-msgid "Top Menu"
-msgstr "منوی بالا"
-
-#: footer.php:30
-msgid "All right reserved."
-msgstr "کلیه حقوق محفوظ می‌باشد."
-
-#: footer.php:30
-msgid "Copyright"
-msgstr "حق انحصاری"
-
-#: footer.php:25
-msgid "Theme Design by DediData"
-msgstr "طراحی سایت توسط پارس میزبان"
+#. Name of the theme
+msgid "Free Template - PCworms forked"
+msgstr "قالب رایگان - نسخه کرم&zwnj;های کامپیوتر"
 
 #: footer.php:24
 msgid "Free Theme by DediData"
 msgstr "طراحی سایت توسط پارس میزبان"
 
-#: comments.php:84
-msgid "Comments are closed."
-msgstr "نظرات بسته شده‌اند."
+#: functions.php:302
+msgid "Frontend Content Bottom"
+msgstr "پایین محتوای صفحه اصلی"
+
+#: functions.php:292
+msgid "Frontend Content Top"
+msgstr "بالای محتوا صفحه اصلی"
+
+#. Name of the template
+msgid "Full width"
+msgstr "پهنای کامل"
+
+#: header.php:28
+msgid "Go to top"
+msgstr "برو به بالا"
+
+#: footer.php:24
+msgid "https://dedidata.com"
+msgstr "https://parsmizban.com"
+
+#. Author URI of the theme
+msgid "https://pcworms"
+msgstr ""
+
+#. URI of the theme
+msgid "https://pcworms.ir"
+msgstr ""
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+"به نظر میرسد هیچ چیزی در این مکان پیدا نشده است. مایل به جستجو می‌باشید؟"
+
+#: functions.php:711 template-parts/part/popup-login.php:33
+msgid "Login"
+msgstr "ورود"
+
+#: inc/customizer.php:184
+msgid "Login link text"
+msgstr "متن لینک ورود"
+
+#: functions.php:714
+msgid "Management"
+msgstr "مدیریت"
+
+#: template-parts/part/entry-header.php:49
+msgid "Most Comments"
+msgstr "داغ‌ترین مطالب"
+
+#: template-parts/part/entry-header.php:55
+msgid "Most Visits"
+msgstr "پر بازدید‌ترین ها"
+
+#: functions.php:538
+msgid "Name"
+msgstr "نام"
+
+#: template-parts/part/entry-header.php:47
+msgid "New Items"
+msgstr "گزینه های جدید"
+
+#: template-parts/part/entry-header.php:52
+msgid "New Modifications"
+msgstr "تغییرات جدید"
+
+#: archive.php:51 comments.php:55 comments.php:73 functions.php:748
+#: index.php:36 tag.php:43 template-fullwidth.php:34
+#: template-parts/part/entry-pagination.php:8
+msgid "Next"
+msgstr "بعدی"
+
+#: template-parts/part/entry-header.php:48
+msgid "Old Items"
+msgstr "گزینه های قدیمی"
+
+#. %s: post title
+#: comments.php:33
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr "یک پاسخ به &ldquo;%s&rdquo;"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "اوه، این صفحه پیدا نمی‌شود"
+
+#: template-parts/part/popup-login.php:27
+msgid "Password"
+msgstr "کلمه عبور"
+
+#: functions.php:554
+msgid "Please enter a valid website starting with http:// on nothing!"
+msgstr ""
+"لطفا یک وب سایت معتبر که با //:http شروع می‌شود وارد نمائید و یا آن را خالی "
+"بگذارید!"
+
+#: functions.php:569
+msgid "Please enter your comment!"
+msgstr "لطفا نظر خود را وارد نمائید!"
+
+#: functions.php:546
+msgid "Please enter your email address!"
+msgstr "لطفا آدرس ایمیل خود را وارد نمائید!"
+
+#: functions.php:538
+msgid "Please enter your name!"
+msgstr "لطفا نام خود را وارد نمائید!"
+
+#: template-parts/part/popup-login.php:27
+msgid "Please enter your password!"
+msgstr "لطفا کلمه عبور خود را وارد نمائید!"
+
+#: template-parts/part/popup-login.php:18
+msgid "Please enter your valid email address!"
+msgstr "لطفا آدرس ایمیل معتبر خود را وارد نمائید!"
+
+#: inc/customizer.php:185
+msgid "Please select the login link text"
+msgstr "لطفا متن لینک ورود را انتخاب نمائید"
+
+#: inc/customizer.php:122
+msgid "Popup Login Form"
+msgstr "فرم ورود پاپ آپ"
+
+#: functions.php:792 functions.php:802
+msgid "Posted on"
+msgstr "ارسال شده در"
+
+#: archive.php:50 comments.php:54 comments.php:72 functions.php:747
+#: index.php:35 tag.php:42 template-fullwidth.php:33
+#: template-parts/part/entry-pagination.php:9
+msgid "Previous"
+msgstr "قبلی"
+
+#: template-parts/part/popup-login.php:35
+msgid "Register!"
+msgstr "عضویت!"
 
 #: comments.php:66
 msgid "Reply"
 msgstr "پاسخ"
 
-#. translators: 1: number of comments, 2: post title
-#: comments.php:38
-msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s دیدگاه برای &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s دیدگاه برای &ldquo;%2$s&rdquo;"
+#: searchform.php:13
+msgid "Search &hellip;"
+msgstr "جستجو &hellip;"
 
-#. translators: %s: post title
-#: comments.php:33
-msgid "One Reply to &ldquo;%s&rdquo;"
-msgstr "یک پاسخ به &ldquo;%s&rdquo;"
+#: inc/customizer.php:50
+msgid "Select Theme Name"
+msgstr "نام قالب را انتخاب نمائید"
 
-#: archive.php:38 comments.php:55 comments.php:73 functions.php:1048
-#: index.php:36 tag.php:36 template-fullwidth.php:34 template-no-header.php:48
-#: template-parts/part/entry-pagination.php:8
-msgid "Next"
-msgstr "بعدی"
+#: functions.php:282
+msgid "Sidebar"
+msgstr "نوارکناری"
 
-#: archive.php:37 comments.php:54 comments.php:72 functions.php:1047
-#: index.php:35 tag.php:35 template-fullwidth.php:33 template-no-header.php:47
-#: template-parts/part/entry-pagination.php:9
-msgid "Previous"
-msgstr "قبلی"
+#: template-parts/part/entry-footer.php:7
+msgid "Tags"
+msgstr "تگ‌ها"
 
-#: 404.php:17
-msgid "It looks like nothing was found at this location. Maybe try a search?"
+#: footer.php:25
+msgid "Theme Design by DediData"
+msgstr "طراحی سایت توسط پارس میزبان"
+
+#: inc/customizer.php:29
+msgid "Theme Options"
+msgstr "گزینه‌های قالب"
+
+#: template-parts/part/entry-header.php:50
+msgid "Title"
+msgstr "عنوان"
+
+#: template-parts/part/header-nav.php:8
+msgid "Toggle navigation"
+msgstr "تعویض ناوبری"
+
+#: functions.php:108 functions.php:254
+msgid "Top Menu"
+msgstr "منوی بالا"
+
+#: template-parts/part/entry-footer.php:38
+#: template-parts/part/entry-footer.php:39
+#: template-parts/part/entry-header.php:69
+#: template-parts/part/entry-header.php:70
+msgid "Total Hits"
+msgstr "مجموع بازدیدها"
+
+#: functions.php:810 functions.php:819
+msgid "Updated on"
+msgstr "بروزشده در"
+
+#: inc/customizer.php:51
+msgid "Using this option you can change the theme colors"
+msgstr "با استفاده از این گزینه می‌توانید رنگ‌های قالب را تغییر دهید"
+
+#: functions.php:554
+msgid "Website"
+msgstr "وب سایت"
+
+#. Description of the theme
+msgid ""
+"WordPress Free Template is an Advanced Responsive Theme, Multi Colors, "
+"Lightweight, Extendable and you can create any type of web sites using Free "
+"Template including Business sites, WooCommerce powered site (eshop). Free "
+"Template supports RTL (Right To Left) Direction which means it supports all "
+"languages and also RTL languages like Persian, Arabic &amp; Hebrew. Free "
+"Template is not just a theme but it is a framework for creating any "
+"WordPress themes. Features: Built-in Top Slider &amp; Mega Menu, Multi "
+"Colors, Popup Login form, Bootstrap Ready, Mobile &amp; Tablet Friendly, "
+"FontAwesome, 4 Columns Bottom Widgets, Auto Side Column, Content Top|Bottom "
+"[Home Page] Widgets Area, Add Logo, Favorite Icon, Full Customizable "
+"Background, HTML 5 &amp; SEO Friendly, Custom CSS, ..."
 msgstr ""
-"به نظر میرسد هیچ چیزی در این مکان پیدا نشده است. مایل به جستجو می‌باشید؟"
 
-#. Author of the theme
-msgid "DediData"
-msgstr "پارس میزبان"
-
-#. Author URI of the theme
-#: footer.php:24
-msgid "https://dedidata.com"
-msgstr "https://parsmizban.com"
+#: inc/comment-walker.php:46
+msgid "Your comment is awaiting moderation."
+msgstr "نظر شما منتظر تایید می‌باشد."
