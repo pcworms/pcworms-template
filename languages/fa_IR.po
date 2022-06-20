@@ -95,6 +95,14 @@ msgstr "به شما اجازه می‌دهد تا لینک ورود و فرم و
 msgid "Allows you to customize settings for Theme."
 msgstr "به شما اجازه می‌دهد تا تنظیمات قالب را سفارشی نمائید."
 
+#: inc/customizer.php:50
+msgid "Count of header latest posts"
+msgstr "تعداد آخرین مطالب سربرگ"
+
+#: inc/customizer.php:51
+msgid "Using this option you can change the count of visible posts in header slide-show"
+msgstr "با استفاده از این گزینه می‌توانید تعداد آخرین مطالب در سربرگ را تغییر دهید"
+
 #: template-parts/part/entry-footer.php:23
 #: template-parts/part/entry-footer.php:24
 #: template-parts/part/entry-header.php:51

@@ -605,7 +605,7 @@ class Free_Template{
 			$classes[] = 'free-template-pcworms' . '-customizer';
 		}
 		
-		$classes[] = esc_html( get_theme_mod( 'bootstrap_theme_name' ) ) . '-theme';
+		//$classes[] = esc_html( get_theme_mod( 'bootstrap_theme_name' ) ) . '-theme';
 
 		if( ! (has_nav_menu( 'primary' ) or get_theme_mod('display_login_link') ) ) {
 			$classes[] = 'non-top-menu';

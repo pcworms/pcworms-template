@@ -65,7 +65,7 @@ function Console_log($output) {
 $args=array(
 	'post_type' => 'post',
 	'post_status' => 'publish',
-	'posts_per_page' => 5,
+	'posts_per_page' => get_option('latest-posts-carousel-count', 5),
 	'caller_get_posts'=> 1
   );
 $my_query = null;

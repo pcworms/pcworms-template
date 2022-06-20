@@ -32,12 +32,12 @@ class Free_Template_Customizer {
 				'description'	=> esc_html__('Allows you to customize settings for Theme.', 'free-template-pcworms'),	//Descriptive tooltip
 			)
 		);
- 		$wp_customize->add_setting( 'bootstrap_theme_name',								//No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
+ 		$wp_customize->add_setting( 'latest-posts-carousel-count',								//No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
 			array(
-				'default'    		=> 'default',																//Default setting/value to save
-				'type'      		=> 'theme_mod', 														//Is this an 'option' or a 'theme_mod'?
+				'default'    		=> 5,																//Default setting/value to save
+				'type'      		=> 'option', 														//Is this an 'option' or a 'theme_mod'?
 				'capability'		=> 'edit_theme_options', 											//Optional. Special permissions for accessing this setting.
-				'sanitize_callback'		=> 'Free_Template_Customizer::sanitize_text',
+				'sanitize_callback'		=> 'absint',
 				//'transport'	=> 'postMessage', 														//What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
 			)
 		);
@@ -45,32 +45,18 @@ class Free_Template_Customizer {
 		 * Additional input types such as `email`, `url`, `number`, `hidden` and `date` are supported implicitly. */
 		$wp_customize->add_control( new WP_Customize_Control(
 			$wp_customize, 																					//Pass the $wp_customize object (required)
-			'bootstrap_theme_name', 																	//Set a unique ID for the control
+			'latest-posts-carousel-count', 																	//Set a unique ID for the control
 			array(
-				'label'      		=> esc_html__( 'Select Theme Name', 'free-template-pcworms' ),	//Admin-visible name of the control
-				'description'	=> esc_html__( 'Using this option you can change the theme colors', 'free-template-pcworms' ),
-				'settings'		=> 'bootstrap_theme_name', 										//Which setting to load and manipulate (serialized is okay)
-				'priority'			=> 10, 																		//Determines the order this control appears in for the specified section
-				'section'			=> 'free-template-pcworms' . '-options', 										//ID of the section this control should render in (can be one of yours, or a WordPress default section)
-				'type'			=> 'select',
-				'choices'		=> array(
-					'default' 	=> esc_html__( 'Default', 'free-template-pcworms' ),
-					'cerulean' 	=> 'Cerulean',
-					'cosmo'		=> 'Cosmo',
-					'cyborg' 	=> 'Cyborg',
-					'darkly' 		=> 'Darkly',
-					'flatly' 		=> 'Flatly',
-					'journal'		=> 'Journal',
-					'lumen'		=> 'Lumen',
-					'paper'		=> 'Paper',
-					'readable'	=> 'Readable',
-					'sandstone'=> 'Sandstone',
-					'simplex'		=> 'Simplex',
-					'slate'		=> 'Slate',
-					'spacelab'	=> 'Spacelab',
-					'superhero'	=> 'Superhero',
-					'united'		=> 'United',
-					'yeti'			=> 'Yeti',
+				'label'      	=> esc_html__( 'Count of header latest posts', 'free-template-pcworms' ),	//Admin-visible name of the control
+				'description'	=> esc_html__( 'Using this option you can change the count of visible posts in header slide-show', 'free-template-pcworms' ),
+				'settings'		=> 'latest-posts-carousel-count', 										//Which setting to load and manipulate (serialized is okay)
+				'priority'		=> 10, 																		//Determines the order this control appears in for the specified section
+				'section'		=> 'free-template-pcworms' . '-options', 										//ID of the section this control should render in (can be one of yours, or a WordPress default section)
+				'type'			=> 'number',
+				'input_attrs' => array(
+					'min'	=> 1,
+					'max'	=> 10,
+					'step'	=> 1,
 				)
 			)
 		) );
@@ -213,6 +199,14 @@ class Free_Template_Customizer {
 
 	static function sanitize_text($input) {
 		return (sanitize_text_field($input));
+	}
+
+	static function sanitize_number($input) {
+		$value = (int) sanitize_text_field($input);
+		if ($value >=1 and $value <= 10)
+			return $value;
+		else
+			return 1;
 	}
 
 	
