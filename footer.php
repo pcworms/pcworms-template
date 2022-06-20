@@ -21,13 +21,13 @@
 			<div class="container">
 				<?php if(is_front_page()){ ?>
 				<div class="pull-left col-xs-12 col-sm-6">
-					<a href="<?php echo esc_url( __('https://dedidata.com', 'free-template') ); ?>" title="<?php esc_attr_e('Free Theme by DediData', 'free-template'); ?>" target="_blank">
-						<?php esc_attr_e('Theme Design by DediData', 'free-template'); ?>
+					<a href="<?php echo esc_url( __('https://dedidata.com', 'free-template-pcworms') ); ?>" title="<?php esc_attr_e('Free Theme by DediData', 'free-template-pcworms'); ?>" target="_blank">
+						<?php esc_attr_e('Theme Design by DediData', 'free-template-pcworms'); ?>
 					</a>
 				</div>
 				<?php } ?>
 				<div class="pull-right col-xs-12 col-sm-6">
-					<p><?php echo esc_html( __('Copyright', 'free-template') . ' &copy; ' . date('Y ') . get_bloginfo( 'name' ) . '. ' .  __('All right reserved.', 'free-template') ); ?></p>
+					<p><?php echo esc_html( __('Copyright', 'free-template-pcworms') . ' &copy; ' . date('Y ') . get_bloginfo( 'name' ) . '. ' .  __('All right reserved.', 'free-template-pcworms') ); ?></p>
 				</div>
 			</div>
 		</div>

@@ -5,8 +5,8 @@ if ( is_single() ) {
 		'before'      => '<nav class="link-pages-nav"><ul class="pagination">',
 		'after'       => '</ul></nav>',
 		'next_or_number'	=> 'next_and_number',
-		'nextpagelink'     => esc_html__( 'Next', 'free-template' ),
-		'previouspagelink' => esc_html__( 'Previous', 'free-template' ),
+		'nextpagelink'     => esc_html__( 'Next', 'free-template-pcworms' ),
+		'previouspagelink' => esc_html__( 'Previous', 'free-template-pcworms' ),
 	) );
 
 }
