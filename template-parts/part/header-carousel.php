@@ -75,7 +75,7 @@ if((is_home() or is_front_page()) and $my_query->have_posts() ) {?>
 		<div class="container">
 		<div id="header-content" class="row">
 			<div id="header-title" class="col-sm-6 text-center align-middle">
-				<div class="row"><div class="col-md-12"><div id="header-logo"><?php the_custom_logo(); ?></div></div></div>
+				<div class="row"><div class="col-md-12"><div id="header-logo align-center"><?php the_custom_logo(); ?></div></div></div>
 				<div class="row"><div class="col-md-12"><h2 class="site-title"><a href="<?php echo home_url( '/' ); // xss ok ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2></div></div>
 				<div class="row"><div class="col-md-12"><h4 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h4></div></div>
 			</div>
