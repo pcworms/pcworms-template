@@ -80,7 +80,7 @@ if((is_home() or is_front_page()) and $my_query->have_posts() ) {?>
 				<div class="row"><div class="col-md-12"><h4 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h4></div></div>
 			</div>
 			<div class="col-sm-6 hidden-xs">
-				<h2 class="text-center"><?php echo __("Last posts", 'free-template-pcworms')?></h2>
+				<h2 class="text-center"><?php echo __("Latest Posts", 'free-template-pcworms')?></h2>
 				<div id="last-posts-carousel" class="carousel slide" data-ride="carousel" data-interval="8000">
 					<ol class="carousel-indicators"><?php
 						for($counter=0; $counter < $my_query->post_count ; $counter++){ ?>

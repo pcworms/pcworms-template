@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Themes - Free Template pcworms\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-20 16:30+0000\n"
-"PO-Revision-Date: 2022-06-20 21:49+0430\n"
+"PO-Revision-Date: 2022-06-20 22:08+0430\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -27,6 +27,10 @@ msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
 msgstr[0] "%1$s دیدگاه برای &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s دیدگاه برای &ldquo;%2$s&rdquo;"
+
+#: template-parts/part/header-carousel.php:38
+msgid "Latest Posts"
+msgstr "آخرین مطالب"
 
 #: template-parts/part/entry-footer.php:14
 msgid ", "
@@ -313,7 +317,7 @@ msgstr "یک پاسخ به &ldquo;%s&rdquo;"
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "اوه، این صفحه پیدا نمی‌شود"
+msgstr "اوه، این صفحه پیدا نمی‌شود."
 
 #: template-parts/part/popup-login.php:27
 msgid "Password"
