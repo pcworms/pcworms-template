@@ -1153,6 +1153,14 @@ body ::-webkit-scrollbar-thumb:active {
     font-size: 14px;
 }
 
+.dropdown-menu {
+    background-color: #003f48;
+}
+
+.dropdown-menu li a {
+    color: white;
+}
+
 .navbar-brand {
     font-size: 15px;
 }
@@ -1438,6 +1446,22 @@ span a .fa {
 #header-title * {
     font-weight: bolder;
     color: white;
+}
+
+.carousel .carousel-inner .item {
+    transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
+}
+
+.carousel .carousel-inner .item.active {
+    opacity: 1;
+}
+
+.carousel .carousel-inner .item.active.left,
+.carousel .carousel-inner .item.active.right {
+    opacity: 0;
 }
 
 .custom-logo {
