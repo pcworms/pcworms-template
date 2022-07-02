@@ -6,7 +6,7 @@
  */
 
 ?>
-<div class = "container-fluid post-container"><div class = "row"><div class="col-xs-1 no-float"><?php echo get_avatar($authorId, 100);?></div><div class="col-xs-11 no-float">
+<div class = "container-fluid post-container"><div class = "row"><div class="col-xs-1 no-float"><?php echo get_avatar($authorId, 50);?></div><div class="col-xs-11 no-float">
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'panel box' ); ?>>
 	<?php get_template_part( 'template-parts/part/entry-header' ); ?>
 
