@@ -1548,18 +1548,20 @@ span a .fa {
 /* THEME STYLES */
 
 .entry-header {
-    background: linear-gradient(to bottom, #3f7d8d, #005160);
-    color: white;
+    background-color: #d04445;
+    color: black;
+    font-weight: bold;
+    position: relative;
     -moz-box-shadow: 0 2px 7px rgba(0, 0, 0, .8);
     box-shadow: 0 2px 7px rgba(0, 0, 0, .8);
-    margin-top: -10px;
-    margin-left: -10px;
-    margin-right: -10px;
+    margin: -10px -10px 0;
+    border-right: #005160 20px solid;
+    padding: 0 15px;
 }
 
 .entry-header .entry-title a {
-    color: white;
-    font-weight: normal;
+    color: black;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
@@ -1616,16 +1618,36 @@ span a .fa {
     height: auto !important;
 }
 
+.post-container img.avatar {
+    border: white 2px solid;
+    position: sticky;
+    top: 10px;
+    vertical-align: unset !important;
+    border-radius: 5px;
+}
+
+.post-container {
+    margin-bottom: 30px;
+}
+
+.row {
+    height: 100%;
+    display: table-row;
+}
+
+.row .no-float {
+    display: table-cell;
+    float: none;
+}
+
 #primary article {
     padding: 10px;
+    border-radius: 0 0 0 30px;
+    margin: 0;
 }
 
 #primary .widget {
     padding: 15px !important;
-}
-
-#primary .entry-header {
-    padding: 5px 15px 0;
 }
 
 #primary .panel-footer {
@@ -2259,11 +2281,10 @@ span a .fa {
     -moz-box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
     box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
     margin-bottom: 10px;
-    border-radius: 5px;
-    border-top: #d04445 solid 10px;
-    background-color: #1e111c;
-    ;
-    color: #ffefe0;
+    background-color: rgba(30, 17, 28, .8);
+    backdrop-filter: blur(10px);
+    border: white 2px solid;
+    color: white;
 }
 
 .nomargin-box {

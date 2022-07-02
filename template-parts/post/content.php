@@ -6,7 +6,7 @@
  */
 
 ?>
-
+<div class = "container-fluid post-container"><div class = "row"><div class="col-xs-1 no-float"><?php echo get_avatar($authorId, 100);?></div><div class="col-xs-11 no-float">
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'panel box' ); ?>>
 	<?php get_template_part( 'template-parts/part/entry-header' ); ?>
 
@@ -23,7 +23,9 @@
 	<div>
 		<?php get_template_part( 'template-parts/part/entry-footer' ); ?>
 	</div>
-</article><!-- #post-## --><?php
+</article><!-- #post-## -->
+</div></div></div>
+<?php
 
 		// If comments are open or we have at least one comment, load up the comment template.
 		if ( comments_open() || get_comments_number() ) {

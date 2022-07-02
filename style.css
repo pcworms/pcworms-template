@@ -8,7 +8,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: free-template-pcworms
 Tags: one-column, two-columns, flexible-header, custom-colors, e-commerce, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, left-sidebar, translation-ready, portfolio, photography
-Version: 4.3.4
+Version: 4.3.5
 GitHub Theme URI: https://github.com/pcworms/free-template-pcworms
 */
 
@@ -846,8 +846,8 @@ body.admin-bar.non-top-menu {
 }
 
 #nprogress .bar {
-    background: red;
-    height: 3px;
+    background: #005160;
+    height: 10px;
     -webkit-transition: all 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: all 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
