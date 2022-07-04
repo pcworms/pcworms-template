@@ -1556,7 +1556,7 @@ span a .fa {
     box-shadow: 0 2px 7px rgba(0, 0, 0, .8);
     margin: -10px -10px 0;
     border-right: #005160 20px solid;
-    padding: 0 15px;
+    padding: 2PX 15px;
 }
 
 .entry-header .entry-title a {
@@ -1621,29 +1621,22 @@ span a .fa {
 .post-container img.avatar {
     border: white 2px solid;
     position: sticky;
-    top: 10px;
+    top: 20px;
     vertical-align: unset !important;
     border-radius: 5px;
+    margin-left: 5px;
 }
 
 .post-container {
     margin-bottom: 30px;
 }
 
-.row {
-    height: 100%;
-    display: table-row;
-}
-
-.row .no-float {
-    display: table-cell;
-    float: none;
-}
-
 #primary article {
+    float: left;
     padding: 10px;
     border-radius: 0 0 0 30px;
     margin: 0;
+    width: calc(100% - 55px);
 }
 
 #primary .widget {
