@@ -665,9 +665,12 @@ class Free_Template{
 			$image = " background-image: url('$background') !important;";
 
 			$repeat = get_theme_mod( 'background_repeat', 'repeat' );
+			$size="";
 
-			if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
+			if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) ){
 				$repeat = 'repeat';
+				$size = "-webkit-background-size: cover !important;-moz-background-size: cover !important;-o-background-size: cover !important;background-size: cover !important;"
+			}
 
 			$repeat = " background-repeat: $repeat !important;";
 
@@ -685,15 +688,11 @@ class Free_Template{
 
 			$attachment = " background-attachment: $attachment !important;";
 
-			$style .= $image . $repeat . $position . $attachment;
+			$style .= $image . $repeat . $position . $attachment . $size;
 		}
 		?>
 		<style type="text/css" id="custom-background-css">
 			body.custom-background { <?php echo trim( $style ); // xss ok ?>
-				-webkit-background-size: cover !important;
-				-moz-background-size: cover !important;
-				-o-background-size: cover !important;
-				background-size: cover !important;
 			}
 			#HeaderCarousel .carousel-caption h3,
 			#HeaderCarousel .carousel-caption h3 a,
