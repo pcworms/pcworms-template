@@ -665,7 +665,7 @@ class Free_Template{
 			$image = " background-image: url('$background') !important;";
 
 			$repeat = get_theme_mod( 'background_repeat', 'repeat' );
-			$size="";
+			$size="background-size: 18%;";
 
 			if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) ){
 				$repeat = 'repeat';
