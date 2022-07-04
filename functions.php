@@ -669,7 +669,7 @@ class Free_Template{
 
 			if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) ){
 				$repeat = 'repeat';
-				$size = "-webkit-background-size: cover !important;-moz-background-size: cover !important;-o-background-size: cover !important;background-size: cover !important;"
+				$size = "-webkit-background-size: cover !important;-moz-background-size: cover !important;-o-background-size: cover !important;background-size: cover !important;";
 			}
 
 			$repeat = " background-repeat: $repeat !important;";
