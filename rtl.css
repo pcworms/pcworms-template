@@ -987,6 +987,15 @@ h3,
     margin-bottom: 5px;
 }
 
+a {
+    color: #65bdd5;
+}
+
+a:hover {
+    color: #005160;
+    text-decoration: underline;
+}
+
 .col-xs-1,
 .col-sm-1,
 .col-md-1,
@@ -1555,7 +1564,6 @@ span a .fa {
     -moz-box-shadow: 0 2px 7px rgba(0, 0, 0, .8);
     box-shadow: 0 2px 7px rgba(0, 0, 0, .8);
     margin: -10px -10px 0;
-    border-right: #005160 20px solid;
     padding: 2PX 15px;
 }
 
@@ -1627,6 +1635,10 @@ span a .fa {
     margin-left: 5px;
 }
 
+.admin-bar .post-container img.avatar {
+    top: 50px
+}
+
 .post-container {
     margin-bottom: 30px;
 }
@@ -1645,6 +1657,31 @@ span a .fa {
 
 #primary .panel-footer {
     padding: 0px 5px;
+}
+
+#primary .post-info {
+    text-align: left;
+    background-color: #005160;
+    padding: 5px;
+    margin: 0 -10px;
+    font-size: .9rem;
+}
+
+#primary .post-info span {
+    padding: 0 5px;
+    border-right: white 1px solid;
+}
+
+#primary .post-info span:first-of-type {
+    border-right: none;
+}
+
+#primary .post-info span a {
+    color: #cf8a8a;
+}
+
+#primary .post-info span a:hover {
+    color: #af4056;
 }
 
 #primary .entry-title {

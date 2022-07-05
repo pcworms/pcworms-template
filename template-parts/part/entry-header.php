@@ -1,5 +1,5 @@
-<header class="entry-header">
-	<div class="row">
+<header class=>
+	<div class="row entry-header">
 		<div class="col <?php echo ((current_user_can( 'edit_post', get_the_ID() ) or is_archive()) ? 'pull-left' : 'col-xs-12'); ?>"><?php
 			$sticky = is_sticky() ? '<i class="sticky-icon fa fa-thumb-tack fa-lg"></i>' : '';
 			$posttypeicon = '';
@@ -104,5 +104,10 @@
 		</div>
 		<?php } ?>
 		
+	</div>
+	<div class="post-info">
+		<span><a href="<?php get_the_author_meta( 'url' ) ?>"><?php the_author()?></a> <i class="fa fa-user-circle" aria-hidden="true"></i></span>
+		<span><?php the_category(' -  ')?> <i class="fa fa-bookmark" aria-hidden="true"></i></span>
+		<span><?php the_date('Y-m-d')?> <i class="fa fa-calendar" aria-hidden="true"></i></span>
 	</div>
 </header><!-- .entry-header -->
