@@ -1722,6 +1722,23 @@ span a .fa {
     padding: 12px;
 }
 
+.entry-footer ul.commenters-avatars,
+.entry-footer ul.commenters-avatars li {
+    display: inline;
+    margin: 0 2.5px;
+    padding: 0;
+}
+
+.entry-footer ul.commenters-avatars li img {
+    height: 20px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.entry-footer a.comment-btn {
+    margin: 0 2.5px
+}
+
 .entry-header div.header-item.pull-left,
 .entry-header div.header-item.pull-right {
     border-left-style: none;

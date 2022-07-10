@@ -42,14 +42,40 @@
 	</div><?php
 	}
 	
-	if(comments_open( get_the_ID() )){ ?>
+	$comments_count = get_comments_number();
+
+	if (is_front_page() and comments_open(get_the_ID()) and $comments_count>0){
+		?>
+		<ul class="commenters-avatars">
+			<?php
+			$args = array(
+				'post_id' => get_the_ID(),
+				'number' => 3,
+				'count' => false
+			);
+			$comments = get_comments(($args));
+
+			foreach($comments as $comment)
+				printf('<li class="commenter-avatar"><img src="%s" title="%s" data-toggle="tooltip" data-placement="top" aria-hidden="true"></li>', get_avatar_url($comment->author_email), get_comment_author($comment->ID));
+			?>
+		</ul>
+		<?php
+		if ($comments_count>3)
+			printf('<span class= "more-comments">%d+</span>',$comments_count-3);
+		
+	}
+
+	if (is_front_page() and comments_open(get_the_ID()))
+		printf('<a href="%s" class="comment-btn"><i class="fa fa-comments fa-lg"></i> %s</a>',get_comments_link(),esc_html__('Write Comment', 'free-template-pcworms'));
+
+	/*if(comments_open( get_the_ID() )){ ?>
 	<div class="footer-item comments-number">
 		<i class="fa fa-comments fa-lg" title="<?php esc_attr_e('Comments Number', 'free-template-pcworms'); ?>" data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i> 
 		<span class="comments-count" title="<?php esc_attr_e('Comments Number', 'free-template-pcworms'); ?>" data-toggle="tooltip" data-placement="bottom">
-		<?php echo esc_html(get_comments_number()); ?>
+		<?php echo esc_html($comments_count); ?>
 		</span>
 	</div>
-	<?php }
+	<?php }*/
 
 	if ( current_user_can( 'edit_post', get_the_ID() ) ) { ?>
 		<div class="footer-item pull-right">
