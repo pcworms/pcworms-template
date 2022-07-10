@@ -1748,6 +1748,8 @@ code:not([class]) {
     padding: 0;
 }
 
+.entry-footer ul.commenters-avatars li img.avatar {}
+
 .entry-footer ul.commenters-avatars li img {
     height: 20px;
     width: auto;
