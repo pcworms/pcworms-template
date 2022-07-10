@@ -55,12 +55,8 @@
 			);
 			$comments = get_comments(($args));
 
-			foreach($comments as $comment){
-				$args = array( 
-					'extra_attr' => 'title="' . get_comment_author($comment) . '" data-toggle="tooltip" data-placement="top" aria-hidden="true"',
-					'class' => 'commenter-avatar');
-				echo '<li class="commenter">'. get_avatar( $comment, 20, $args = $args) .'</li>';
-			}
+			foreach($comments as $comment)
+				printf('<li class="commenter-avatar"><img src="%s" title="%s" data-toggle="tooltip" data-placement="top" aria-hidden="true"></li>', get_avatar_url($comment), get_comment_author($comment));
 			?>
 		</ul>
 		<?php
