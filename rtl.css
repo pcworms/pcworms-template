@@ -1697,6 +1697,25 @@ span a .fa {
     line-height: 35px;
 }
 
+pre.wp-block-code,
+code:not([class]) {
+    background-color: #002836;
+    color: white;
+}
+
+.admin-bar pre.wp-block-code>code:not([class])::after {
+    position: relative;
+    float: right;
+    top: 9.5px;
+    content: "\f071  Unspecified language";
+    font: normal normal normal 10px/1 FontAwesome;
+    color: rgb(127, 83, 0);
+}
+
+.admin-bar pre.wp-block-code>code:not([class]):hover::after {
+    content: "\f071  Dear author, please specify code language!";
+}
+
 .entry-header-right {}
 
 .entry-header-right div.header-item {
