@@ -1987,15 +1987,23 @@ code:not([class]) {
 }
 
 .page-footer {
-    -webkit-box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
-    -moz-box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
-    box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
+    background-color: black;
+    color: #ffdbdb;
     min-height: 50px;
     height: auto;
     padding: 10px 0 0;
     margin-top: 20px;
     padding-top: 20px;
     border-radius: 0;
+}
+
+.page-footer h1,
+.page-footer h2,
+.page-footer h3,
+.page-footer h4,
+.page-footer h5,
+.page-footer h6 {
+    color: #ccf5ff;
 }
 
 .page-footer .widget {

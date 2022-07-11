@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 ?>
-	<footer class="page-footer navbar-inverse text-warning">
+	<footer class="page-footer">
 		<div class="container">
 			<div class="row">            
 				<div class="footer-widget col-xs-12 col-sm-3"><?php dynamic_sidebar( 'footer-column-1' ); ?></div>
