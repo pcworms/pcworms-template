@@ -7,6 +7,6 @@ $content = $post->post_content;?>
     <div class="post-slide">
         <a href="#post-<?php echo $ID?>"><h3><?php echo $title;?></h3></a>
         <?php echo $content?>
-        <a class="btn light-blue" href="#post-<?php echo $ID?>" role="button">خواندن مطلب</a>
+        <a class="btn light-green" href="#post-<?php echo $ID?>" role="button">خواندن مطلب</a>
     </div>
 </div>

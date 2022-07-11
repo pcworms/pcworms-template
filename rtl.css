@@ -1,3 +1,4 @@
+@import "palette.css";
 @font-face {
     font-family: 'Yekan';
     src: url('assets/fonts/Yekan.eot');
@@ -103,7 +104,7 @@ html {
 
 html,
 body {
-    background: #0d1117;
+    background: var(--darkest-green);
     background-size: 100px;
 }
 
@@ -135,7 +136,7 @@ blockquote small {
 
 body {
     font-size: 1.4rem;
-    line-height: 1.5;
+    line-height: 1.8;
 }
 
 mark,
@@ -220,8 +221,8 @@ h6,
 
 .pagination li span,
 .pagination li a.page-numbers {
-    background-color: #3f7d8d !important;
-    color: white !important;
+    background-color: var(--dark-green) !important;
+    color: var(--white) !important;
 }
 
 
@@ -246,271 +247,6 @@ h6,
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-
-/*--------------------------------------------------------------
-4.0 Clearings
---------------------------------------------------------------*/
-
-
-/* Typography for Chinese Font */
-
-html[lang^="zh-"] body,
-html[lang^="zh-"] button,
-html[lang^="zh-"] input,
-html[lang^="zh-"] select,
-html[lang^="zh-"] textarea {
-    font-family: "PingFang TC", "Helvetica Neue", Helvetica, STHeitiTC-Light, Arial, sans-serif;
-}
-
-html[lang="zh-CN"] body,
-html[lang="zh-CN"] button,
-html[lang="zh-CN"] input,
-html[lang="zh-CN"] select,
-html[lang="zh-CN"] textarea {
-    font-family: "PingFang SC", "Helvetica Neue", Helvetica, STHeitiSC-Light, Arial, sans-serif;
-}
-
-html[lang^="zh-"] h1,
-html[lang^="zh-"] h2,
-html[lang^="zh-"] h3,
-html[lang^="zh-"] h4,
-html[lang^="zh-"] h5,
-html[lang^="zh-"] h6 {
-    font-weight: 700;
-}
-
-
-/* Typography for Cyrillic Font */
-
-html[lang="bg-BG"] body,
-html[lang="bg-BG"] button,
-html[lang="bg-BG"] input,
-html[lang="bg-BG"] select,
-html[lang="bg-BG"] textarea,
-html[lang="ru-RU"] body,
-html[lang="ru-RU"] button,
-html[lang="ru-RU"] input,
-html[lang="ru-RU"] select,
-html[lang="ru-RU"] textarea,
-html[lang="uk"] body,
-html[lang="uk"] button,
-html[lang="uk"] input,
-html[lang="uk"] select,
-html[lang="uk"] textarea {
-    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
-}
-
-html[lang="bg-BG"] h1,
-html[lang="bg-BG"] h2,
-html[lang="bg-BG"] h3,
-html[lang="bg-BG"] h4,
-html[lang="bg-BG"] h5,
-html[lang="bg-BG"] h6,
-html[lang="ru-RU"] h1,
-html[lang="ru-RU"] h2,
-html[lang="ru-RU"] h3,
-html[lang="ru-RU"] h4,
-html[lang="ru-RU"] h5,
-html[lang="ru-RU"] h6,
-html[lang="uk"] h1,
-html[lang="uk"] h2,
-html[lang="uk"] h3,
-html[lang="uk"] h4,
-html[lang="uk"] h5,
-html[lang="uk"] h6 {
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-
-/* Typography for Devanagari Font */
-
-html[lang="bn-BD"] body,
-html[lang="bn-BD"] button,
-html[lang="bn-BD"] input,
-html[lang="bn-BD"] select,
-html[lang="bn-BD"] textarea,
-html[lang="hi-IN"] body,
-html[lang="hi-IN"] button,
-html[lang="hi-IN"] input,
-html[lang="hi-IN"] select,
-html[lang="hi-IN"] textarea,
-html[lang="mr-IN"] body,
-html[lang="mr-IN"] button,
-html[lang="mr-IN"] input,
-html[lang="mr-IN"] select,
-html[lang="mr-IN"] textarea {
-    font-family: Arial, sans-serif;
-}
-
-html[lang="bn-BD"] h1,
-html[lang="bn-BD"] h2,
-html[lang="bn-BD"] h3,
-html[lang="bn-BD"] h4,
-html[lang="bn-BD"] h5,
-html[lang="bn-BD"] h6,
-html[lang="hi-IN"] h1,
-html[lang="hi-IN"] h2,
-html[lang="hi-IN"] h3,
-html[lang="hi-IN"] h4,
-html[lang="hi-IN"] h5,
-html[lang="hi-IN"] h6,
-html[lang="mr-IN"] h1,
-html[lang="mr-IN"] h2,
-html[lang="mr-IN"] h3,
-html[lang="mr-IN"] h4,
-html[lang="mr-IN"] h5,
-html[lang="mr-IN"] h6 {
-    font-weight: 700;
-}
-
-
-/* Typography for Greek Font */
-
-html[lang="el"] body,
-html[lang="el"] button,
-html[lang="el"] input,
-html[lang="el"] select,
-html[lang="el"] textarea {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-html[lang="el"] h1,
-html[lang="el"] h2,
-html[lang="el"] h3,
-html[lang="el"] h4,
-html[lang="el"] h5,
-html[lang="el"] h6 {
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-
-/* Typography for Gujarati Font */
-
-html[lang="gu-IN"] body,
-html[lang="gu-IN"] button,
-html[lang="gu-IN"] input,
-html[lang="gu-IN"] select,
-html[lang="gu-IN"] textarea {
-    font-family: Arial, sans-serif;
-}
-
-html[lang="gu-IN"] h1,
-html[lang="gu-IN"] h2,
-html[lang="gu-IN"] h3,
-html[lang="gu-IN"] h4,
-html[lang="gu-IN"] h5,
-html[lang="gu-IN"] h6 {
-    font-weight: 700;
-}
-
-
-/* Typography for Hebrew Font */
-
-html[lang="he-IL"] body,
-html[lang="he-IL"] button,
-html[lang="he-IL"] input,
-html[lang="he-IL"] select,
-html[lang="he-IL"] textarea {
-    font-family: "Arial Hebrew", Arial, sans-serif;
-}
-
-html[lang="he-IL"] h1,
-html[lang="he-IL"] h2,
-html[lang="he-IL"] h3,
-html[lang="he-IL"] h4,
-html[lang="he-IL"] h5,
-html[lang="he-IL"] h6 {
-    font-weight: 700;
-}
-
-
-/* Typography for Japanese Font */
-
-html[lang="ja"] body,
-html[lang="ja"] button,
-html[lang="ja"] input,
-html[lang="ja"] select,
-html[lang="ja"] textarea {
-    font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
-}
-
-html[lang="ja"] h1,
-html[lang="ja"] h2,
-html[lang="ja"] h3,
-html[lang="ja"] h4,
-html[lang="ja"] h5,
-html[lang="ja"] h6 {
-    font-weight: 700;
-}
-
-
-/* Typography for Korean font */
-
-html[lang="ko-KR"] body,
-html[lang="ko-KR"] button,
-html[lang="ko-KR"] input,
-html[lang="ko-KR"] select,
-html[lang="ko-KR"] textarea {
-    font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
-}
-
-html[lang="ko-KR"] h1,
-html[lang="ko-KR"] h2,
-html[lang="ko-KR"] h3,
-html[lang="ko-KR"] h4,
-html[lang="ko-KR"] h5,
-html[lang="ko-KR"] h6 {
-    font-weight: 600;
-}
-
-
-/* Typography for Thai Font */
-
-html[lang="th"] h1,
-html[lang="th"] h2,
-html[lang="th"] h3,
-html[lang="th"] h4,
-html[lang="th"] h5,
-html[lang="th"] h6 {
-    line-height: 1.65;
-    font-family: "Sukhumvit Set", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-html[lang="th"] body,
-html[lang="th"] button,
-html[lang="th"] input,
-html[lang="th"] select,
-html[lang="th"] textarea {
-    line-height: 1.8;
-    font-family: "Sukhumvit Set", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-
-/* Remove letter-spacing for all non-latin alphabets */
-
-html[lang="ar"] *,
-html[lang="ary"] *,
-html[lang="azb"] *,
-html[lang="haz"] *,
-html[lang="ps"] *,
-html[lang^="zh-"] *,
-html[lang="bg-BG"] *,
-html[lang="ru-RU"] *,
-html[lang="uk"] *,
-html[lang="bn-BD"] *,
-html[lang="hi-IN"] *,
-html[lang="mr-IN"] *,
-html[lang="el"] *,
-html[lang="gu-IN"] *,
-html[lang="he-IL"] *,
-html[lang="ja"] *,
-html[lang="ko-KR"] *,
-html[lang="th"] * {
-    letter-spacing: 0 !important;
 }
 
 
@@ -947,10 +683,13 @@ body.admin-bar.non-top-menu {
 
 a {
     transition: all 0.2s ease 0s;
+    color: var(--pink);
+    text-decoration: none;
 }
 
 a:hover {
     text-decoration: none;
+    color: var(--lighter-red);
 }
 
 h1,
@@ -989,17 +728,8 @@ h2,
 .h2,
 h3,
 .h3 {
-    margin-top: 5px;
+    margin-top: 15px;
     margin-bottom: 5px;
-}
-
-a {
-    color: #65bdd5;
-}
-
-a:hover {
-    color: #005160;
-    text-decoration: underline;
 }
 
 .col-xs-1,
@@ -1120,7 +850,7 @@ body ::-webkit-scrollbar-thumb:active {
     min-height: 50px;
     margin-bottom: 20px;
     border-radius: 4px;
-    background-color: #003f48;
+    background-color: var(--darker-green);
 }
 
 .navbar-nav>li>a {
@@ -1169,10 +899,11 @@ body ::-webkit-scrollbar-thumb:active {
 }
 
 .dropdown-menu {
-    background-color: #003f48;
+    background-color: var(--darkest-green);
 }
 
 .dropdown-menu li a {
+    background-color: var(--gray-1) !important;
     color: white;
 }
 
@@ -1388,50 +1119,52 @@ span a .fa {
     padding-right: 25px;
 }
 
-.btn.dark-blue {
-    background-color: #002836;
-    color: white;
+.btn.dark-blue,
+.btn.dark-green {
+    background-color: var(--dark-green);
+    color: var(--white);
 }
 
-.btn.blue {
-    background-color: #005160;
-    color: white;
+.btn.blue,
+.btn.green {
+    background-color: var(--green);
+    color: var(--white);
 }
 
-.btn.blue.black {
-    color: black;
+.btn.black {
+    color: var(--black);
 }
 
-.btn.light-blue {
-    background-color: #3f7d8d;
-    color: black;
+.btn.light-blue,
+.btn.light-green {
+    background-color: var(--light-green);
+    color: var(--black);
 }
 
-.btn.light-blue.white {
-    color: black;
+.btn.dark-pink,
+.btn.dark-red {
+    background-color: var(--dark-red);
+    color: var(--white);
 }
 
-.btn.dark-pink {
-    background-color: #640000;
-    color: white;
+.btn.pink,
+.btn.red {
+    background-color: var(--red);
+    color: var(--white);
 }
 
-.btn.pink {
-    background-color: #99001e;
-    color: white;
+.btn.black {
+    color: var(--black);
 }
 
-.btn.pink.black {
-    color: black;
-}
-
-.btn.light-pink {
-    background-color: #d04445;
-    color: black;
+.btn.light-pink,
+.btn.light-red {
+    background-color: var(--light-red);
+    color: var(--black);
 }
 
 .btn.light-pink.white {
-    color: white;
+    color: var(--white);
 }
 
 #header {
@@ -1563,8 +1296,8 @@ span a .fa {
 /* THEME STYLES */
 
 .entry-header {
-    background-color: #d04445;
-    color: black;
+    background-color: var(--light-red);
+    color: var(--black);
     font-weight: bold;
     position: relative;
     -moz-box-shadow: 0 2px 7px rgba(0, 0, 0, .8);
@@ -1574,7 +1307,7 @@ span a .fa {
 }
 
 .entry-header .entry-title a {
-    color: black;
+    color: var(--black);
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -1633,7 +1366,7 @@ span a .fa {
 }
 
 .post-container img.avatar {
-    border: white 2px solid;
+    border: var(--purple) 2px solid;
     position: sticky;
     top: 20px;
     vertical-align: unset !important;
@@ -1655,6 +1388,12 @@ span a .fa {
     border-radius: 0 0 0 30px;
     margin: 0;
     width: calc(100% - 55px);
+}
+
+#primary article button.continue-read {
+    margin: 20px auto;
+    display: block;
+    padding: 5px 70px;
 }
 
 #primary .widget {
@@ -1691,7 +1430,7 @@ span a .fa {
 }
 
 #primary .entry-title {
-    padding: 0 10px;
+    margin: 5px;
 }
 
 #primary .entry-header h1,
@@ -1998,8 +1737,8 @@ code:not([class]) {
 }
 
 .page-footer {
-    background-color: black;
-    color: #ffdbdb;
+    background-color: var(--black);
+    color: var(--lightest-red);
     min-height: 50px;
     height: auto;
     padding: 10px 0 0;
@@ -2014,7 +1753,7 @@ code:not([class]) {
 .page-footer h4,
 .page-footer h5,
 .page-footer h6 {
-    color: #ccf5ff;
+    color: var(--lightest-green);
 }
 
 .page-footer .widget {
@@ -2368,10 +2107,10 @@ code:not([class]) {
     -moz-box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
     box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
     margin-bottom: 10px;
-    background-color: rgba(30, 17, 28, .8);
+    background-color: var(--box-background);
     backdrop-filter: blur(10px);
-    border: white 2px solid;
-    color: white;
+    border: var(--purple) 2px solid;
+    color: var(--white);
 }
 
 .nomargin-box {

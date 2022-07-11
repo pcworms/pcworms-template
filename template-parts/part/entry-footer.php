@@ -44,9 +44,12 @@
 	
 	$comments_count = get_comments_number();
 
+	if (is_front_page() and comments_open(get_the_ID()))
+		printf('<a href="%s" class="comment-btn"><i class="fa fa-comments fa-lg"></i> %s</a>',get_comments_link(),esc_html__('Write Comment', 'free-template-pcworms'));
+
 	if (is_front_page() and comments_open(get_the_ID()) and $comments_count>0){
 		?>
-		<ul class="commenters-avatars">
+		| <ul class="commenters-avatars">
 			<?php
 			$args = array(
 				'post_id' => get_the_ID(),
@@ -64,9 +67,6 @@
 			printf('<span class= "more-comments">%d+</span>',$comments_count-3);
 		
 	}
-
-	if (is_front_page() and comments_open(get_the_ID()))
-		printf('<a href="%s" class="comment-btn"><i class="fa fa-comments fa-lg"></i> %s</a>',get_comments_link(),esc_html__('Write Comment', 'free-template-pcworms'));
 
 	/*if(comments_open( get_the_ID() )){ ?>
 	<div class="footer-item comments-number">
