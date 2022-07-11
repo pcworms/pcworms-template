@@ -218,6 +218,12 @@ h6,
     letter-spacing: 0 !important;
 }
 
+.pagination li span,
+.pagination li a.page-numbers {
+    background-color: #3f7d8d !important;
+    color: white !important;
+}
+
 
 /*--------------------------------------------------------------
 3.0 Alignments
