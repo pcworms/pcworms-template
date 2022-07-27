@@ -50,7 +50,7 @@ class Free_Template{
 
 	public function setup() {
 		// Make theme available for translation.
-		load_theme_textdomain( 'free-template-pcworms', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'pcworms', get_template_directory() . '/languages' );
 		
 		// Define and register starter content to showcase the theme on new sites.
 		$starter_content = array(
@@ -105,7 +105,7 @@ class Free_Template{
 			'nav_menus' => array(
 				// Assign a menu to the "top" location.
 				'primary' => array(
-					'name' => __( 'Top Menu', 'free-template-pcworms' ),
+					'name' => __( 'Top Menu', 'pcworms' ),
 					'items' => array(
 						'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
 						'page_about',
@@ -116,7 +116,7 @@ class Free_Template{
 				),
 
 				'bottom' => array(
-					'name' => __( 'Bottom of Site', 'free-template-pcworms' ),
+					'name' => __( 'Bottom of Site', 'pcworms' ),
 					'items' => array(
 						'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
 						'page_about',
@@ -128,7 +128,7 @@ class Free_Template{
 
 				// Assign a menu to the "header" location.
 				'header' => array(
-					'name' => __( 'Bottom of Header', 'free-template-pcworms' ),
+					'name' => __( 'Bottom of Header', 'pcworms' ),
 					'items' => array(
 						'link_instagram',
 						'link_facebook',
@@ -139,7 +139,7 @@ class Free_Template{
 				
 				// Assign a menu to the "header-right" location.
 				'header-right' => array(
-					'name' => __( 'Bottom of Header - Right', 'free-template-pcworms' ),
+					'name' => __( 'Bottom of Header - Right', 'pcworms' ),
 					'items' => array(
 						'link_youtube',
 						'link_github',
@@ -251,14 +251,14 @@ class Free_Template{
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
-			'primary'			=> esc_html__( 'Top Menu', 'free-template-pcworms' ),
-			'header'			=> esc_html__( 'Bottom of Header', 'free-template-pcworms' ),
-			'header-right'	=> esc_html__( 'Bottom of Header - Right', 'free-template-pcworms' ),
-			'bottom'		=> esc_html__( 'Bottom of Site', 'free-template-pcworms' ),
+			'primary'			=> esc_html__( 'Top Menu', 'pcworms' ),
+			'header'			=> esc_html__( 'Bottom of Header', 'pcworms' ),
+			'header-right'	=> esc_html__( 'Bottom of Header - Right', 'pcworms' ),
+			'bottom'		=> esc_html__( 'Bottom of Site', 'pcworms' ),
 		) );
 
-		//add_image_size( 'free-template-pcworms' . '-featured-image', 2000, 1200, true );
-		//add_image_size( 'free-template-pcworms' . '-thumbnail-avatar', 90, 90, true );
+		//add_image_size( 'pcworms' . '-featured-image', 2000, 1200, true );
+		//add_image_size( 'pcworms' . '-thumbnail-avatar', 90, 90, true );
 
 		// Set the default content width.
 		$GLOBALS['content_width'] = 525;
@@ -279,9 +279,9 @@ class Free_Template{
 	 */
 	public function widgets_init() {
 		register_sidebar( array(
-			'name'				=> esc_html__( 'Sidebar', 'free-template-pcworms' ),
+			'name'				=> esc_html__( 'Sidebar', 'pcworms' ),
 			'id'					=> 'sidebar-1',
-			'description'		=> esc_html__( 'Add widgets here to appear in your sidebar.', 'free-template-pcworms' ),
+			'description'		=> esc_html__( 'Add widgets here to appear in your sidebar.', 'pcworms' ),
 			'before_widget'	=> '<div id="%1$s" class="widget %2$s panel box">',
 			'after_widget'		=> '</div>',
 			'before_title'		=> '<h4 class="widget-title">',
@@ -289,9 +289,9 @@ class Free_Template{
 		) );
 
 		register_sidebar( array(
-			'name'				=> esc_html__( 'Frontend Content Top', 'free-template-pcworms' ),
+			'name'				=> esc_html__( 'Frontend Content Top', 'pcworms' ),
 			'id'           			=> 'frontend-content-top',
-			'description'   		=> esc_html__( 'Add widgets here to appear in your top of content in Frontpage.', 'free-template-pcworms' ),
+			'description'   		=> esc_html__( 'Add widgets here to appear in your top of content in Frontpage.', 'pcworms' ),
 			'before_widget' 	=> '<div id="%1$s" class="widget %2$s panel box">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
@@ -299,9 +299,9 @@ class Free_Template{
 		) );
 
 		register_sidebar( array(
-			'name'          		=> esc_html__( 'Frontend Content Bottom', 'free-template-pcworms' ),
+			'name'          		=> esc_html__( 'Frontend Content Bottom', 'pcworms' ),
 			'id'            		=> 'frontend-content-bottom',
-			'description'   		=> esc_html__( 'Add widgets here to appear in your bottom of content in Frontpage.', 'free-template-pcworms' ),
+			'description'   		=> esc_html__( 'Add widgets here to appear in your bottom of content in Frontpage.', 'pcworms' ),
 			'before_widget' 	=> '<div id="%1$s" class="widget %2$s panel box">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
@@ -309,9 +309,9 @@ class Free_Template{
 		) );
 
 		register_sidebar( array(
-			'name'          		=> esc_html__( 'Content Top', 'free-template-pcworms' ),
+			'name'          		=> esc_html__( 'Content Top', 'pcworms' ),
 			'id'            		=> 'content-top',
-			'description'   		=> esc_html__( 'Add widgets here to appear in your top of content.', 'free-template-pcworms' ),
+			'description'   		=> esc_html__( 'Add widgets here to appear in your top of content.', 'pcworms' ),
 			'before_widget' 	=> '<div id="%1$s" class="widget %2$s panel box">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
@@ -319,9 +319,9 @@ class Free_Template{
 		) );
 
 		register_sidebar( array(
-			'name'          		=> esc_html__( 'Content Bottom', 'free-template-pcworms' ),
+			'name'          		=> esc_html__( 'Content Bottom', 'pcworms' ),
 			'id'            		=> 'content-bottom',
-			'description'   		=> esc_html__( 'Add widgets here to appear in your bottom of content.', 'free-template-pcworms' ),
+			'description'   		=> esc_html__( 'Add widgets here to appear in your bottom of content.', 'pcworms' ),
 			'before_widget' 	=> '<div id="%1$s" class="widget %2$s panel box">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
@@ -329,9 +329,9 @@ class Free_Template{
 		) );
 
 		register_sidebar( array(
-			'name'          		=> esc_html__( 'Footer Column 1', 'free-template-pcworms' ),
+			'name'          		=> esc_html__( 'Footer Column 1', 'pcworms' ),
 			'id'            		=> 'footer-column-1',
-			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 1.', 'free-template-pcworms' ),
+			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 1.', 'pcworms' ),
 			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="fade-left">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
@@ -339,9 +339,9 @@ class Free_Template{
 		) );
 
 		register_sidebar( array(
-			'name'          		=> esc_html__( 'Footer Column 2', 'free-template-pcworms' ),
+			'name'          		=> esc_html__( 'Footer Column 2', 'pcworms' ),
 			'id'            		=> 'footer-column-2',
-			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 2.', 'free-template-pcworms' ),
+			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 2.', 'pcworms' ),
 			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="fade-left">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
@@ -349,9 +349,9 @@ class Free_Template{
 		) );
 
 		register_sidebar( array(
-			'name'          		=> esc_html__( 'Footer Column 3', 'free-template-pcworms' ),
+			'name'          		=> esc_html__( 'Footer Column 3', 'pcworms' ),
 			'id'            		=> 'footer-column-3',
-			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 3.', 'free-template-pcworms' ),
+			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 3.', 'pcworms' ),
 			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="fade-left">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
@@ -359,9 +359,9 @@ class Free_Template{
 		) );
 
 		register_sidebar( array(
-			'name'          		=> esc_html__( 'Footer Column 4', 'free-template-pcworms' ),
+			'name'          		=> esc_html__( 'Footer Column 4', 'pcworms' ),
 			'id'            		=> 'footer-column-4',
-			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 4.', 'free-template-pcworms' ),
+			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 4.', 'pcworms' ),
 			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="fade-left">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
@@ -478,7 +478,7 @@ class Free_Template{
 			return $link;
 		}
 
-		$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link btn btn-default" title="%2$s" data-toggle="tooltip" data-placement="bottom" aria-hidden="true"><span class="fa fa-eye"></span> ' . esc_html__( 'Continue reading', 'free-template-pcworms' ) . '</a></p>',
+		$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link btn btn-default" title="%2$s" data-toggle="tooltip" data-placement="bottom" aria-hidden="true"><span class="fa fa-eye"></span> ' . esc_html__( 'Continue reading', 'pcworms' ) . '</a></p>',
 			esc_url( get_permalink( get_the_ID() ) ),
 			esc_attr(get_the_title())
 		);
@@ -537,7 +537,7 @@ class Free_Template{
 			'author' => '<div class="form-group has-feedback comment-form-author">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
-									<input placeholder="' . esc_attr__( 'Name', 'free-template-pcworms' ) .( $req ? ' *' : '' ) . '" class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your name!', 'free-template-pcworms') . '"' . $aria_req . ' />
+									<input placeholder="' . esc_attr__( 'Name', 'pcworms' ) .( $req ? ' *' : '' ) . '" class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your name!', 'pcworms') . '"' . $aria_req . ' />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 								<div class="help-block with-errors"></div>
@@ -545,7 +545,7 @@ class Free_Template{
 			'email'  => '<div class="form-group has-feedback comment-form-email">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-at fa-lg"></i></span>
-									<input placeholder="' . esc_attr__( 'Email', 'free-template-pcworms' ) . ( $req ? ' *' : '' ) . '" style="direction: ltr;" class="form-control" id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your email address!', 'free-template-pcworms') . '"' . $aria_req . ' />
+									<input placeholder="' . esc_attr__( 'Email', 'pcworms' ) . ( $req ? ' *' : '' ) . '" style="direction: ltr;" class="form-control" id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your email address!', 'pcworms') . '"' . $aria_req . ' />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 								<div class="help-block with-errors"></div>
@@ -553,7 +553,7 @@ class Free_Template{
 			'url'    => '<div class="form-group has-feedback comment-form-url">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-globe fa-lg"></i></span>
-									<input placeholder="' . esc_attr__( 'Website', 'free-template-pcworms' ) . '" style="direction: ltr;" class="form-control" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" data-error="' . esc_html__('Please enter a valid website starting with http:// on nothing!', 'free-template-pcworms') . '" />
+									<input placeholder="' . esc_attr__( 'Website', 'pcworms' ) . '" style="direction: ltr;" class="form-control" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" data-error="' . esc_html__('Please enter a valid website starting with http:// on nothing!', 'pcworms') . '" />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 								<div class="help-block with-errors"></div>
@@ -568,7 +568,7 @@ class Free_Template{
 											<div class="form-group has-feedback comment-form-comment">
 												<div class="input-group">
 													<span class="input-group-addon"><i class="fa fa-comments fa-lg"></i></span>
-													<textarea placeholder="' . esc_attr__( 'Comment', 'free-template-pcworms' ) . '" class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required" data-error="' . esc_html__('Please enter your comment!', 'free-template-pcworms') . '"></textarea>
+													<textarea placeholder="' . esc_attr__( 'Comment', 'pcworms' ) . '" class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required" data-error="' . esc_html__('Please enter your comment!', 'pcworms') . '"></textarea>
 												</div>
 												<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 												<div class="help-block with-errors"></div>
@@ -604,7 +604,7 @@ class Free_Template{
 
 		// Add class if we're viewing the Customizer for easier styling of theme options.
 		if ( is_customize_preview() ) {
-			$classes[] = 'free-template-pcworms' . '-customizer';
+			$classes[] = 'pcworms' . '-customizer';
 		}
 		
 		//$classes[] = esc_html( get_theme_mod( 'bootstrap_theme_name' ) ) . '-theme';
@@ -709,11 +709,11 @@ class Free_Template{
 	
 	static function login_link_texts(){
 		return array(
-			'Login'				=> esc_html__('Login', 'free-template-pcworms'),
-			'Customer Panel'	=> esc_html__('Customer Panel', 'free-template-pcworms'),
-			'Customer Login'	=> esc_html__('Customer Login', 'free-template-pcworms'),
-			'Management'		=> esc_html__('Management', 'free-template-pcworms'),
-			'Administration'	=> esc_html__('Administration', 'free-template-pcworms'),
+			'Login'				=> esc_html__('Login', 'pcworms'),
+			'Customer Panel'	=> esc_html__('Customer Panel', 'pcworms'),
+			'Customer Login'	=> esc_html__('Customer Login', 'pcworms'),
+			'Management'		=> esc_html__('Management', 'pcworms'),
+			'Administration'	=> esc_html__('Administration', 'pcworms'),
 		);
 	}
 
@@ -745,8 +745,8 @@ class Free_Template{
 		if ( $GLOBALS['wp_query']->max_num_pages > 1 ) {
 			$args = wp_parse_args( $args, array(
 				'mid_size'           => 1,
-				'prev_text'          => esc_html__( 'Previous', 'free-template-pcworms' ),
-				'next_text'          => esc_html__( 'Next', 'free-template-pcworms' ),
+				'prev_text'          => esc_html__( 'Previous', 'pcworms' ),
+				'next_text'          => esc_html__( 'Next', 'pcworms' ),
 			) );
 
 			// Make sure we get a string back. Plain is the next best thing.
@@ -780,7 +780,7 @@ class Free_Template{
 			sprintf(
 				/* translators: %s: Name of current post */
 				'<i class="fa fa-pencil-square-o fa-lg" data-toggle="tooltip" data-placement="top" title="%s" aria-hidden="true"></i>',
-				esc_attr( __('Edit ', 'free-template-pcworms') . get_the_title() )
+				esc_attr( __('Edit ', 'pcworms') . get_the_title() )
 			),
 			'<span class="edit-link">',
 			'</span>'
@@ -790,7 +790,7 @@ class Free_Template{
 	
 	// Prints HTML with meta information for the current post-date/time and author.
 	public static function posted_on() {
-		$time_string = '<time class="entry-date published" title="'. esc_html__('Posted on', 'free-template-pcworms') .'" data-toggle="tooltip" data-placement="bottom" datetime="%1$s">%2$s</time>';
+		$time_string = '<time class="entry-date published" title="'. esc_html__('Posted on', 'pcworms') .'" data-toggle="tooltip" data-placement="bottom" datetime="%1$s">%2$s</time>';
 
 		$time_string = sprintf( $time_string,
 			get_the_date( DATE_W3C ),
@@ -800,7 +800,7 @@ class Free_Template{
 		// Finally, let's write all of this to the page.
 		?>
 		<span class="posted-on">
-			<i class="fa fa-calendar" aria-hidden="true" title="<?php esc_attr_e('Posted on', 'free-template-pcworms'); ?>" data-toggle="tooltip" data-placement="bottom"></i> 
+			<i class="fa fa-calendar" aria-hidden="true" title="<?php esc_attr_e('Posted on', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom"></i> 
 			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php echo $time_string; // xss ok ?></a>
 		</span>
 		<?php
@@ -808,7 +808,7 @@ class Free_Template{
 
 	// Prints HTML with meta information for the current post-date/time and author.
 	public static function modified_on() {
-		$time_string = '<time class="entry-date updated" title="' . esc_html__('Updated on', 'free-template-pcworms') .'" data-toggle="tooltip" data-placement="bottom" datetime="%1$s">%2$s</time>';
+		$time_string = '<time class="entry-date updated" title="' . esc_html__('Updated on', 'pcworms') .'" data-toggle="tooltip" data-placement="bottom" datetime="%1$s">%2$s</time>';
 		$time_string = sprintf( $time_string,
 			get_the_modified_date( DATE_W3C ),
 			get_the_modified_date()
@@ -817,7 +817,7 @@ class Free_Template{
 		// Finally, let's write all of this to the page.
 		?>
 		<span class="modified-on">
-			<i class="fa fa-pencil fa-lg" aria-hidden="true" title="<?php esc_attr_e('Updated on', 'free-template-pcworms'); ?>" data-toggle="tooltip" data-placement="bottom"></i>
+			<i class="fa fa-pencil fa-lg" aria-hidden="true" title="<?php esc_attr_e('Updated on', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom"></i>
 			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php echo $time_string; // xss ok ?></a>
 		</span>
 		<?php
@@ -839,5 +839,5 @@ class Free_Template{
 
 }
 
-// change exactly 'free-template-pcworms' to 'your-text-domain'
+// change exactly 'pcworms' to 'your-text-domain'
 // change exactly Free_Template to Your_Theme_Classname

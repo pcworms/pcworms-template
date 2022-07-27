@@ -25,7 +25,7 @@
 		};
 
 		/* translators: %s: Name of current post */
-		the_content( '<span class="fa fa-eye btn btn-default"></span> ' . esc_html__( 'Continue reading', 'free-template-pcworms' ) );
+		the_content( '<span class="fa fa-eye btn btn-default"></span> ' . esc_html__( 'Continue reading', 'pcworms' ) );
 	
 		get_template_part( 'template-parts/part/entry-pagination' ); ?>
 	

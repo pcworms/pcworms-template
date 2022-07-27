@@ -32,8 +32,8 @@ $sidebar_condition = is_active_sidebar( 'sidebar-1' ); ?>
 				}
 
 				Free_Template::posts_pagination( array(
-					'prev_text' => '<span >' . esc_html__( 'Previous', 'free-template-pcworms' ) . '</span>',
-					'next_text' => '<span>' . esc_html__( 'Next', 'free-template-pcworms' ) . '</span>',
+					'prev_text' => '<span >' . esc_html__( 'Previous', 'pcworms' ) . '</span>',
+					'next_text' => '<span>' . esc_html__( 'Next', 'pcworms' ) . '</span>',
 					'type'						=> 'list',
 					'end_size'					=> 3,
 					'mid_size'					=> 3,

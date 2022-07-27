@@ -24,7 +24,7 @@
 				</div>
 				<?php } ?>
 				<div class="pull-right col-xs-12 col-sm-6">
-					<p><?php echo esc_html( __('Copyright', 'free-template-pcworms') . ' &copy; ' . date('Y ') . get_bloginfo( 'name' ) . '. ' .  __('All right reserved.', 'free-template-pcworms') ); ?></p>
+					<p><?php echo esc_html( __('Copyright', 'pcworms') . ' &copy; ' . date('Y ') . get_bloginfo( 'name' ) . '. ' .  __('All right reserved.', 'pcworms') ); ?></p>
 				</div>
 			</div>
 		</div>*/?>

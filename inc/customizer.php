@@ -25,11 +25,11 @@ class Free_Template_Customizer {
     */
 	public static function register( $wp_customize ) {
 
-		$wp_customize->add_section( 'free-template-pcworms' . '-options', array(
-				'title'       		=> esc_html__( 'Theme Options', 'free-template-pcworms' ),										//Visible title of section
+		$wp_customize->add_section( 'pcworms' . '-options', array(
+				'title'       		=> esc_html__( 'Theme Options', 'pcworms' ),										//Visible title of section
 				'priority'    		=> 20,																										//Determines what order this appears in
 				'capability'  	=> 'edit_theme_options',																			//Capability needed to tweak
-				'description'	=> esc_html__('Allows you to customize settings for Theme.', 'free-template-pcworms'),	//Descriptive tooltip
+				'description'	=> esc_html__('Allows you to customize settings for Theme.', 'pcworms'),	//Descriptive tooltip
 			)
 		);
  		$wp_customize->add_setting( 'latest-posts-carousel-count',								//No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
@@ -47,11 +47,11 @@ class Free_Template_Customizer {
 			$wp_customize, 																					//Pass the $wp_customize object (required)
 			'latest-posts-carousel-count', 																	//Set a unique ID for the control
 			array(
-				'label'      	=> esc_html__( 'Count of header latest posts', 'free-template-pcworms' ),	//Admin-visible name of the control
-				'description'	=> esc_html__( 'Using this option you can change the count of visible posts in header slide-show', 'free-template-pcworms' ),
+				'label'      	=> esc_html__( 'Count of header latest posts', 'pcworms' ),	//Admin-visible name of the control
+				'description'	=> esc_html__( 'Using this option you can change the count of visible posts in header slide-show', 'pcworms' ),
 				'settings'		=> 'latest-posts-carousel-count', 										//Which setting to load and manipulate (serialized is okay)
 				'priority'		=> 10, 																		//Determines the order this control appears in for the specified section
-				'section'		=> 'free-template-pcworms' . '-options', 										//ID of the section this control should render in (can be one of yours, or a WordPress default section)
+				'section'		=> 'pcworms' . '-options', 										//ID of the section this control should render in (can be one of yours, or a WordPress default section)
 				'type'			=> 'number',
 				'input_attrs' => array(
 					'min'	=> 1,
@@ -84,9 +84,9 @@ class Free_Template_Customizer {
 					'settings'			=> 'display_visits', 												//Which setting to load and manipulate (serialized is okay)
 					'capability'			=> 'edit_theme_options', 									//Optional. Special permissions for accessing this setting.
 					'priority'				=> 13, 																//Determines the order this control appears in for the specified section , Default: 10
-					'section'				=> 'free-template-pcworms' . '-options', 								//ID of the section this control should render in (can be one of yours, or a WordPress default section)
-					'label'				=> esc_html__( 'Display visits?', 'free-template-pcworms' ),	//Admin-visible name of the control
-					'description'		=> esc_html__( 'Display number of visits in pages and posts', 'free-template-pcworms' ),
+					'section'				=> 'pcworms' . '-options', 								//ID of the section this control should render in (can be one of yours, or a WordPress default section)
+					'label'				=> esc_html__( 'Display visits?', 'pcworms' ),	//Admin-visible name of the control
+					'description'		=> esc_html__( 'Display number of visits in pages and posts', 'pcworms' ),
 					'input_attrs'		=> array(),														// List of custom input attributes for control output, where attribute names are the keys and values are the values.
 																													// Not used for 'checkbox', 'radio', 'select', 'textarea', or 'dropdown-pages' control types. Default empty array.
 					'allow_addition'	=> false,															// (bool) Show UI for adding new content, currently only used for the dropdown-pages control. Default false.
@@ -95,20 +95,20 @@ class Free_Template_Customizer {
 																													// Additional input types such as 'email', 'url', 'number', 'hidden', and 'date' are supported implicitly. Default 'text'.
 					/*
 					'choices'			=> [																	// List of choices for 'radio' or 'select' type controls
-						'yes'	=> esc_html__( 'Yes', 'free-template-pcworms' ),
-						'no'	=> esc_html__( 'No', 'free-template-pcworms' ),
+						'yes'	=> esc_html__( 'Yes', 'pcworms' ),
+						'no'	=> esc_html__( 'No', 'pcworms' ),
 					],
 					*/
 				)
 			) );
 		}
 		
-		$wp_customize->add_section( 'free-template-pcworms' . '-login-form-options', 
+		$wp_customize->add_section( 'pcworms' . '-login-form-options', 
 			array(
-				'title'				=> esc_html__( 'Popup Login Form', 'free-template-pcworms' ),												//Visible title of section
+				'title'				=> esc_html__( 'Popup Login Form', 'pcworms' ),												//Visible title of section
 				'priority'			=> 22,																												//Determines what order this appears in
 				'capability'		=> 'edit_theme_options',																					//Capability needed to tweak
-				'description'	=> esc_html__('Allows you to customize login link and login form.', 'free-template-pcworms'),	//Descriptive tooltip
+				'description'	=> esc_html__('Allows you to customize login link and login form.', 'pcworms'),	//Descriptive tooltip
 			)
 		);
 		$wp_customize->add_setting( 'display_login_link',		//No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
@@ -130,9 +130,9 @@ class Free_Template_Customizer {
 				'settings'			=> 'display_login_link',												//Which setting to load and manipulate (serialized is okay)
 				'capability'			=> 'edit_theme_options',										//Optional. Special permissions for accessing this setting.
 				'priority'				=> 11,																	//Determines the order this control appears in for the specified section , Default: 10
-				'section'				=> 'free-template-pcworms' . '-login-form-options',						//ID of the section this control should render in (can be one of yours, or a WordPress default section)
-				'label'				=> esc_html__( 'Display login link?', 'free-template-pcworms' ),	//Admin-visible name of the control
-				'description'		=> esc_html__( 'Display a link on topmenu for login user', 'free-template-pcworms' ),
+				'section'				=> 'pcworms' . '-login-form-options',						//ID of the section this control should render in (can be one of yours, or a WordPress default section)
+				'label'				=> esc_html__( 'Display login link?', 'pcworms' ),	//Admin-visible name of the control
+				'description'		=> esc_html__( 'Display a link on topmenu for login user', 'pcworms' ),
 				'input_attrs'		=> array(),															// List of custom input attributes for control output, where attribute names are the keys and values are the values.
 																													// Not used for 'checkbox', 'radio', 'select', 'textarea', or 'dropdown-pages' control types. Default empty array.
 				'allow_addition'	=> false,																// (bool) Show UI for adding new content, currently only used for the dropdown-pages control. Default false.
@@ -141,8 +141,8 @@ class Free_Template_Customizer {
 																													// Additional input types such as 'email', 'url', 'number', 'hidden', and 'date' are supported implicitly. Default 'text'.
 				/*
 				'choices'			=> [																		// List of choices for 'radio' or 'select' type controls
-					'yes'	=> esc_html__( 'Yes', 'free-template-pcworms' ),
-					'no'	=> esc_html__( 'No', 'free-template-pcworms' ),
+					'yes'	=> esc_html__( 'Yes', 'pcworms' ),
+					'no'	=> esc_html__( 'No', 'pcworms' ),
 				],
 				*/
 			)
@@ -166,9 +166,9 @@ class Free_Template_Customizer {
 				'settings'			=> 'login_link_text',											//Which setting to load and manipulate (serialized is okay)
 				'capability'			=> 'edit_theme_options',									//Optional. Special permissions for accessing this setting.
 				'priority'				=> 12,																//Determines the order this control appears in for the specified section , Default: 10
-				'section'				=> 'free-template-pcworms' . '-login-form-options',					//ID of the section this control should render in (can be one of yours, or a WordPress default section)
-				'label'				=> esc_html__( 'Login link text', 'free-template-pcworms' ),	//Admin-visible name of the control
-				'description'		=> esc_html__( 'Please select the login link text', 'free-template-pcworms' ),
+				'section'				=> 'pcworms' . '-login-form-options',					//ID of the section this control should render in (can be one of yours, or a WordPress default section)
+				'label'				=> esc_html__( 'Login link text', 'pcworms' ),	//Admin-visible name of the control
+				'description'		=> esc_html__( 'Please select the login link text', 'pcworms' ),
 				'input_attrs'		=> array(),														// List of custom input attributes for control output, where attribute names are the keys and values are the values.
 																												// Not used for 'checkbox', 'radio', 'select', 'textarea', or 'dropdown-pages' control types. Default empty array.
 				'allow_addition'	=> false,															// (bool) Show UI for adding new content, currently only used for the dropdown-pages control. Default false.
@@ -222,7 +222,7 @@ class Free_Template_Customizer {
 	*/
 	public static function live_preview() {
 		wp_enqueue_script(
-			'free-template-pcworms' . '-theme-customizer', // Give the script a unique ID
+			'pcworms' . '-theme-customizer', // Give the script a unique ID
 			get_template_directory_uri() . '/assets/js/theme-customizer.js', // Define the path to the JS file
 			array('jquery', 'customize-preview'), // Define dependencies
 			wp_get_theme()->get( 'Version' ), // Define a version (optional) 

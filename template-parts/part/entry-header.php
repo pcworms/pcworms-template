@@ -44,15 +44,15 @@
 			$cat_data 	= get_option("taxonomy_$cat_id");
 		}
 		$options_values = array(
-			'date-desc' 					=> esc_html__('New Items', 'free-template-pcworms'),
-			'date-asc' 						=> esc_html__('Old Items', 'free-template-pcworms'),
-			'comment-count'		 	=> esc_html__('Most Comments', 'free-template-pcworms'),
-			'title' 							=> esc_html__('Title', 'free-template-pcworms'),
-			'author' 						=> esc_html__('Author', 'free-template-pcworms'),
-			'modified' 						=> esc_html__('New Modifications', 'free-template-pcworms'),
+			'date-desc' 					=> esc_html__('New Items', 'pcworms'),
+			'date-asc' 						=> esc_html__('Old Items', 'pcworms'),
+			'comment-count'		 	=> esc_html__('Most Comments', 'pcworms'),
+			'title' 							=> esc_html__('Title', 'pcworms'),
+			'author' 						=> esc_html__('Author', 'pcworms'),
+			'modified' 						=> esc_html__('New Modifications', 'pcworms'),
 		);
 		if(function_exists( 'wp_statistics_pages' )){
-			$options_values['visit'] = esc_html__('Most Visits', 'free-template-pcworms');
+			$options_values['visit'] = esc_html__('Most Visits', 'pcworms');
 		}
 		if( isset($_GET['orderedby']) and array_key_exists(wp_unslash($_GET['orderedby']), $options_values) ){ // sanitization ok
 			$orderby_value = wp_unslash($_GET['orderedby']); // sanitization ok
@@ -66,8 +66,8 @@
 
 		if ( (is_archive() and !is_tag()) and function_exists( 'wp_statistics_pages' ) && get_theme_mod('display_visits', true) && isset($orderby_value) && $orderby_value=='visit' ) { ?>
 		<div class="header-item total-hits pull-right">
-			<i class="fa fa-bar-chart fa-lg" title="<?php esc_attr_e('Total Hits', 'free-template-pcworms'); ?>" data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i> 
-			<span class="stat-hits" title="<?php esc_attr_e('Total Hits', 'free-template-pcworms'); ?>" data-toggle="tooltip" data-placement="bottom">
+			<i class="fa fa-bar-chart fa-lg" title="<?php esc_attr_e('Total Hits', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i> 
+			<span class="stat-hits" title="<?php esc_attr_e('Total Hits', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom">
 			<?php echo esc_html( wp_statistics_pages( 'total', "", get_the_ID()) ); ?>
 			</span>
 		</div><?php
@@ -88,8 +88,8 @@
 		
 		if((is_archive() and !is_tag()) && isset($orderby_value) && $orderby_value=='author') { ?>
 		<div class="header-item author-name pull-right">
-				<i class="fa fa-user fa-lg" title="<?php esc_attr_e('Author', 'free-template-pcworms'); ?>" data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i>
-				<span class="author vcard" title="<?php esc_attr_e('Author', 'free-template-pcworms'); ?>" data-toggle="tooltip" data-placement="bottom">
+				<i class="fa fa-user fa-lg" title="<?php esc_attr_e('Author', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i>
+				<span class="author vcard" title="<?php esc_attr_e('Author', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom">
 					<a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo get_the_author(); ?></a>
 				</span>
 		</div>
@@ -97,8 +97,8 @@
 		
 		if(comments_open( get_the_ID() ) && is_archive() && isset($orderby_value) && $orderby_value=='comment-count') { ?>
 		<div class="header-item comments-number pull-right">
-			<i class="fa fa-comments fa-lg" title="<?php esc_attr_e('Comments Number', 'free-template-pcworms'); ?>" data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i> 
-			<span class="comments-count" title="<?php esc_attr_e('Comments Number', 'free-template-pcworms'); ?>" data-toggle="tooltip" data-placement="bottom">
+			<i class="fa fa-comments fa-lg" title="<?php esc_attr_e('Comments Number', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i> 
+			<span class="comments-count" title="<?php esc_attr_e('Comments Number', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom">
 			<?php echo esc_html(get_comments_number()); ?>
 			</span>
 		</div>
