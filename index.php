@@ -5,11 +5,11 @@
 ?>
  
 <?php get_header();
-$sidebar_condition = is_active_sidebar( 'sidebar-1' ); ?>
-<main id="main" class="site-main">
+$sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_single() ; ?>
+<main id="main" class="site-main <?php (is_single()?'single':'') ?>">
 	<div class="container"><?php
 		if ( $sidebar_condition ) { ?>
-		<div class="row"><?php
+			<div class="row"><?php
 		} ?>
 			<div id="primary" class="site-content content-area col-xs-12<?php if( $sidebar_condition ) { echo ' pull-right col-sm-9'; } ?>"><?php
 			

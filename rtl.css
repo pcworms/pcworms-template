@@ -1365,7 +1365,7 @@ span a .fa {
     height: auto !important;
 }
 
-.post-container img.avatar {
+.post-container>img.avatar {
     border: var(--purple) 2px solid;
     position: sticky;
     top: 20px;
@@ -1374,7 +1374,72 @@ span a .fa {
     margin-left: 5px;
 }
 
-.admin-bar .post-container img.avatar {
+.author-info {
+    border-radius: 0 0 4px 4px;
+}
+
+.author-info .about-author {
+    display: block;
+    background-color: var(--purple);
+    text-align: center;
+}
+
+.author-info img.avatar {
+    display: block;
+    min-width: 100%;
+    height: auto;
+}
+
+.author-info span.job {
+    color: var(--pink);
+    font-size: 1rem;
+    display: block;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.author-info span.name {
+    display: block;
+    text-align: center;
+    font-size: x-large;
+    padding: 0 10px;
+    background-color: var(--black);
+}
+
+.author-info div.desc {
+    font-size: 1rem;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.author-info ul.social {
+    text-align: center;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.author-info ul.social li {
+    text-decoration: none;
+    display: inline;
+    margin-left: 5px;
+}
+
+.author-info ul.social li i {
+    font-family: FontAwesome;
+    color: white;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.author-info ul.social li a {
+    font-size: 32px;
+}
+
+.author-info ul.social li a:hover {
+    font-size: 40px;
+}
+
+.admin-bar .post-container>img.avatar {
     top: 50px
 }
 
@@ -1388,6 +1453,10 @@ span a .fa {
     border-radius: 0 0 0 30px;
     margin: 0;
     width: calc(100% - 55px);
+}
+
+.single #primary article {
+    width: 100%;
 }
 
 #primary article button.continue-read {
@@ -1683,48 +1752,6 @@ code:not([class]) {
     padding: 7px;
     position: relative;
     margin-bottom: 15px;
-}
-
-#secondary .widget:before,
-#secondary .widget:after {
-    z-index: -10000;
-    position: absolute;
-    content: "";
-    bottom: 15px;
-    left: 10px;
-    width: 50%;
-    top: 80%;
-    max-width: 300px;
-    background: #777;
-    box-shadow: 0 15px 10px rgba(0, 0, 0, .2);
-    transform: rotate(-3deg);
-}
-
-#secondary .widget:after {
-    transform: rotate(3deg);
-    right: 10px;
-    left: auto;
-}
-
-#primary .widget:before,
-#primary .widget:after {
-    z-index: -10000;
-    position: absolute;
-    content: "";
-    bottom: 15px;
-    left: 10px;
-    width: 50%;
-    top: 80%;
-    max-width: 300px;
-    background: #777;
-    box-shadow: 0 15px 10px rgba(0, 0, 0, .2);
-    transform: rotate(-2deg);
-}
-
-#primary .widget:after {
-    transform: rotate(2deg);
-    right: 10px;
-    left: auto;
 }
 
 #secondary .widget-title {

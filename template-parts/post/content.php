@@ -7,7 +7,9 @@
 
 ?>
 <div class = "container-fluid post-container">
-	<?php echo get_avatar(get_the_author_meta( 'ID' ), 50);?>
+	<?php 
+	if (! is_single())
+		echo get_avatar(get_the_author_meta( 'ID' ), 50); ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'panel box' ); ?>>
 		<?php get_template_part( 'template-parts/part/entry-header' ); ?>
 

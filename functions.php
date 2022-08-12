@@ -24,6 +24,7 @@ class Free_Template{
 		add_filter( 'body_class', 										array($this, 'body_classes') );
 		add_filter( 'wp_get_attachment_image_attributes', array($this, 'image_item_add_title'), 10, 2 );
 		add_filter( 'excerpt_length', 								array($this, 'custom_excerpt_length'), 999 );
+		remove_filter('pre_user_description', 'wp_filter_kses');
 
 		// Check if WooCommerce is active
 		if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {

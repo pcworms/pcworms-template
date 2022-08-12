@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PCWorms Template\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-20 16:30+0000\n"
-"PO-Revision-Date: 2022-07-28 00:20+0430\n"
+"PO-Revision-Date: 2022-08-12 13:59+0430\n"
 "Last-Translator: \n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -159,6 +159,10 @@ msgstr "بالای محتوا"
 #: template-parts/post/content-video.php:37 template-parts/post/content.php:17
 msgid "Continue reading"
 msgstr "ادامه مطلب"
+
+#: sidebar.php:16
+msgid "About author"
+msgstr "درباره نویسنده"
 
 #: footer.php:30
 msgid "Copyright"
