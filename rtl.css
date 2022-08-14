@@ -331,6 +331,10 @@ th {
     margin-top: 15px;
 }
 
+.site-content {
+    padding-left: 0 !important;
+}
+
 .wp-caption {
     border: 1px solid #ccc;
     padding-top: 7px;
@@ -1365,7 +1369,8 @@ span a .fa {
     height: auto !important;
 }
 
-.post-container>img.avatar {
+.post-container>.author-avatar {
+    display: inline-block;
     border: var(--purple) 2px solid;
     position: sticky;
     top: 20px;
@@ -1411,13 +1416,15 @@ span a .fa {
     text-align: center;
 }
 
-.author-info ul.social {
+.author-info ul.social,
+.author-info ul.stack {
     text-align: center;
     padding: 0 10px;
     margin: 0;
 }
 
-.author-info ul.social li {
+.author-info ul.social li,
+.author-info ul.stack li {
     text-decoration: none;
     display: inline;
     margin-left: 5px;
@@ -1444,6 +1451,7 @@ span a .fa {
 
 .post-container {
     margin-bottom: 30px;
+    padding: 0 !important;
 }
 
 #primary article {
@@ -1451,10 +1459,10 @@ span a .fa {
     padding: 10px;
     border-radius: 0 0 0 30px;
     margin: 0;
-    width: calc(100% - 55px);
+    width: calc(100% - 60px);
 }
 
-.single #primary article {
+#primary article.noavatar {
     width: 100%;
 }
 

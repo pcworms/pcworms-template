@@ -3,30 +3,33 @@
  * The archive template file
  */
  ?>
-<?php get_header(); ?>
+<?php
+get_header();
+$sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_author()
+?>
 <main id="main" class="site-main">
 	<div class="container"><?php
-		if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
+		if ( $sidebar_condition ) { ?>
 		<div class="row"><?php
 		} ?>
-			<div id="primary" class="site-content content-area col-xs-12<?php if( is_active_sidebar( 'sidebar-1' ) ) { echo ' pull-right col-sm-9'; } ?>"><?php
+			<div id="primary" class="site-content content-area col-xs-12<?php if( $sidebar_condition ) { echo ' pull-right col-sm-9'; } ?>"><?php
 			
 			dynamic_sidebar( 'content-top' );
 			if (is_category()) {
 				$title = single_cat_title('', false);
 			} elseif (is_tag()) {
 				$title = single_tag_title('', false);
-			} elseif (is_author()) {
-				$title = '<span class="vcard">' . get_the_author() . '</span>';
 			} elseif (is_tax()) { //for custom post types
 				$title = sprintf(__('%1$s'), single_term_title('', false));
 			} elseif (is_post_type_archive()) {
 				$title = post_type_archive_title('', false);
 			}
+			if ($title!='') {
 			?>
 			<h1 class="text-center"><?php echo esc_html($title); ?></h1>
-			<?php
-			the_archive_description('<div class="text-justify">', '</div>');
+			<?php }
+			if(!is_author())
+				the_archive_description('<div class="text-justify">', '</div>');
 
 			if ( have_posts() ) {
 			?>
@@ -58,11 +61,11 @@
 			<?php dynamic_sidebar( 'content-bottom' ); ?>
 			</div><?php
 
-			if ( is_active_sidebar( 'sidebar-1' ) ) {
+			if ( $sidebar_condition ) {
 				get_sidebar();
 			}
 
-		if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
+		if ( $sidebar_condition) { ?>
 		</div>
 		<?php } ?>
 	</div>

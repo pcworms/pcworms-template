@@ -840,5 +840,39 @@ class Free_Template{
 
 }
 
-// change exactly 'pcworms' to 'your-text-domain'
-// change exactly Free_Template to Your_Theme_Classname
+function render_badges($inp){
+	$matches = array();
+	$brands = null;
+	$cache = get_transient("badges");
+	$update_cache = false;
+	if ($cache == false){
+		$cache = array();
+		$brands = json_decode(file_get_contents(get_template_directory() . '/assets/simple-icon/brands-color.json'), true);
+		$res = set_transient("badges",$cache,300);
+	}
+	preg_match_all("/;([^;-]*)-?([^;]*);/",$inp,$matches,PREG_UNMATCHED_AS_NULL);
+	for($i=0;$i<count($matches[1]);$i++){
+		$badge = $matches[0][$i];
+		if (array_key_exists($badge,$cache)){
+			$inp = str_replace($badge,$cache[$badge],$inp);
+		}else{
+			$icon = strtolower($matches[1][$i]);
+			$text = $matches[2][$i]!=""  ?  $matches[2][$i]  :  $matches[1][$i];
+			if (is_null($brands))
+				$brands = json_decode(file_get_contents(get_template_directory() . '/assets/simple-icon/brands-color.json'), true);
+			$has_icon = array_key_exists($icon,$brands);
+			if($has_icon)
+				$color = $brands[$icon];
+			else
+				$color = sprintf('%06X', mt_rand(0, 0xFFFFFF));
+			$src = 'https://img.shields.io/badge/' . urlencode($text) . '-' . $color . '?logo=' . urlencode($icon) . '&logoColor=white';
+			$img = '<img title="'.$text.'" src="'.$src.'">';
+			$cache[$badge] = $img;
+			$update_cache = true;
+			$inp = str_replace($badge,$img,$inp);
+		}
+	}
+	echo $inp;
+	if ($update_cache)
+		$res = set_transient("badges",$cache,300);
+}

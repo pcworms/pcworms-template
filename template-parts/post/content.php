@@ -8,9 +8,11 @@
 ?>
 <div class = "container-fluid post-container">
 	<?php 
-	if (! is_single())
-		echo get_avatar(get_the_author_meta( 'ID' ), 50); ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class( 'panel box' ); ?>>
+	if (!is_single() && !is_author()){
+		$ID = get_the_author_meta( 'ID' );
+		echo '<a class="author-avatar" title = "'. get_the_author_meta("display_name") . '" href = "' . get_author_posts_url($ID) . '">'. get_avatar($ID, 50) . '</a>'; 
+	}?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'panel box' . (is_single()||is_author() ? ' noavatar' : '') ); ?>>
 		<?php get_template_part( 'template-parts/part/entry-header' ); ?>
 
 		<div class="entry-content panel-body">

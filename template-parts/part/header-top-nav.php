@@ -2,7 +2,6 @@
 $attachments = get_uploaded_header_images();
 if (has_nav_menu('primary') or get_theme_mod('display_login_link')) {
 ?>
-	<!--nav class="megamenu navbar navbar-default navbar-toggleable-md navbar-fixed-top navbar-inverse bg-inverse  navbar-toggleable-md navbar-light"-->
 	<div class="navbar-wrapper">
 		<div class="container">
 			<nav id="top-menu" class="navbar navbar-static-top">

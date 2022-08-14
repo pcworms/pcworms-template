@@ -71,42 +71,16 @@
 			<?php echo esc_html( wp_statistics_pages( 'total', "", get_the_ID()) ); ?>
 			</span>
 		</div><?php
-		}
-
-		if((is_archive() and !is_tag()) && isset($orderby_value) && ($orderby_value=='date-desc' || $orderby_value=='date-asc')){ ?>
-		<div class="header-item created-on pull-right">
-			<?php Free_Template::posted_on(); ?>
-		</div>
-		<?php
-		}
-		
-		if((is_archive() and !is_tag()) && isset($orderby_value) && $orderby_value=='modified'){ ?>
-		<div class="header-item modified-on pull-right">
-			<?php Free_Template::modified_on(); ?>
-		</div>
-		<?php }
-		
-		if((is_archive() and !is_tag()) && isset($orderby_value) && $orderby_value=='author') { ?>
-		<div class="header-item author-name pull-right">
-				<i class="fa fa-user fa-lg" title="<?php esc_attr_e('Author', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i>
-				<span class="author vcard" title="<?php esc_attr_e('Author', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom">
-					<a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo get_the_author(); ?></a>
-				</span>
-		</div>
-		<?php }
-		
-		if(comments_open( get_the_ID() ) && is_archive() && isset($orderby_value) && $orderby_value=='comment-count') { ?>
-		<div class="header-item comments-number pull-right">
-			<i class="fa fa-comments fa-lg" title="<?php esc_attr_e('Comments Number', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom" aria-hidden="true"></i> 
-			<span class="comments-count" title="<?php esc_attr_e('Comments Number', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom">
-			<?php echo esc_html(get_comments_number()); ?>
-			</span>
-		</div>
-		<?php } ?>
+		} ?>
 		
 	</div>
 	<div class="post-info">
-		<span><a href="<?php get_the_author_meta( 'url' ) ?>"><?php the_author()?></a> <i class="fa fa-user-circle" aria-hidden="true"></i></span>
+		<?php 
+		// get_the_author();
+		$link = get_author_posts_url(get_the_author_meta( 'ID' ));
+		$name = get_the_author_meta("display_name");
+		?>
+		<span><a href="<?php echo $link ?>"><?php echo $name?></a> <i class="fa fa-user-circle" aria-hidden="true"></i></span>
 		<span><?php the_category(' -  ')?> <i class="fa fa-bookmark" aria-hidden="true"></i></span>
 		<span><?php the_date('Y-m-d')?> <i class="fa fa-calendar" aria-hidden="true"></i></span>
 	</div>

@@ -5,7 +5,7 @@
 ?>
  
 <?php get_header();
-$sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_single() ; ?>
+$sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_single() || is_author() ; ?>
 <main id="main" class="site-main <?php (is_single()?'single':'') ?>">
 	<div class="container"><?php
 		if ( $sidebar_condition ) { ?>
@@ -49,7 +49,9 @@ $sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_single() ; ?>
 			?>
 			</div><?php
 
-			if ( $sidebar_condition ) {
+
+
+			if ( $sidebar_condition) {
 				get_sidebar();
 			}
 
