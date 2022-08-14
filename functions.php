@@ -865,7 +865,7 @@ function render_badges($inp){
 				$color = $brands[$icon];
 			else
 				$color = sprintf('%06X', mt_rand(0, 0xFFFFFF));
-			$src = 'https://img.shields.io/badge/' . urlencode(str_replace(' ','%20',$text)) . '-' . $color . '?logo=' . urlencode($icon) . '&logoColor=white';
+			$src = 'https://img.shields.io/badge/' . str_replace('+','%20',urlencode($text)) . '-' . $color . '?logo=' . urlencode($icon) . '&logoColor=white';
 			$img = '<img title="'.$text.'" src="'.$src.'">';
 			$cache[$badge] = $img;
 			$update_cache = true;
