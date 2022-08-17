@@ -15,6 +15,7 @@ class Free_Template{
 		add_action( 'wp_enqueue_scripts', 						array($this, 'enqueue_all') );
 		add_action( 'customize_register',							array('Free_Template_Customizer' , 'register') );
 		add_action( 'customize_preview_init', 					array('Free_Template_Customizer' , 'live_preview') );
+
 		add_filter( 'excerpt_more', 									array($this, 'excerpt_more') );
 		add_filter( 'wp_link_pages_link', 							array($this, 'bs_link_pages') );
 		add_filter( 'wp_link_pages_args', 							array($this, 'wp_link_pages_args_prevnext_add') );
@@ -24,7 +25,20 @@ class Free_Template{
 		add_filter( 'body_class', 										array($this, 'body_classes') );
 		add_filter( 'wp_get_attachment_image_attributes', array($this, 'image_item_add_title'), 10, 2 );
 		add_filter( 'excerpt_length', 								array($this, 'custom_excerpt_length'), 999 );
+
+		// allow html in author description
 		remove_filter('pre_user_description', 'wp_filter_kses');
+
+		// custom rss templates
+		// TODO: make this feature optional (configurable from template customization)
+		remove_all_actions( 'do_feed_atom' );
+		remove_all_actions( 'do_feed_rdf' );
+		remove_all_actions( 'do_feed_rss' );
+		remove_all_actions( 'do_feed_rss2' );
+		add_action( 'do_feed_atom', array($this,'custom_feed_atom'));
+		add_action( 'do_feed_rdf', array($this,'custom_feed_rdf'));
+		add_action( 'do_feed_rss', array($this,'custom_feed_rss'));
+		add_action( 'do_feed_rss2', array($this,'custom_feed_rss2'));
 
 		// Check if WooCommerce is active
 		if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
@@ -40,6 +54,10 @@ class Free_Template{
 
 	}
 
+	public function custom_feed_atom() { get_template_part( 'template-parts/feeds/feed-atom', 'atom'); }
+	public function custom_feed_rdf() { get_template_part( 'template-parts/feeds/feed-rdf', 'rdf'); }
+	public function custom_feed_rss() { get_template_part( 'template-parts/feeds/feed-rss', 'rss'); }
+	public function custom_feed_rss2() { get_template_part( 'template-parts/feeds/feed-rss2', 'rss2'); }
 	
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -837,7 +855,6 @@ class Free_Template{
 		}
 		return esc_url($image_url);
 	}
-
 }
 
 function render_badges($inp){
@@ -875,4 +892,22 @@ function render_badges($inp){
 	echo $inp;
 	if ($update_cache)
 		$res = set_transient("badges",$cache,300);
+}
+
+function custom_get_the_content_feed( $feed_type = null ) {
+	if ( ! $feed_type ) {
+		$feed_type = get_default_feed();
+	}
+
+	/** This filter is documented in wp-includes/post-template.php */
+	$post_id = get_the_ID();
+	$post_field = get_post_field( 'post_content', $post_id );
+	$content_parts = get_extended( $post_field );
+	$content = $content_parts['main'];
+	$more_link_text = '<button class="continue-read btn dark-red"><span class="fa fa-eye"></span> ' . esc_html__( 'Continue reading', 'pcworms' ) . '</button>';
+	$more = apply_filters( 'the_content_more_link', ' <a href="' . get_the_permalink() . "#more-{post_id}\" class=\"more-link\">$more_link_text</a>", $more_link_text );
+	$content = apply_filters( 'the_content', $content ) . $more;
+	$content = str_replace( ']]>', ']]&gt;', $content );
+
+	return apply_filters( 'the_content_feed', $content, $feed_type );
 }
