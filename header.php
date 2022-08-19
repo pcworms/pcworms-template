@@ -17,7 +17,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('line-numbers'); ?>>
 <script type="text/javascript">
 NProgress.start();
 window.onload = function() {
