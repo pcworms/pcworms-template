@@ -1518,6 +1518,10 @@ span a .fa {
     line-height: 35px;
 }
 
+code {
+    direction: ltr !important;
+}
+
 pre.wp-block-code,
 code:not([class]) {
     background-color: #002836;
