@@ -657,7 +657,7 @@ class Free_Template{
 	 */
 	public function custom_excerpt_length( $length ) {
 		if ( ! is_admin() ) {
-			return 100;
+			return 255;
 		}
 	}
 
