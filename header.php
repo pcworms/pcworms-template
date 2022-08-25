@@ -36,6 +36,11 @@ if ($desc=="")
 	<meta property="og:title" content="<?php echo $title?>">
     <meta property="og:image" content="<?php echo $image?>">
 	<meta property="og:description" content="<?php echo $desc?>">
+	<meta property="og:site_name" content="<?php echo get_bloginfo( 'name' )?>">
+	<meta name="twitter:title" content="<?php echo $title?>">
+	<meta name="twitter:description" content="<?php echo $desc?>">
+	<meta name="twitter:image" content="<?php echo $image?>">
+	<meta name="twitter:card" content="summary_large_image">
 <?php wp_head(); ?>
 </head>
 <body <?php body_class('line-numbers'); ?>>
