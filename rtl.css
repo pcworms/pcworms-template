@@ -696,6 +696,13 @@ a:hover {
     color: var(--lighter-red);
 }
 
+.entry-header a{
+    color: var(--black);
+}
+.entry-header a:hover{
+    color: var(--gray-2);
+}
+
 h1,
 .h1 {
     font-size: 3.2rem;

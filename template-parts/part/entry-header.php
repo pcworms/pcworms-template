@@ -1,6 +1,6 @@
 <header class=>
 	<div class="row entry-header">
-		<div class="col <?php echo ((current_user_can( 'edit_post', get_the_ID() ) or is_archive()) ? 'pull-left' : 'col-xs-12'); ?>"><?php
+		<div class="col pull-left"><?php
 			$sticky = is_sticky() ? '<i class="sticky-icon fa fa-thumb-tack fa-lg"></i>' : '';
 			$posttypeicon = '';
 			if (get_post_format() == 'image'){
@@ -32,11 +32,14 @@
 			}else{
 				the_title( '<h2 class="entry-title">' . $icons . '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr(get_the_title()) . '" rel="bookmark">', '</a></h2>' );
 			} ?>
-		</div><?php
-		if ( current_user_can( 'edit_post', get_the_ID() ) ) { ?>
+		</div>
 		<div class="header-item pull-right">
-			<?php Free_Template::edit_link(); ?>
-		</div><?php }
+			<a href="javascript:" onclick="navigator.share({ title: '<?php echo esc_attr(get_the_title())?>', url: '<?php echo esc_url( get_permalink() )?>' });"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+			<?php
+			if ( current_user_can( 'edit_post', get_the_ID() ) )
+				Free_Template::edit_link();
+			?>
+		</div><?php
 		
 		if(is_category()){
 			$cat 		= get_queried_object();
