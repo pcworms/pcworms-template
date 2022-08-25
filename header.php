@@ -17,7 +17,7 @@ $image = "";
 $desc = "";
 if (is_single()){
 	$image = get_the_post_thumbnail_url();
-	$description = get_the_excerpt();
+	$desc = get_the_excerpt();
 }
 if ($image==""){
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
