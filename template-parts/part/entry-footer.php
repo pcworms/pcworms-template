@@ -77,10 +77,11 @@
 	</div>
 	<?php }*/
 
-	if ( current_user_can( 'edit_post', get_the_ID() ) ) { ?>
+	 ?>
 		<div class="footer-item pull-right">
-			<?php Free_Template::edit_link(); ?>
-		</div><?php
-	}
-	?>
+		<a class="share-btn" href="javascript:" onclick="navigator.share({ title: '<?php echo esc_attr(get_the_title())?>', url: '<?php echo esc_url( get_permalink() )?>' });"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+			<?php
+			if ( current_user_can( 'edit_post', get_the_ID() ) )
+				Free_Template::edit_link(); ?>
+		</div>
 </footer> <!-- .entry-footer -->

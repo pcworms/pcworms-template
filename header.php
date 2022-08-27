@@ -46,6 +46,9 @@ if ($desc=="")
 <body <?php body_class('line-numbers'); ?>>
 <script type="text/javascript">
 NProgress.start();
+if (typeof navigator.canShare !== 'undefined' && navigator.canShare()) {
+	document.body.classList.add("can-share")
+}
 window.onload = function() {
 	NProgress.done();
 }

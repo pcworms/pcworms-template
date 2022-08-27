@@ -34,7 +34,7 @@
 			} ?>
 		</div>
 		<div class="header-item pull-right">
-			<a href="javascript:" onclick="navigator.share({ title: '<?php echo esc_attr(get_the_title())?>', url: '<?php echo esc_url( get_permalink() )?>' });"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+			<a class="share-btn" href="javascript:" onclick="navigator.share({ title: '<?php echo esc_attr(get_the_title())?>', url: '<?php echo esc_url( get_permalink() )?>' });"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
 			<?php
 			if ( current_user_can( 'edit_post', get_the_ID() ) )
 				Free_Template::edit_link();
