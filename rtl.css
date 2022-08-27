@@ -697,10 +697,10 @@ a:hover {
 }
 
 .entry-header a{
-    color: var(--black);
+    color: var(--black) !important;
 }
 .entry-header a:hover{
-    color: var(--gray-2);
+    color: var(--gray-2) !important;
 }
 
 h1,

@@ -431,8 +431,12 @@ class Free_Template{
 		wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css', array(), '4.7.0', 'all');
 
 		// main css
-		if ( !is_rtl() ) {
-			wp_enqueue_style( 'theme-style', get_stylesheet_uri(), array( ), wp_get_theme()->get( 'Version' ), 'all' );
+		$version = wp_get_theme()->Version;
+		if ( is_rtl() ) {
+			remove_action( 'wp_head', 'locale_stylesheet' );
+			wp_enqueue_style( 'theme-style', get_stylesheet_directory_uri()."/rtl.css", array( ), $version, 'all' );
+		} else {
+			wp_enqueue_style( 'theme-style', get_stylesheet_uri(), array( ), $version, 'all' );
 		}
 
 		// dedidata js load in footer
