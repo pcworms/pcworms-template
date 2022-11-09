@@ -219,10 +219,14 @@ h6,
     letter-spacing: 0 !important;
 }
 
-.pagination li span,
 .pagination li a.page-numbers {
     background-color: var(--dark-green) !important;
     color: var(--white) !important;
+}
+
+.pagination li a.page-numbers:not(.disabled):hover {
+    background-color: var(--white) !important;
+    color: var(--black) !important;
 }
 
 
@@ -1251,8 +1255,7 @@ span a .fa {
     border: silver 5px solid;
     border-radius: 10px;
     padding: 15px;
-    margin: 20px;
-    margin-top: 5px;
+    margin: 5px;
     overflow: hidden;
     position: relative;
 }
@@ -1467,6 +1470,7 @@ span a .fa {
 .post-container {
     margin-bottom: 30px;
     padding: 0 !important;
+    float: right;
 }
 
 #primary article {

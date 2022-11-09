@@ -6,7 +6,7 @@
  */
 
 ?>
-<div class = "container-fluid post-container">
+<div data-aos="fade-left" class = "container-fluid post-container">
 	<?php 
 	if (!is_single() && !is_author()){
 		$ID = get_the_author_meta( 'ID' );

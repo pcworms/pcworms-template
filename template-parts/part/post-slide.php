@@ -9,7 +9,7 @@ $content_parts = get_extended( $post_field );
 $content = $content_parts['main'];
 $content = apply_filters( 'the_content', $content );
 ?>
-<div class="item<?php echo ($args['counter'] == 0) ? ' active' : ''; ?>">
+<div class="carousel-item<?php echo ($args['counter'] == 0) ? ' active' : ''; ?>">
     <div class="post-slide">
         <a href="#post-<?php echo $ID?>"><h3><?php echo $title;?></h3></a>
         <?php echo $content?>

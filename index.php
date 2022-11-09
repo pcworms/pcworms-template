@@ -59,6 +59,6 @@ $sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_single() || is_autho
 		</div>
 		<?php } ?>
 	</div>
-</main><!-- .site-main -->
+</main><!-- .site-main test-->
 <?php
 get_footer();

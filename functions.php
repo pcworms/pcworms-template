@@ -402,25 +402,35 @@ class Free_Template{
 		// tether js (for tooltips , should before bootstrap) load in footer
 		wp_enqueue_script( 'tether', get_stylesheet_directory_uri() . '/assets/tether/js/tether.min.js', array(), '1.4.0', true);
 
-		// bootstrap js css load in footer
-		wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), '3.3.7', true);
+		// bootstrap 3 js css load in footer
+		//wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), '3.3.7', true);
 
-		wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), '3.3.7', 'all');
+		//wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), '3.3.7', 'all');
 
 		// bootstrap theme css
-		if (get_theme_mod('bootstrap_theme_name') != 'default' && get_theme_mod('bootstrap_theme_name') ) {
-			wp_enqueue_style( 'bootswatch', get_stylesheet_directory_uri() . '/assets/bootswatch/' . esc_html( get_theme_mod( 'bootstrap_theme_name' ) ) . '/bootstrap.min.css', array(), '3.3.7', 'all');
-		} else {
-			wp_enqueue_style( 'bootstrap-theme', get_stylesheet_directory_uri() . '/assets/bootstrap/css/bootstrap-theme.min.css', array(), '3.3.7', 'all');
-		}
+		//if (get_theme_mod('bootstrap_theme_name') != 'default' && get_theme_mod('bootstrap_theme_name') ) {
+		//	wp_enqueue_style( 'bootswatch', get_stylesheet_directory_uri() . '/assets/bootswatch/' . esc_html( get_theme_mod( 'bootstrap_theme_name' ) ) . '/bootstrap.min.css', array(), '3.3.7', 'all');
+		//} else {
+		//	wp_enqueue_style( 'bootstrap-theme', get_stylesheet_directory_uri() . '/assets/bootstrap/css/bootstrap-theme.min.css', array(), '3.3.7', 'all');
+		//}
+
+		// bootstrap 4 js css load
+		
+		wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap4/css/bootstrap.min.css', array(), '4.1.3', 'all');
+		wp_enqueue_style( 'bootstrap-grid', get_stylesheet_directory_uri() . '/assets/bootstrap4/css/bootstrap-grid.min.css', array(), '4.1.3', 'all');
+		wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap4/js/bootstrap.bundle.min.js', array('jquery'), '4.1.3', true);
 
 		// rtl bootstrap
+		// if ( is_rtl() ) {
+		// 	wp_enqueue_style( 'partial-bootstrap-rtl', get_stylesheet_directory_uri() . '/assets/bootstrap-rtl/css/bootstrap.rtl.css', array(), '3.3.7.2', 'all');
+		// }
+
 		if ( is_rtl() ) {
-			wp_enqueue_style( 'partial-bootstrap-rtl', get_stylesheet_directory_uri() . '/assets/bootstrap-rtl/css/bootstrap.rtl.css', array(), '3.3.7.2', 'all');
+			wp_enqueue_style( 'bootstrap-rtl', get_stylesheet_directory_uri() . '/assets/bootstrap4-rtl/bootstrap-rtl.min.css', array(), '4.1.3', 'all');
 		}
 
 		// 1000hz-bootstrap-validator js load in footer
-		wp_enqueue_script( 'bootstrap-validator', get_stylesheet_directory_uri() . '/assets/bootstrap-validator/validator.min.js', array(), '0.11.9', true);
+		// wp_enqueue_script( 'bootstrap-validator', get_stylesheet_directory_uri() . '/assets/bootstrap-validator/validator.min.js', array(), '0.11.9', true);
 
 		// fancybox
 		wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/assets/fancybox/jquery.fancybox.min.css', array(), '3.1.24', 'all');
@@ -449,12 +459,12 @@ class Free_Template{
 		if ( function_exists( 'is_woocommerce' ) ){
 			// woocommerce is enabled
 			if( ! is_woocommerce() ){
-				wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.2.0', 'all');
-				wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.2.0', true);
+				wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.3.4', 'all');
+				wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.3.4', false);
 			}
 		}else{
-			wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.2.0', 'all');
-			wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.2.0', true);
+			wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.3.4', 'all');
+			wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.3.4', false);
 		}
 
 		// html5shiv js
@@ -559,7 +569,7 @@ class Free_Template{
 		$fields   =  array(
 			'author' => '<div class="form-group has-feedback comment-form-author">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
+									<span class="input-group-prepend"><i class="fa fa-user fa-lg"></i></span>
 									<input placeholder="' . esc_attr__( 'Name', 'pcworms' ) .( $req ? ' *' : '' ) . '" class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your name!', 'pcworms') . '"' . $aria_req . ' />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -567,7 +577,7 @@ class Free_Template{
 							</div>',
 			'email'  => '<div class="form-group has-feedback comment-form-email">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-at fa-lg"></i></span>
+									<span class="input-group-prepend"><i class="fa fa-at fa-lg"></i></span>
 									<input placeholder="' . esc_attr__( 'Email', 'pcworms' ) . ( $req ? ' *' : '' ) . '" style="direction: ltr;" class="form-control" id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your email address!', 'pcworms') . '"' . $aria_req . ' />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -575,7 +585,7 @@ class Free_Template{
 							</div>',
 			'url'    => '<div class="form-group has-feedback comment-form-url">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-globe fa-lg"></i></span>
+									<span class="input-group-prepend"><i class="fa fa-globe fa-lg"></i></span>
 									<input placeholder="' . esc_attr__( 'Website', 'pcworms' ) . '" style="direction: ltr;" class="form-control" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" data-error="' . esc_html__('Please enter a valid website starting with http:// on nothing!', 'pcworms') . '" />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -590,7 +600,7 @@ class Free_Template{
 		$args['comment_field'] = '
 											<div class="form-group has-feedback comment-form-comment">
 												<div class="input-group">
-													<span class="input-group-addon"><i class="fa fa-comments fa-lg"></i></span>
+													<span class="input-group-prepend"><i class="fa fa-comments fa-lg"></i></span>
 													<textarea placeholder="' . esc_attr__( 'Comment', 'pcworms' ) . '" class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required" data-error="' . esc_html__('Please enter your comment!', 'pcworms') . '"></textarea>
 												</div>
 												<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -765,29 +775,74 @@ class Free_Template{
 		$navigation = '';
 
 		// Don't print empty markup if there's only one page.
-		if ( $GLOBALS['wp_query']->max_num_pages > 1 ) {
-			$args = wp_parse_args( $args, array(
-				'mid_size'           => 1,
-				'prev_text'          => esc_html__( 'Previous', 'pcworms' ),
-				'next_text'          => esc_html__( 'Next', 'pcworms' ),
-			) );
-
-			// Make sure we get a string back. Plain is the next best thing.
-			if ( isset( $args['type'] ) && 'array' == $args['type'] ) {
-				$args['type'] = 'plain';
+		$max_pages_num = max( 1, $GLOBALS['wp_query']->max_num_pages );
+		if ( $max_pages_num > 1 ) {
+			$currentPage = max(1,get_query_var( 'paged', 1 ));
+			$previous_state = $currentPage==1 ? " disabled" : "";
+			$link = $currentPage==1 ? "#" : get_pagenum_link( $currentPage - 1 );
+			$links = "
+			<li class=\"page-item{$previous_state}\">
+				<a class=\"page-link page-numbers\" href=\"{$link}\">
+					<span aria-hidden=\"true\">&laquo;</span>
+					<span class=\"sr-only\">Previous</span>
+				</a>
+			</li>";
+			foreach (range( 1, $max_pages_num) as $page){
+				if ($page == $currentPage)
+					$links .= "<li calss=\"page-item disabled\"><span class=\"page-link page-numbers\">{$page}</span></li>";
+				else{
+					$link = get_pagenum_link( $page );
+					$links .= "<li calss=\"page-item\"><a class=\"page-link page-numbers\" href=\"{$link}\">{$page}</a></li>";
+				}
 			}
-
-			// Set up paginated links.
-			$links = paginate_links( $args );
-
-			if ( $links ) {
-				$navigation = _navigation_markup( $links, 'posts-pagination', '' );
-			}
+			$next_state = $currentPage==$max_pages_num ? " disabled" : "";
+			$link = $currentPage== $max_pages_num? "#" : get_pagenum_link( $currentPage + 1 );
+			$links.="
+			<li class=\"page-item{$next_state}\">
+				<a class=\"page-link page-numbers\" href=\"{$link}\">
+					<span aria-hidden=\"true\">&raquo;</span>
+					<span class=\"sr-only\">Next</span>
+				</a>
+			</li>";
+			echo "<nav>
+						<ul class=\"pagination justify-content-center\">
+							{$links}
+						</ul>
+					</nav>";
 		}
+		// 	$args = wp_parse_args( $args, array(
+		// 		'mid_size'           => 1,
+		// 		'prev_text'          => esc_html__( 'Previous', 'pcworms' ),
+		// 		'next_text'          => esc_html__( 'Next', 'pcworms' ),
+		// 	) );
 
-		$navigation = str_replace("ul class='" , "ul class='pagination ", $navigation);
-		$navigation = str_replace("<li><span class='page-numbers current'" , "<li class='active'><span class='page-numbers current'", $navigation);
-		echo $navigation; // xss ok
+		// 	// Make sure we get a string back. Plain is the next best thing.
+		// 	if ( isset( $args['type'] ) && 'array' == $args['type'] ) {
+		// 		$args['type'] = 'plain';
+		// 	}
+
+		// 	// Set up paginated links.
+		// 	$links = paginate_links( $args );
+
+		// 	$links = str_replace("<ul class='page-numbers'>","<ul class='pagination justify-content-center'>", $links);
+		// 	$links = str_replace("<li><span","<li class='page-item active'><span",$links);
+		// 	$links = str_replace("<li>","<li class='page-item'>",$links);
+		// 	$links = str_replace('class="page-numbers','class="page-numbers page-link',$links);
+		// 	$links = str_replace('class="page-numbers','class="page-numbers page-link',$links);
+
+
+		// 	if ( $links ) {
+		// 		$template = '<nav class="navigation posts-pagination">
+		// 						<div class="nav-links">%1$s</div>
+		// 					</nav>';
+		// 		$navigation = sprintf($template,$links);
+		// 	}
+		// }
+
+		// // $navigation = str_replace("ul class='" , "ul class='pagination ", $navigation);
+		// // $navigation = str_replace("<li><span aria-current=\"page\" class=\"page-numbers current\"" , "<li class='page-item active'><span aria-current=\"page\" class='page-link page-numbers current'", $navigation);
+		// // $navigation = str_replace("<li><a class=\"","<li class='page-item'><a class=\"page-link ",$navigation);
+		// echo $navigation; // xss ok
 	}
 
 	/**

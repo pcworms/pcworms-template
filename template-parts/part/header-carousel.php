@@ -81,7 +81,7 @@ if((is_home() or is_front_page()) and $my_query->have_posts() ) {?>
 			</div>
 			<div class="col-sm-6 hidden-xs">
 				<h2 class="text-center"><?php echo __("Latest Posts", 'pcworms')?></h2>
-				<div id="last-posts-carousel" class="carousel slide" data-ride="carousel" data-interval="8000">
+				<div id="last-posts-carousel" class="carousel slide" data-ride="carousel" data-interval="5000" >
 					<ol class="carousel-indicators"><?php
 						for($counter=0; $counter < $my_query->post_count ; $counter++){ ?>
 							<li data-target="#last-posts-carousel" data-slide-to="<?php echo esc_attr($counter); ?>"<?php echo ($counter == 0) ? ' class="active"' : ''; ?>></li><?php
