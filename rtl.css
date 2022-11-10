@@ -1387,14 +1387,14 @@ span a .fa {
     height: auto !important;
 }
 
-.post-container>.author-avatar {
-    display: inline-block;
+.post-container .author-avatar {
     border: var(--purple) 2px solid;
     position: sticky;
     top: 20px;
     vertical-align: unset !important;
     border-radius: 5px;
-    margin-left: 5px;
+    margin-left: 0;
+    float: left;
 }
 
 .author-info {
@@ -1478,7 +1478,6 @@ span a .fa {
     padding: 10px;
     border-radius: 0 0 0 30px;
     margin: 0;
-    width: calc(100% - 60px);
 }
 
 #primary article.noavatar {
@@ -1686,7 +1685,6 @@ code:not([class]) {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flow-root;
 }
 
 .comment-body {}
@@ -2163,6 +2161,7 @@ code:not([class]) {
     -webkit-box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
     -moz-box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
     box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
+    float:right;
     margin-bottom: 10px;
     background-color: var(--box-background);
     backdrop-filter: blur(10px);

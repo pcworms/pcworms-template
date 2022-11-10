@@ -773,76 +773,42 @@ class Free_Template{
 
 	public static function posts_pagination( $args = array() ) {
 		$navigation = '';
+		$page_btn_template = '
+		<li class="page-item%3$s">
+			<a class="page-link page-numbers" href="%1$s">
+				%2$s
+			</a>
+		</li>';
+		$previous_icon = '<span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span>';
+		$next_icon = '<span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span>';
 
 		// Don't print empty markup if there's only one page.
 		$max_pages_num = max( 1, $GLOBALS['wp_query']->max_num_pages );
 		if ( $max_pages_num > 1 ) {
 			$currentPage = max(1,get_query_var( 'paged', 1 ));
-			$previous_state = $currentPage==1 ? " disabled" : "";
-			$link = $currentPage==1 ? "#" : get_pagenum_link( $currentPage - 1 );
-			$links = "
-			<li class=\"page-item{$previous_state}\">
-				<a class=\"page-link page-numbers\" href=\"{$link}\">
-					<span aria-hidden=\"true\">&laquo;</span>
-					<span class=\"sr-only\">Previous</span>
-				</a>
-			</li>";
+			echo '<nav><ul class="pagination justify-content-center">';
+			printf(
+				$page_btn_template,
+				$currentPage==1 ? '#':get_pagenum_link( $currentPage-1 ),
+				$previous_icon,
+				$currentPage==1 ? ' disabled':''
+			);
 			foreach (range( 1, $max_pages_num) as $page){
-				if ($page == $currentPage)
-					$links .= "<li calss=\"page-item disabled\"><span class=\"page-link page-numbers\">{$page}</span></li>";
-				else{
-					$link = get_pagenum_link( $page );
-					$links .= "<li calss=\"page-item\"><a class=\"page-link page-numbers\" href=\"{$link}\">{$page}</a></li>";
-				}
+				printf(
+					$page_btn_template,
+					$currentPage==$page ? '#':get_pagenum_link( $page ),
+					$page,
+					$currentPage==$page ? ' active':''
+				);
 			}
-			$next_state = $currentPage==$max_pages_num ? " disabled" : "";
-			$link = $currentPage== $max_pages_num? "#" : get_pagenum_link( $currentPage + 1 );
-			$links.="
-			<li class=\"page-item{$next_state}\">
-				<a class=\"page-link page-numbers\" href=\"{$link}\">
-					<span aria-hidden=\"true\">&raquo;</span>
-					<span class=\"sr-only\">Next</span>
-				</a>
-			</li>";
-			echo "<nav>
-						<ul class=\"pagination justify-content-center\">
-							{$links}
-						</ul>
-					</nav>";
+			printf(
+				$page_btn_template,
+				$currentPage==$max_pages_num ? '#':get_pagenum_link( $currentPage-1 ),
+				$next_icon,
+				$currentPage==$max_pages_num ? ' disabled':''
+			);
+			echo "</ul></nav>";
 		}
-		// 	$args = wp_parse_args( $args, array(
-		// 		'mid_size'           => 1,
-		// 		'prev_text'          => esc_html__( 'Previous', 'pcworms' ),
-		// 		'next_text'          => esc_html__( 'Next', 'pcworms' ),
-		// 	) );
-
-		// 	// Make sure we get a string back. Plain is the next best thing.
-		// 	if ( isset( $args['type'] ) && 'array' == $args['type'] ) {
-		// 		$args['type'] = 'plain';
-		// 	}
-
-		// 	// Set up paginated links.
-		// 	$links = paginate_links( $args );
-
-		// 	$links = str_replace("<ul class='page-numbers'>","<ul class='pagination justify-content-center'>", $links);
-		// 	$links = str_replace("<li><span","<li class='page-item active'><span",$links);
-		// 	$links = str_replace("<li>","<li class='page-item'>",$links);
-		// 	$links = str_replace('class="page-numbers','class="page-numbers page-link',$links);
-		// 	$links = str_replace('class="page-numbers','class="page-numbers page-link',$links);
-
-
-		// 	if ( $links ) {
-		// 		$template = '<nav class="navigation posts-pagination">
-		// 						<div class="nav-links">%1$s</div>
-		// 					</nav>';
-		// 		$navigation = sprintf($template,$links);
-		// 	}
-		// }
-
-		// // $navigation = str_replace("ul class='" , "ul class='pagination ", $navigation);
-		// // $navigation = str_replace("<li><span aria-current=\"page\" class=\"page-numbers current\"" , "<li class='page-item active'><span aria-current=\"page\" class='page-link page-numbers current'", $navigation);
-		// // $navigation = str_replace("<li><a class=\"","<li class='page-item'><a class=\"page-link ",$navigation);
-		// echo $navigation; // xss ok
 	}
 
 	/**

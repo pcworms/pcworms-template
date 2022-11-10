@@ -8,8 +8,8 @@
  *
  */
 ?>
-<aside id="secondary">
-	<div class="col-sm-3 col-xs-12 pull-left side-column">
+<aside id="secondary" class="col-md-3 col-12 order-md-first">
+	<div class="side-column">
 		<?php
 		if (is_single()||is_author()){ ?>
 			<div class="author-info box">

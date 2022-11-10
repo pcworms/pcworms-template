@@ -74,12 +74,12 @@ if((is_home() or is_front_page()) and $my_query->have_posts() ) {?>
 	<div id="header" class="container-fluid full-header">
 		<div class="container">
 		<div id="header-content" class="row">
-			<div id="header-title" class="col-sm-6 text-center align-middle">
+			<div id="header-title" class="col-md-6 text-center align-middle">
 				<div class="row"><div class="col-md-12"><div id="header-logo align-center"><?php the_custom_logo(); ?></div></div></div>
 				<div class="row"><div class="col-md-12"><h2 class="site-title"><a href="<?php echo home_url( '/' ); // xss ok ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2></div></div>
 				<div class="row"><div class="col-md-12"><h4 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h4></div></div>
 			</div>
-			<div class="col-sm-6 hidden-xs">
+			<div class="col-sm-6 d-none d-md-block">
 				<h2 class="text-center"><?php echo __("Latest Posts", 'pcworms')?></h2>
 				<div id="last-posts-carousel" class="carousel slide" data-ride="carousel" data-interval="5000" >
 					<ol class="carousel-indicators"><?php
@@ -122,9 +122,9 @@ if((is_home() or is_front_page()) and $my_query->have_posts() ) {?>
 	if(display_header_text()){ ?>
 	<div id="header" class="container"><?php
 		if(has_custom_logo()){ ?>
-			<div id="header-logo" class="pull-left"><?php the_custom_logo(); ?></div><?php
+			<div id="header-logo" class="d-inline-block"><?php the_custom_logo(); ?></div><?php
 		} ?>
-		<div id="header-title" class="pull-left">
+		<div id="header-title" class="d-inline-block">
 			<h3 class="site-title"><a href="<?php echo home_url( '/' ); // xss ok ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3><?php
 			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) { ?>

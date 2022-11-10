@@ -11,7 +11,7 @@ $sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_single() || is_autho
 		if ( $sidebar_condition ) { ?>
 			<div class="row"><?php
 		} ?>
-			<div id="primary" class="site-content content-area col-xs-12<?php if( $sidebar_condition ) { echo ' pull-right col-sm-9'; } ?>"><?php
+			<div id="primary" class="site-content content-area <?php if ($sidebar_condition) echo 'col-md-9 order-md-last'?> col-12"><?php
 			
 			if(is_home() or is_front_page()){
 				dynamic_sidebar( 'frontend-content-top' );
@@ -48,8 +48,6 @@ $sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_single() || is_autho
 			
 			?>
 			</div><?php
-
-
 
 			if ( $sidebar_condition) {
 				get_sidebar();
