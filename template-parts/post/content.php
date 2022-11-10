@@ -6,7 +6,7 @@
  */
 
 ?>
-<div <?php if (is_home() or is_front_page()) echo "data-aos='fade-left'"; ?> class = "container post-container">
+<div <?php if ((is_home() or is_front_page()) and ! wp_is_mobile()) echo "data-aos='fade-left'"; ?> class = "container post-container">
 	<div class="row">
 		<?php 
 		if (!is_single() && !is_author()){

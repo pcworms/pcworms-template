@@ -48,8 +48,7 @@ if ($desc=="")
 	NProgress.start();
 	AOS.init({
 		easing: 'ease-in-sine',
-		disable: 'mobile',
-		duration: 200
+		duration: 400
 	});
 	if (typeof navigator.canShare !== 'undefined' && navigator.canShare()) {
 		document.body.classList.add("can-share")
