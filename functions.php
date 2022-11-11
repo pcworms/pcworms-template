@@ -25,6 +25,8 @@ class Free_Template{
 		add_filter( 'body_class', 										array($this, 'body_classes') );
 		add_filter( 'wp_get_attachment_image_attributes', array($this, 'image_item_add_title'), 10, 2 );
 		add_filter( 'excerpt_length', 								array($this, 'custom_excerpt_length'), 999 );
+		// add the filter
+		add_filter( 'comment_form_submit_button', array($this,'filter_comment_form_submit_button'), 10, 2 );
 
 		// allow html in author description
 		remove_filter('pre_user_description', 'wp_filter_kses');
@@ -569,7 +571,7 @@ class Free_Template{
 		$fields   =  array(
 			'author' => '<div class="form-group has-feedback comment-form-author">
 								<div class="input-group">
-									<span class="input-group-prepend"><i class="fa fa-user fa-lg"></i></span>
+									<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-user fa-lg"></i></div></div>
 									<input placeholder="' . esc_attr__( 'Name', 'pcworms' ) .( $req ? ' *' : '' ) . '" class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your name!', 'pcworms') . '"' . $aria_req . ' />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -577,7 +579,7 @@ class Free_Template{
 							</div>',
 			'email'  => '<div class="form-group has-feedback comment-form-email">
 								<div class="input-group">
-									<span class="input-group-prepend"><i class="fa fa-at fa-lg"></i></span>
+									<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-at fa-lg"></i></div></div>
 									<input placeholder="' . esc_attr__( 'Email', 'pcworms' ) . ( $req ? ' *' : '' ) . '" style="direction: ltr;" class="form-control" id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your email address!', 'pcworms') . '"' . $aria_req . ' />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -585,7 +587,7 @@ class Free_Template{
 							</div>',
 			'url'    => '<div class="form-group has-feedback comment-form-url">
 								<div class="input-group">
-									<span class="input-group-prepend"><i class="fa fa-globe fa-lg"></i></span>
+									<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-globe fa-lg"></i></div></div>
 									<input placeholder="' . esc_attr__( 'Website', 'pcworms' ) . '" style="direction: ltr;" class="form-control" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" data-error="' . esc_html__('Please enter a valid website starting with http:// on nothing!', 'pcworms') . '" />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -596,17 +598,29 @@ class Free_Template{
 		return $fields;
 	}
 
+	// define the comment_form_submit_button callback
+	function filter_comment_form_submit_button( $submit_button, $args ) {
+		// make filter magic happen here...
+		$submit_before = '<div class="input-group"><div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-paper-plane" aria-hidden="true"></i></div></div>';
+		$submit_after = '</div>';
+		return $submit_before . $submit_button . $submit_after;
+	}
+
 	public function bootstrap3_comment_form( $args ) {
 		$args['comment_field'] = '
-											<div class="form-group has-feedback comment-form-comment">
-												<div class="input-group">
-													<span class="input-group-prepend"><i class="fa fa-comments fa-lg"></i></span>
-													<textarea placeholder="' . esc_attr__( 'Comment', 'pcworms' ) . '" class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required" data-error="' . esc_html__('Please enter your comment!', 'pcworms') . '"></textarea>
-												</div>
-												<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-												<div class="help-block with-errors"></div>
-											</div>';
-		$args['class_submit'] = 'btn btn-default'; // since WP 4.1
+			<div class="form-group has-feedback comment-form-comment">
+				<div class="input-group">
+					<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-comments fa-lg"></i></div></div>
+					<textarea placeholder="' . esc_attr__( 'Comment', 'pcworms' ) . '"
+					class="form-control" id="comment"
+					name="comment" cols="45" rows="8"
+					aria-required="true" required="required"
+					data-error="' . esc_html__('Please enter your comment!', 'pcworms') . '"></textarea>
+				</div>
+				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div class="help-block with-errors"></div>
+			</div>';
+		$args['class_submit'] = 'btn px-5 btn-default'; // since WP 4.1
 
 		return $args;
 	}
