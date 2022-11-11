@@ -335,10 +335,6 @@ th {
     margin-top: 15px;
 }
 
-.site-content {
-    padding-left: 0 !important;
-}
-
 .wp-caption {
     border: 1px solid #ccc;
     padding-top: 7px;
@@ -855,9 +851,6 @@ body ::-webkit-scrollbar-thumb:active {
     body.admin-bar .navbar-fixed-top {
         top: 46px !important;
     }
-    body.admin-bar {
-        margin-top: 51px !important;
-    }
 }
 
 .navbar-wrapper {
@@ -876,6 +869,10 @@ body ::-webkit-scrollbar-thumb:active {
     background-color: var(--darker-green);
 }
 
+.navbar ul.nav {
+    padding-right:0;
+}
+
 .navbar-nav>li>a {
     line-height: 20px;
     color: white;
@@ -891,6 +888,12 @@ body ::-webkit-scrollbar-thumb:active {
     font-size: 18px;
     line-height: 20px;
     color: white;
+}
+
+.navbar .search-field {
+    background-color: var(--dark-green);
+    border-color: var(--light-green);
+    color: var(--white)
 }
 
 @media (min-width: 768px) {
@@ -1135,11 +1138,6 @@ a .fa {
 .btn .fa,
 span a .fa {
     vertical-align: middle;
-}
-
-.btn {
-    padding-left: 25px;
-    padding-right: 25px;
 }
 
 .btn.dark-blue,
@@ -1393,7 +1391,7 @@ span a .fa {
     top: 20px;
     vertical-align: unset !important;
     border-radius: 5px;
-    margin-left: 0;
+    margin-left: 5px;
     float: left;
 }
 

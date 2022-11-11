@@ -7,10 +7,8 @@
 <?php get_header();
 $sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_single() || is_author() ; ?>
 <main id="main" class="site-main <?php (is_single()?'single':'') ?>">
-	<div class="container"><?php
-		if ( $sidebar_condition ) { ?>
-			<div class="row"><?php
-		} ?>
+	<div class="container">
+		<div class="row">
 			<div id="primary" class="site-content content-area <?php if ($sidebar_condition) echo 'col-md-9 order-md-last'?> col-12"><?php
 			
 			if(is_home() or is_front_page()){
