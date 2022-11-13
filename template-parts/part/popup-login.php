@@ -13,7 +13,7 @@ if(get_theme_mod('display_login_link')){
 						<form id="loginform" data-toggle="validator" method="post" action="<?php echo esc_url( get_site_url() . '/wp-login.php' ); ?>">
 							<div class="form-group has-feedback">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-at fa-lg"></i></span>
+									<span class="input-group-prepend"><i class="fa fa-at fa-lg"></i></span>
 									<input id="login-username" style="direction: ltr;" type="email" class="form-control" name="log"
 										placeholder="<?php esc_attr_e('Email Address', 'pcworms'); ?>" required="required" data-error="<?php esc_attr_e('Please enter your valid email address!', 'pcworms'); ?>" />
 								</div>
@@ -22,7 +22,7 @@ if(get_theme_mod('display_login_link')){
 							</div>
 							<div class="form-group has-feedback">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-key fa-lg"></i></span>
+									<span class="input-group-prepend"><i class="fa fa-key fa-lg"></i></span>
 									<input id="login-password" style="direction: ltr;" type="password" class="form-control" name="pwd"
 										placeholder="<?php esc_attr_e('Password', 'pcworms'); ?>"  required="required" data-error="<?php esc_attr_e('Please enter your password!', 'pcworms'); ?>" />
 								</div>

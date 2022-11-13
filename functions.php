@@ -25,6 +25,8 @@ class Free_Template{
 		add_filter( 'body_class', 										array($this, 'body_classes') );
 		add_filter( 'wp_get_attachment_image_attributes', array($this, 'image_item_add_title'), 10, 2 );
 		add_filter( 'excerpt_length', 								array($this, 'custom_excerpt_length'), 999 );
+		// add the filter
+		add_filter( 'comment_form_submit_button', array($this,'filter_comment_form_submit_button'), 10, 2 );
 
 		// allow html in author description
 		remove_filter('pre_user_description', 'wp_filter_kses');
@@ -402,25 +404,35 @@ class Free_Template{
 		// tether js (for tooltips , should before bootstrap) load in footer
 		wp_enqueue_script( 'tether', get_stylesheet_directory_uri() . '/assets/tether/js/tether.min.js', array(), '1.4.0', true);
 
-		// bootstrap js css load in footer
-		wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), '3.3.7', true);
+		// bootstrap 3 js css load in footer
+		//wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'), '3.3.7', true);
 
-		wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), '3.3.7', 'all');
+		//wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), '3.3.7', 'all');
 
 		// bootstrap theme css
-		if (get_theme_mod('bootstrap_theme_name') != 'default' && get_theme_mod('bootstrap_theme_name') ) {
-			wp_enqueue_style( 'bootswatch', get_stylesheet_directory_uri() . '/assets/bootswatch/' . esc_html( get_theme_mod( 'bootstrap_theme_name' ) ) . '/bootstrap.min.css', array(), '3.3.7', 'all');
-		} else {
-			wp_enqueue_style( 'bootstrap-theme', get_stylesheet_directory_uri() . '/assets/bootstrap/css/bootstrap-theme.min.css', array(), '3.3.7', 'all');
-		}
+		//if (get_theme_mod('bootstrap_theme_name') != 'default' && get_theme_mod('bootstrap_theme_name') ) {
+		//	wp_enqueue_style( 'bootswatch', get_stylesheet_directory_uri() . '/assets/bootswatch/' . esc_html( get_theme_mod( 'bootstrap_theme_name' ) ) . '/bootstrap.min.css', array(), '3.3.7', 'all');
+		//} else {
+		//	wp_enqueue_style( 'bootstrap-theme', get_stylesheet_directory_uri() . '/assets/bootstrap/css/bootstrap-theme.min.css', array(), '3.3.7', 'all');
+		//}
+
+		// bootstrap 4 js css load
+		
+		wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap4/css/bootstrap.min.css', array(), '4.1.3', 'all');
+		wp_enqueue_style( 'bootstrap-grid', get_stylesheet_directory_uri() . '/assets/bootstrap4/css/bootstrap-grid.min.css', array(), '4.1.3', 'all');
+		wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap4/js/bootstrap.bundle.min.js', array('jquery'), '4.1.3', true);
 
 		// rtl bootstrap
+		// if ( is_rtl() ) {
+		// 	wp_enqueue_style( 'partial-bootstrap-rtl', get_stylesheet_directory_uri() . '/assets/bootstrap-rtl/css/bootstrap.rtl.css', array(), '3.3.7.2', 'all');
+		// }
+
 		if ( is_rtl() ) {
-			wp_enqueue_style( 'partial-bootstrap-rtl', get_stylesheet_directory_uri() . '/assets/bootstrap-rtl/css/bootstrap.rtl.css', array(), '3.3.7.2', 'all');
+			wp_enqueue_style( 'bootstrap-rtl', get_stylesheet_directory_uri() . '/assets/bootstrap4-rtl/bootstrap-rtl.min.css', array(), '4.1.3', 'all');
 		}
 
 		// 1000hz-bootstrap-validator js load in footer
-		wp_enqueue_script( 'bootstrap-validator', get_stylesheet_directory_uri() . '/assets/bootstrap-validator/validator.min.js', array(), '0.11.9', true);
+		// wp_enqueue_script( 'bootstrap-validator', get_stylesheet_directory_uri() . '/assets/bootstrap-validator/validator.min.js', array(), '0.11.9', true);
 
 		// fancybox
 		wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/assets/fancybox/jquery.fancybox.min.css', array(), '3.1.24', 'all');
@@ -449,12 +461,12 @@ class Free_Template{
 		if ( function_exists( 'is_woocommerce' ) ){
 			// woocommerce is enabled
 			if( ! is_woocommerce() ){
-				wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.2.0', 'all');
-				wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.2.0', true);
+				wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.3.4', 'all');
+				wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.3.4', false);
 			}
 		}else{
-			wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.2.0', 'all');
-			wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.2.0', true);
+			wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.3.4', 'all');
+			wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.3.4', false);
 		}
 
 		// html5shiv js
@@ -559,7 +571,7 @@ class Free_Template{
 		$fields   =  array(
 			'author' => '<div class="form-group has-feedback comment-form-author">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
+									<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-user fa-lg"></i></div></div>
 									<input placeholder="' . esc_attr__( 'Name', 'pcworms' ) .( $req ? ' *' : '' ) . '" class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your name!', 'pcworms') . '"' . $aria_req . ' />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -567,7 +579,7 @@ class Free_Template{
 							</div>',
 			'email'  => '<div class="form-group has-feedback comment-form-email">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-at fa-lg"></i></span>
+									<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-at fa-lg"></i></div></div>
 									<input placeholder="' . esc_attr__( 'Email', 'pcworms' ) . ( $req ? ' *' : '' ) . '" style="direction: ltr;" class="form-control" id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your email address!', 'pcworms') . '"' . $aria_req . ' />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -575,7 +587,7 @@ class Free_Template{
 							</div>',
 			'url'    => '<div class="form-group has-feedback comment-form-url">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-globe fa-lg"></i></span>
+									<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-globe fa-lg"></i></div></div>
 									<input placeholder="' . esc_attr__( 'Website', 'pcworms' ) . '" style="direction: ltr;" class="form-control" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" data-error="' . esc_html__('Please enter a valid website starting with http:// on nothing!', 'pcworms') . '" />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -586,17 +598,29 @@ class Free_Template{
 		return $fields;
 	}
 
+	// define the comment_form_submit_button callback
+	function filter_comment_form_submit_button( $submit_button, $args ) {
+		// make filter magic happen here...
+		$submit_before = '<div class="input-group"><div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-paper-plane" aria-hidden="true"></i></div></div>';
+		$submit_after = '</div>';
+		return $submit_before . $submit_button . $submit_after;
+	}
+
 	public function bootstrap3_comment_form( $args ) {
 		$args['comment_field'] = '
-											<div class="form-group has-feedback comment-form-comment">
-												<div class="input-group">
-													<span class="input-group-addon"><i class="fa fa-comments fa-lg"></i></span>
-													<textarea placeholder="' . esc_attr__( 'Comment', 'pcworms' ) . '" class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required" data-error="' . esc_html__('Please enter your comment!', 'pcworms') . '"></textarea>
-												</div>
-												<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-												<div class="help-block with-errors"></div>
-											</div>';
-		$args['class_submit'] = 'btn btn-default'; // since WP 4.1
+			<div class="form-group has-feedback comment-form-comment">
+				<div class="input-group">
+					<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-comments fa-lg"></i></div></div>
+					<textarea placeholder="' . esc_attr__( 'Comment', 'pcworms' ) . '"
+					class="form-control" id="comment"
+					name="comment" cols="45" rows="8"
+					aria-required="true" required="required"
+					data-error="' . esc_html__('Please enter your comment!', 'pcworms') . '"></textarea>
+				</div>
+				<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				<div class="help-block with-errors"></div>
+			</div>';
+		$args['class_submit'] = 'btn px-5 btn-default'; // since WP 4.1
 
 		return $args;
 	}
@@ -763,31 +787,42 @@ class Free_Template{
 
 	public static function posts_pagination( $args = array() ) {
 		$navigation = '';
+		$page_btn_template = '
+		<li class="page-item%3$s">
+			<a class="page-link page-numbers" href="%1$s">
+				%2$s
+			</a>
+		</li>';
+		$previous_icon = '<span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span>';
+		$next_icon = '<span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span>';
 
 		// Don't print empty markup if there's only one page.
-		if ( $GLOBALS['wp_query']->max_num_pages > 1 ) {
-			$args = wp_parse_args( $args, array(
-				'mid_size'           => 1,
-				'prev_text'          => esc_html__( 'Previous', 'pcworms' ),
-				'next_text'          => esc_html__( 'Next', 'pcworms' ),
-			) );
-
-			// Make sure we get a string back. Plain is the next best thing.
-			if ( isset( $args['type'] ) && 'array' == $args['type'] ) {
-				$args['type'] = 'plain';
+		$max_pages_num = max( 1, $GLOBALS['wp_query']->max_num_pages );
+		if ( $max_pages_num > 1 ) {
+			$currentPage = max(1,get_query_var( 'paged', 1 ));
+			echo '<nav><ul class="pagination justify-content-center">';
+			printf(
+				$page_btn_template,
+				$currentPage==1 ? '#':get_pagenum_link( $currentPage-1 ),
+				$previous_icon,
+				$currentPage==1 ? ' disabled':''
+			);
+			foreach (range( 1, $max_pages_num) as $page){
+				printf(
+					$page_btn_template,
+					$currentPage==$page ? '#':get_pagenum_link( $page ),
+					$page,
+					$currentPage==$page ? ' active':''
+				);
 			}
-
-			// Set up paginated links.
-			$links = paginate_links( $args );
-
-			if ( $links ) {
-				$navigation = _navigation_markup( $links, 'posts-pagination', '' );
-			}
+			printf(
+				$page_btn_template,
+				$currentPage==$max_pages_num ? '#':get_pagenum_link( $currentPage-1 ),
+				$next_icon,
+				$currentPage==$max_pages_num ? ' disabled':''
+			);
+			echo "</ul></nav>";
 		}
-
-		$navigation = str_replace("ul class='" , "ul class='pagination ", $navigation);
-		$navigation = str_replace("<li><span class='page-numbers current'" , "<li class='active'><span class='page-numbers current'", $navigation);
-		echo $navigation; // xss ok
 	}
 
 	/**

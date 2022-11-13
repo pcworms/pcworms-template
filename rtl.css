@@ -219,10 +219,14 @@ h6,
     letter-spacing: 0 !important;
 }
 
-.pagination li span,
 .pagination li a.page-numbers {
     background-color: var(--dark-green) !important;
     color: var(--white) !important;
+}
+
+.pagination li a.page-numbers:not(.disabled):hover {
+    background-color: var(--white) !important;
+    color: var(--black) !important;
 }
 
 
@@ -329,10 +333,6 @@ th {
 
 .site-main {
     margin-top: 15px;
-}
-
-.site-content {
-    padding-left: 0 !important;
 }
 
 .wp-caption {
@@ -751,75 +751,6 @@ h3,
     margin-bottom: 5px;
 }
 
-.col-xs-1,
-.col-sm-1,
-.col-md-1,
-.col-lg-1,
-.col-xs-2,
-.col-sm-2,
-.col-md-2,
-.col-lg-2,
-.col-xs-3,
-.col-sm-3,
-.col-md-3,
-.col-lg-3,
-.col-xs-4,
-.col-sm-4,
-.col-md-4,
-.col-lg-4,
-.col-xs-5,
-.col-sm-5,
-.col-md-5,
-.col-lg-5,
-.col-xs-6,
-.col-sm-6,
-.col-md-6,
-.col-lg-6,
-.col-xs-7,
-.col-sm-7,
-.col-md-7,
-.col-lg-7,
-.col-xs-8,
-.col-sm-8,
-.col-md-8,
-.col-lg-8,
-.col-xs-9,
-.col-sm-9,
-.col-md-9,
-.col-lg-9,
-.col-xs-10,
-.col-sm-10,
-.col-md-10,
-.col-lg-10,
-.col-xs-11,
-.col-sm-11,
-.col-md-11,
-.col-lg-11,
-.col-xs-12,
-.col-sm-12,
-.col-md-12,
-.col-lg-12 {
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-.d-flex {
-    display: flex;
-}
-
-.d-flex>div {
-    float: none;
-}
-
-.col-auto {
-    flex: 0 0 auto;
-    width: auto;
-    max-width: none;
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-
 /* Handle */
 
 body::-webkit-scrollbar {
@@ -851,9 +782,6 @@ body ::-webkit-scrollbar-thumb:active {
     body.admin-bar .navbar-fixed-top {
         top: 46px !important;
     }
-    body.admin-bar {
-        margin-top: 51px !important;
-    }
 }
 
 .navbar-wrapper {
@@ -872,6 +800,10 @@ body ::-webkit-scrollbar-thumb:active {
     background-color: var(--darker-green);
 }
 
+.navbar ul.nav {
+    padding-right:0;
+}
+
 .navbar-nav>li>a {
     line-height: 20px;
     color: white;
@@ -887,6 +819,12 @@ body ::-webkit-scrollbar-thumb:active {
     font-size: 18px;
     line-height: 20px;
     color: white;
+}
+
+.navbar .search-field {
+    background-color: var(--dark-green);
+    border-color: var(--light-green);
+    color: var(--white)
 }
 
 @media (min-width: 768px) {
@@ -1133,11 +1071,6 @@ span a .fa {
     vertical-align: middle;
 }
 
-.btn {
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
 .btn.dark-blue,
 .btn.dark-green {
     background-color: var(--dark-green);
@@ -1251,8 +1184,7 @@ span a .fa {
     border: silver 5px solid;
     border-radius: 10px;
     padding: 15px;
-    margin: 20px;
-    margin-top: 5px;
+    margin: 5px;
     overflow: hidden;
     position: relative;
 }
@@ -1384,14 +1316,14 @@ span a .fa {
     height: auto !important;
 }
 
-.post-container>.author-avatar {
-    display: inline-block;
+.post-container .author-avatar {
     border: var(--purple) 2px solid;
     position: sticky;
     top: 20px;
     vertical-align: unset !important;
     border-radius: 5px;
     margin-left: 5px;
+    float: left;
 }
 
 .author-info {
@@ -1467,6 +1399,7 @@ span a .fa {
 .post-container {
     margin-bottom: 30px;
     padding: 0 !important;
+    float: right;
 }
 
 #primary article {
@@ -1474,7 +1407,6 @@ span a .fa {
     padding: 10px;
     border-radius: 0 0 0 30px;
     margin: 0;
-    width: calc(100% - 60px);
 }
 
 #primary article.noavatar {
@@ -1682,7 +1614,6 @@ code:not([class]) {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flow-root;
 }
 
 .comment-body {}
@@ -1757,6 +1688,28 @@ code:not([class]) {
     margin-left: 0.66%;
     margin-right: 0.66%;
     min-width: 170px;
+}
+
+.comment-form input, .comment-form textarea{
+    background-color: var(--darker-green);
+    color: var(--white);
+    border-color: var(--light-green);
+}
+
+.comment-form .input-group-prepend .input-group-text{
+    background-color: var(--darkest-green);
+    color: var(--white);
+    border-color: var(--light-green);
+}
+
+.comment-form input:focus, .comment-form textarea:focus{
+    background-color: var(--dark-green) !important;
+    color: var(--white);
+    border-color: var(--light-green);
+}
+
+.comment-form input[type="submit"]:hover{
+    background-color: var(--green);
 }
 
 .woocommerce-Reviews .comment-form-author,
@@ -2159,6 +2112,7 @@ code:not([class]) {
     -webkit-box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
     -moz-box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
     box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
+    float:right;
     margin-bottom: 10px;
     background-color: var(--box-background);
     backdrop-filter: blur(10px);
