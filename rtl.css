@@ -1403,10 +1403,11 @@ span a .fa {
 }
 
 #primary article {
-    float: left;
+    float: right;
     padding: 10px;
     border-radius: 0 0 0 30px;
     margin: 0;
+    width: 100%;
 }
 
 #primary article.noavatar {
