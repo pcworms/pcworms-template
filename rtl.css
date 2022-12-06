@@ -1468,12 +1468,15 @@ span a .fa {
 
 code {
     direction: ltr !important;
+    text-align: left;
 }
 
 pre.wp-block-code,
 code:not([class]) {
+    direction: ltr;
     background-color: #002836;
     color: white;
+    text-align: left;
 }
 
 .admin-bar pre.wp-block-code>code:not([class])::after {
