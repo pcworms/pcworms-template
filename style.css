@@ -8,7 +8,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: pcworms
 Tags: one-column, two-columns, flexible-header, custom-colors, e-commerce, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, left-sidebar, translation-ready, portfolio, photography
-Version: 2.0.2
+Version: 2.0.3
 GitHub Theme URI: https://github.com/pcworms/pcworms-template
 */
 
@@ -759,34 +759,42 @@ th {
 --------------------------------------------------------------*/
 
 @media screen and (min-width: 30em) {
+
     /* Fix image alignment */
     img.alignleft {
         float: left;
         margin-right: 1.5em;
     }
+
     img.alignright {
         float: right;
         margin-left: 1.5em;
     }
+
     /* Gallery Columns */
     .gallery-item {
         max-width: 25%;
     }
+
     .gallery-columns-1 .gallery-item {
         max-width: 100%;
     }
+
     .gallery-columns-2 .gallery-item {
         max-width: 49%;
     }
+
     .gallery-columns-3 .gallery-item {
         max-width: 32%;
     }
+
     .gallery-columns-4 .gallery-item {
         max-width: 24%;
     }
 }
 
 @media screen and (min-width: 48em) {
+
     /* Typography */
     body,
     button,
@@ -797,19 +805,24 @@ th {
         font-size: 1rem;
         line-height: 1.5;
     }
+
     /* Gallery Columns */
     .gallery-columns-5 .gallery-item {
         max-width: 20%;
     }
+
     .gallery-columns-6 .gallery-item {
         max-width: 16.66%;
     }
+
     .gallery-columns-7 .gallery-item {
         max-width: 14.28%;
     }
+
     .gallery-columns-8 .gallery-item {
         max-width: 12.5%;
     }
+
     .gallery-columns-9 .gallery-item {
         max-width: 11.11%;
     }
@@ -980,10 +993,11 @@ body ::-webkit-scrollbar-thumb:active {
     background: rgba(255, 0, 0, 0.4);
 }
 
-@media screen and ( max-width: 782px) {
+@media screen and (max-width: 782px) {
     body.admin-bar .navbar-fixed-top {
         top: 46px !important;
     }
+
     body.admin-bar {
         margin-top: 51px !important;
     }
@@ -1091,7 +1105,8 @@ body ::-webkit-scrollbar-thumb:active {
     white-space: nowrap;
 }
 
-@media screen and ( min-width: 768px) {
+@media screen and (min-width: 768px) {
+
     .megamenu>li.dropdown:hover>ul.dropdown-menu,
     .megamenu .open>.dropdown-menu {
         left: auto;
@@ -1099,18 +1114,21 @@ body ::-webkit-scrollbar-thumb:active {
         border-right: 2px solid red;
         max-width: 85%;
     }
+
     .megamenu .menu-col {
         display: table;
     }
 }
 
-@media screen and ( max-width: 768px) {
+@media screen and (max-width: 768px) {
     .megamenu .nav {
         display: initial;
     }
+
     .megamenu .open>.dropdown-menu {
         display: block;
     }
+
     .megamen .dropdown-menu li {
         display: block;
     }
@@ -1308,18 +1326,21 @@ span a .fa {
 
 @media all and (transform-3d),
 (-webkit-transform-3d) {
+
     #HeaderCarousel .carousel-inner>.item.next,
     #HeaderCarousel .carousel-inner>.item.active.right {
         opacity: 0;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
+
     #HeaderCarousel .carousel-inner>.item.prev,
     #HeaderCarousel .carousel-inner>.item.active.left {
         opacity: 0;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
+
     #HeaderCarousel .carousel-inner>.item.next.left,
     #HeaderCarousel .carousel-inner>.item.prev.right,
     #HeaderCarousel .carousel-inner>.item.active {
@@ -1340,10 +1361,11 @@ span a .fa {
     z-index: 10;
 }
 
-@media screen and ( min-width: 782px) {
+@media screen and (min-width: 782px) {
     #HeaderCarousel .carousel-control {
         opacity: 0;
     }
+
     #HeaderCarousel .carousel-control,
     #HeaderCarousel a.carousel-control,
     #HeaderCarousel .carousel-indicators li {
@@ -1355,13 +1377,16 @@ span a .fa {
         /* hardware acceleration causes Bootstrap carousel controlbox margin error in webkit */
         /* Assigning animation to indicator li will make slides flicker */
     }
+
     /* Hover animation */
     #HeaderCarousel:hover .carousel-control {
         opacity: 1;
     }
+
     #HeaderCarousel:hover a.carousel-control.left {
         left: 15px;
     }
+
     #HeaderCarousel:hover a.carousel-control.right {
         right: 15px;
     }
@@ -1484,7 +1509,7 @@ span a .fa {
     transition-delay: 2s;
 }
 
-@media screen and ( max-width: 768px) {
+@media screen and (max-width: 768px) {
     #HeaderCarousel .carousel-caption p {
         display: none;
     }
@@ -1514,11 +1539,12 @@ span a .fa {
     margin-top: 10px;
 }
 
-@media screen and ( max-width: 768px) {
+@media screen and (max-width: 768px) {
     #header {
         display: grid;
         text-align: center;
     }
+
     #header-title h3 {
         margin-top: 0;
     }
@@ -1779,6 +1805,7 @@ span a .fa {
     .has-arrow-right {
         position: relative;
     }
+
     .has-arrow-right:before {
         content: '';
         position: absolute;
@@ -1787,9 +1814,11 @@ span a .fa {
         border: 15px solid transparent;
         border-right: 15px solid lightgray;
     }
+
     #comments ol #respond {
         padding-left: 130px;
     }
+
     #comments .children #respond {
         padding-left: 100px;
     }
@@ -1799,6 +1828,7 @@ span a .fa {
     .comment-author {
         display: none;
     }
+
     #comments .children #respond {
         padding-left: 20px;
     }
@@ -1922,6 +1952,7 @@ span a .fa {
 }
 
 @media (max-width: 768px) {
+
     .footer-bottom .pull-left,
     .footer-bottom .pull-right {
         text-align: center;
@@ -1944,7 +1975,7 @@ span a .fa {
 }
 
 .fancybox-container {
-    z-index: 999999!important;
+    z-index: 999999 !important;
 }
 
 .fancybox-caption {
