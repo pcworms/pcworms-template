@@ -78,7 +78,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			}
 			$indent = str_repeat( $t, $depth );
 			if( $depth == 0 ) {
-				$output .= "$indent</ul>{$n}{$n}{$n}";
+				$output .= "{$indent}</ul>{$n}{$n}{$n}";
 			}else{
 				$output .= "$indent</ul>{$n}";
 			}

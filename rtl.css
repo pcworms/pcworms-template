@@ -1,4 +1,5 @@
 @import "palette.css";
+
 @font-face {
     font-family: 'Yekan';
     src: url('assets/fonts/Yekan.eot');
@@ -606,47 +607,59 @@ ol.wp-block-latest-comments {
 --------------------------------------------------------------*/
 
 @media screen and (min-width: 30em) {
+
     /* Fix image alignment */
     img.alignleft {
         float: right;
         margin-left: 1.5em;
     }
+
     img.alignright {
         float: left;
         margin-right: 1.5em;
     }
+
     /* Gallery Columns */
     .gallery-item {
         max-width: 25%;
     }
+
     .gallery-columns-1 .gallery-item {
         max-width: 100%;
     }
+
     .gallery-columns-2 .gallery-item {
         max-width: 49%;
     }
+
     .gallery-columns-3 .gallery-item {
         max-width: 32%;
     }
+
     .gallery-columns-4 .gallery-item {
         max-width: 24%;
     }
 }
 
 @media screen and (min-width: 48em) {
+
     /* Gallery Columns */
     .gallery-columns-5 .gallery-item {
         max-width: 20%;
     }
+
     .gallery-columns-6 .gallery-item {
         max-width: 16.66%;
     }
+
     .gallery-columns-7 .gallery-item {
         max-width: 14.28%;
     }
+
     .gallery-columns-8 .gallery-item {
         max-width: 12.5%;
     }
+
     .gallery-columns-9 .gallery-item {
         max-width: 11.11%;
     }
@@ -696,18 +709,19 @@ a:hover {
     color: var(--lighter-red);
 }
 
-.entry-header a{
+.entry-header a {
     color: var(--black) !important;
 }
-.entry-header a:hover{
+
+.entry-header a:hover {
     color: var(--gray-2) !important;
 }
 
-.share-btn{
+.share-btn {
     display: none;
 }
 
-.can-share .share-btn{
+.can-share .share-btn {
     display: inline-block;
 }
 
@@ -778,7 +792,7 @@ body ::-webkit-scrollbar-thumb:active {
     background: rgba(255, 0, 0, 0.4);
 }
 
-@media screen and ( max-width: 782px) {
+@media screen and (max-width: 782px) {
     body.admin-bar .navbar-fixed-top {
         top: 46px !important;
     }
@@ -801,7 +815,7 @@ body ::-webkit-scrollbar-thumb:active {
 }
 
 .navbar ul.nav {
-    padding-right:0;
+    padding-right: 0;
 }
 
 .navbar-nav>li>a {
@@ -857,6 +871,7 @@ body ::-webkit-scrollbar-thumb:active {
 
 .dropdown-menu {
     background-color: var(--darkest-green);
+    left: unset !important;
 }
 
 .dropdown-menu li a {
@@ -922,7 +937,8 @@ body ::-webkit-scrollbar-thumb:active {
     white-space: nowrap;
 }
 
-@media screen and ( min-width: 768px) {
+@media screen and (min-width: 768px) {
+
     .megamenu>li.dropdown:hover>ul.dropdown-menu,
     .megamenu .open>.dropdown-menu {
         right: auto;
@@ -930,18 +946,21 @@ body ::-webkit-scrollbar-thumb:active {
         border-right: 2px solid red;
         max-width: 85%;
     }
+
     .megamenu .menu-col {
         display: table;
     }
 }
 
-@media screen and ( max-width: 768px) {
+@media screen and (max-width: 768px) {
     .megamenu .nav {
         display: initial;
     }
+
     .megamenu .open>.dropdown-menu {
         display: block;
     }
+
     .megamen .dropdown-menu li {
         display: block;
     }
@@ -1210,11 +1229,12 @@ span a .fa {
     z-index: 20;
 }
 
-@media screen and ( max-width: 768px) {
+@media screen and (max-width: 768px) {
     #header {
         display: grid;
         text-align: center;
     }
+
     #header-title h3 {
         margin-top: 0;
     }
@@ -1659,6 +1679,7 @@ code:not([class]) {
     .has-arrow-right {
         position: relative;
     }
+
     .has-arrow-right:before {
         content: '';
         position: absolute;
@@ -1667,9 +1688,11 @@ code:not([class]) {
         border: 15px solid transparent;
         border-left: 15px solid lightgray;
     }
+
     #comments ol #respond {
         padding-right: 130px;
     }
+
     #comments .children #respond {
         padding-right: 100px;
     }
@@ -1679,6 +1702,7 @@ code:not([class]) {
     .comment-author {
         display: none;
     }
+
     #comments .children #respond {
         padding-right: 20px;
     }
@@ -1694,25 +1718,27 @@ code:not([class]) {
     min-width: 170px;
 }
 
-.comment-form input, .comment-form textarea{
+.comment-form input,
+.comment-form textarea {
     background-color: var(--darker-green);
     color: var(--white);
     border-color: var(--light-green);
 }
 
-.comment-form .input-group-prepend .input-group-text{
+.comment-form .input-group-prepend .input-group-text {
     background-color: var(--darkest-green);
     color: var(--white);
     border-color: var(--light-green);
 }
 
-.comment-form input:focus, .comment-form textarea:focus{
+.comment-form input:focus,
+.comment-form textarea:focus {
     background-color: var(--dark-green) !important;
     color: var(--white);
     border-color: var(--light-green);
 }
 
-.comment-form input[type="submit"]:hover{
+.comment-form input[type="submit"]:hover {
     background-color: var(--green);
 }
 
@@ -1790,6 +1816,7 @@ code:not([class]) {
 }
 
 @media (max-width: 768px) {
+
     .footer-bottom .pull-left,
     .footer-bottom .pull-right {
         text-align: center;
@@ -1812,7 +1839,7 @@ code:not([class]) {
 }
 
 .fancybox-container {
-    z-index: 999999!important;
+    z-index: 999999 !important;
 }
 
 .fancybox-caption {
@@ -2116,7 +2143,7 @@ code:not([class]) {
     -webkit-box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
     -moz-box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
     box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
-    float:right;
+    float: right;
     margin-bottom: 10px;
     background-color: var(--box-background);
     backdrop-filter: blur(10px);
