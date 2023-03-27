@@ -19,7 +19,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area panel box">
+<div id="comments" class="comments-area panel box mt-4">
 
 	<?php
 	

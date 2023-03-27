@@ -83,8 +83,10 @@
 		$link = get_author_posts_url(get_the_author_meta( 'ID' ));
 		$name = get_the_author_meta("display_name");
 		?>
-		<span><a href="<?php echo $link ?>"><?php echo $name?></a> <i class="fa fa-user-circle" aria-hidden="true"></i></span>
-		<span><?php the_category(' -  ')?> <i class="fa fa-bookmark" aria-hidden="true"></i></span>
-		<span><?php the_date('Y-m-d')?> <i class="fa fa-calendar" aria-hidden="true"></i></span>
+		<h6>
+			<span><a href="<?php echo $link ?>"><?php echo $name?></a> <i class="fa fa-user-circle" aria-hidden="true"></i></span>
+			<span><?php the_category(' -  ')?> <i class="fa fa-bookmark" aria-hidden="true"></i></span>
+			<span><?php the_date('Y-m-d')?> <i class="fa fa-calendar" aria-hidden="true"></i></span>
+		</h6>
 	</div>
 </header><!-- .entry-header -->

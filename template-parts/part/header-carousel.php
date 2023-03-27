@@ -55,7 +55,7 @@ if((is_home() or is_front_page()) and $my_query->have_posts() ) {?>
 </section><?php
 } else {*/
 if(display_header_text()){ ?>
-	<div id="header" class="row no-gutters">
+	<div id="header" class="row <?php if (is_home() || is_front_page()) echo "no-gutters";?>">
 		<div class="col-8 mx-auto">
 			<?php
 			if(has_custom_logo()){ ?>

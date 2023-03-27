@@ -8,7 +8,7 @@
  *
  */
 ?>
-<aside id="secondary" class="col-md-3 col-12 order-md-first">
+<aside id="secondary" class="col-md-3 col-12 order-md-first pr-0">
 	<div class="side-column">
 		<?php
 		if (is_single()||is_author()){ ?>

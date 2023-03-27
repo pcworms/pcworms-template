@@ -5,7 +5,7 @@
 ?>
 <?php get_header();?>
 <body <?php body_class('line-numbers'); ?>>
-<div class="container-fluid p-0">
+<div class="container<?php if (is_home() || is_front_page()) echo "-fluid";?> p-0">
 	<script type="text/javascript">
 		NProgress.start();
 		AOS.init({
@@ -28,8 +28,8 @@
 	get_template_part( 'template-parts/part/header-top-nav' );
 	get_template_part( 'template-parts/part/header-carousel' );
 	$sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_single() || is_author() ; ?>
-	<main id="main" class="row mx-0 site-main <?php (is_single()?'single':'') ?>">
-		<div id="primary" class="site-content content-area <?php if ($sidebar_condition) echo 'col-md-9 order-md-last'?> col-12"><?php
+	<main id="main" class="row site-main <?php (is_single()?'single':'') ?>">
+		<div id="primary" class="site-content content-area <?php if ($sidebar_condition) echo 'col-md-9 order-md-last pl-0'?> col-12"><?php
 				
 			if(is_home() or is_front_page()){
 				dynamic_sidebar( 'frontend-content-top' );
@@ -39,6 +39,7 @@
 			?><div class = "row container<?php if (is_home() or is_front_page()):?>-fluid posts-grid<?php endif; ?> mx-auto post-container"><?php
 			if ( have_posts() ) {
 				/* Start the Loop */
+				$post_counter = 0;
 				while ( have_posts() ) {
 					the_post();
 					/*
@@ -46,7 +47,8 @@
 					* If you want to override this in a child theme, then include a file
 					* called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					*/
-					get_template_part( 'template-parts/post/content', get_post_format() );
+					get_template_part( 'template-parts/post/content', get_post_format(), array('post_counter' => $post_counter));
+					$post_counter++;
 				}
 				?></div><div class="row"><?php
 				Free_Template::posts_pagination( array(
