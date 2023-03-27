@@ -174,7 +174,6 @@ class Free_Template{
 		add_theme_support( 'starter-content', $starter_content );
 
 		$background_defaults = array(
-			'default-color'          => 'ffffff',
 			'default-image'          => '',
 			'default-repeat'         => '',
 			'default-position-x'     => '',
@@ -313,7 +312,7 @@ class Free_Template{
 			'name'				=> esc_html__( 'Frontend Content Top', 'pcworms' ),
 			'id'           			=> 'frontend-content-top',
 			'description'   		=> esc_html__( 'Add widgets here to appear in your top of content in Frontpage.', 'pcworms' ),
-			'before_widget' 	=> '<div id="%1$s" class="widget %2$s panel box">',
+			'before_widget' 	=> '<div id="%1$s" class="widget %2$s panel box row">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
 			'after_title'  		=> '</h4>',
@@ -333,7 +332,7 @@ class Free_Template{
 			'name'          		=> esc_html__( 'Content Top', 'pcworms' ),
 			'id'            		=> 'content-top',
 			'description'   		=> esc_html__( 'Add widgets here to appear in your top of content.', 'pcworms' ),
-			'before_widget' 	=> '<div id="%1$s" class="widget %2$s panel box">',
+			'before_widget' 	=> '<div id="%1$s" class="widget %2$s panel box row">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
 			'after_title'   		=> '</h4>',
@@ -800,7 +799,7 @@ class Free_Template{
 		$max_pages_num = max( 1, $GLOBALS['wp_query']->max_num_pages );
 		if ( $max_pages_num > 1 ) {
 			$currentPage = max(1,get_query_var( 'paged', 1 ));
-			echo '<nav><ul class="pagination justify-content-center">';
+			echo '<nav class="mx-auto"><ul class="pagination justify-content-center">';
 			printf(
 				$page_btn_template,
 				$currentPage==1 ? '#':get_pagenum_link( $currentPage-1 ),

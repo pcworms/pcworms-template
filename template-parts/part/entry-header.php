@@ -1,4 +1,4 @@
-<header class=>
+<header>
 	<div class="row entry-header">
 		<div class="col pull-left"><?php
 			$sticky = is_sticky() ? '<i class="sticky-icon fa fa-thumb-tack fa-lg"></i>' : '';
