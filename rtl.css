@@ -1337,7 +1337,7 @@ span a .fa {
 
 #primary>.post-container.posts-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 3fr));
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
     gap: .5rem;
 }
 
@@ -1452,6 +1452,7 @@ span a .fa {
     align-self: end;
     border-radius: 1rem;
     z-index: 15;
+    transition: opacity .5s;
 }
 
 .posts-grid .card .card-title,
@@ -1471,6 +1472,10 @@ span a .fa {
 
 .posts-grid .card:hover .card-top::after {
     opacity: .5;
+}
+
+.posts-grid .card:hover .card-body{
+    opacity: .7;
 }
 
 .posts-grid .card:hover .card-top .card-img{
@@ -2394,4 +2399,19 @@ code:not([class]) {
 .cyborg-theme select,
 .cyborg-theme textarea {
     color: black;
+}
+
+/* -------- Media --------- */
+@media screen and (max-width: 320px) {
+    .post-container.posts-grid{
+        grid-template-columns: 100% !important;
+    }
+
+    .posts-grid .card {
+        aspect-ratio: 1;
+    }
+
+    #header{
+        padding-top: 23svh;
+    }
 }

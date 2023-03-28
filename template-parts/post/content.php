@@ -47,7 +47,7 @@
 			);
 			$gradient = $gradients[array_rand($gradients)];
 			?>
-			<div class="post-summary <?php echo $gradients[$args['post_counter']%7]?>"><?php echo $content; ?></div>
+			<div class="post-summary <?php echo $gradient?>"><?php echo $content; ?></div>
 			<?php if ( has_post_thumbnail() ):
 				$featured_image_array = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 				$alt_tag_value = trim( strip_tags( get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true ) ) );?>
