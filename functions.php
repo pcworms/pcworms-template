@@ -490,7 +490,7 @@ class Free_Template{
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		wp_register_style('Palette', get_stylesheet_directory_uri() . '/palette.css');
+		wp_register_style('Palette', get_stylesheet_directory_uri() . '/palette.css', array(), $version, all);
 
 		// prism
 		//if ( is_single() && has_tag( 'code' ) ) {
