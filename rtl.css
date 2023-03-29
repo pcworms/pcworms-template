@@ -1502,9 +1502,13 @@ span a .fa {
     position: sticky;
     top: 20px;
     vertical-align: unset !important;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-left: 5px;
     float: left;
+}
+
+.post-container .author-avatar img{
+    border-radius: 8px;
 }
 
 .author-info {

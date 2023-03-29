@@ -52,7 +52,7 @@ if ( post_password_required() ) {
 			</h2>
 		</div>
 
-		<div class="panel-body">
+		<div class="row panel-body">
 			<?php echo Free_Template::comments_pagination( array( // xss ok
 				'prev_text' => '<span>' . esc_html__( 'Previous', 'pcworms' ) . '</span>',
 				'next_text' => '<span>' . esc_html__( 'Next', 'pcworms' ) . '</span>',
@@ -88,7 +88,7 @@ if ( post_password_required() ) {
 	<?php
 	} ?>
 	
-	<div class="panel-footer">
+	<div class="row panel-footer">
 		<?php Free_Template::validate_comment_form(); ?>
 	</div>
 
