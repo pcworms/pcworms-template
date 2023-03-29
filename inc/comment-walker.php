@@ -19,18 +19,17 @@ class BS_Walker_Comment extends Walker_Comment {
         <<?php echo $tag; // xss ok ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
             <div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 
-                <div class="comment-author vcard panel box">
+                <div class="comment-author vcard panel">
                     <?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'], NULL, 'avatar' ); ?>
                 </div><!-- .comment-author -->
 
-                <div class="comment-content panel box">
-					<footer class="comment-meta panel-heading has-arrow-right">
+                <div class="comment-content panel">
+					<div class="comment-meta panel-heading">
 						<div class="comment-metadata">
 							<?php
-								printf( '<i class="fa fa-user" aria-hidden="true"></i> <b class="fn">%s</b>', get_comment_author_link( $comment ) );
+								printf( '<b>%s</b>', get_comment_author_link( $comment ) );
 							?>
-							<div class="pull-right">
-								<i class="fa fa-clock-o" aria-hidden="true"></i>
+								&nbsp;<i class="fa fa-clock-o border-right pr-2" aria-hidden="true"></i>&nbsp;
 								<a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
 									<?php
 										global $wpp_settings;
@@ -47,13 +46,12 @@ class BS_Walker_Comment extends Walker_Comment {
 										?>
 									</time>
 								</a>
-							</div>
 						</div><!-- .comment-metadata -->
 	 
 						<?php if ( '0' == $comment->comment_approved ) : ?>
 						<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'pcworms' ); ?></p>
 						<?php endif; ?>
-	                </footer><!-- .comment-meta -->
+	                </div><!-- .comment-meta -->
 					<div class="panel-body">
 						<?php comment_text(); ?>
 					</div>

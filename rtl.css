@@ -1284,6 +1284,7 @@ span a .fa {
     box-shadow: 0 2px 7px rgba(0, 0, 0, .8);
     margin: -10px -10px 0;
     padding: 2PX 15px;
+    border-radius: 8px 8px 0 0 ;
 }
 
 .entry-header .entry-title a {
@@ -1337,7 +1338,7 @@ span a .fa {
 
 #primary>.post-container.posts-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
     gap: .5rem;
 }
 
@@ -1362,7 +1363,7 @@ span a .fa {
 }
 
 .posts-grid .card .card-top .card-img{
-    transition: opacity 1.25s;
+    transition: opacity .7s;
 }
 
 .posts-grid .card .card-top>* {
@@ -1651,7 +1652,7 @@ span a .fa {
 #primary .entry-header h4,
 #primary .entry-header h5,
 #primary .entry-header h6 {
-    line-height: 35px;
+    line-height: 1.4em;
 }
 
 code {
@@ -1797,8 +1798,27 @@ code:not([class]) {
 14.0 Comments
 --------------------------------------------------------------*/
 
+.comments-area .comments-title {
+    border-radius: 8px 8px 0 0;
+    padding: 5px;
+    background-color: var(--purple);
+}
+
+.comments-area .comments-title .panel-heading{
+    width: 100%;
+    text-align: center;
+}
+
 .comment-list li {
     clear: both;
+}
+
+.comment-list .comment{
+    margin-bottom: 10px;
+    background-color: var(--comment-background);
+    border: var(--purple) 2px solid;
+    border-radius: 10px;
+    color: var(--white);
 }
 
 .comment-list,
@@ -1815,6 +1835,10 @@ code:not([class]) {
 .comment-author {
     float: right;
     margin-left: 20px;
+}
+
+.comment-author img{
+    border-radius: 8px;
 }
 
 .comment-metadata {}
@@ -1835,12 +1859,8 @@ code:not([class]) {
 }
 
 .comment-list .children {
-    margin-right: 50px;
-}
-
-.children .comment-author .avatar {
-    height: 70px;
-    width: 70px;
+    margin: 5px;
+    padding-right: 15px;
 }
 
 @media (min-width: 768px) {
@@ -2311,11 +2331,12 @@ code:not([class]) {
     -webkit-box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
     -moz-box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
     box-shadow: 1px 1px 7px rgba(0, 0, 0, .2);
-    float: right;
+    /* float: right; */
     margin-bottom: 10px;
     background-color: var(--box-background);
     backdrop-filter: blur(10px);
     border: var(--purple) 2px solid;
+    border-radius: 10px;
     color: var(--white);
 }
 

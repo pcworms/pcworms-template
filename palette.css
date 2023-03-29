@@ -27,5 +27,6 @@
     --gray-1: rgb(25, 25, 25);
     --black: rgb(10, 10, 10);
     --box-background: rgba(10, 10, 10, .85);
+    --comment-background: rgb(10, 10, 10);
     --background: var(--darkest-green);
 }

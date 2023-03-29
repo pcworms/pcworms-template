@@ -5,7 +5,7 @@
 ?>
 <?php get_header();?>
 <body <?php body_class('line-numbers'); ?>>
-<div class="container<?php if (is_home() || is_front_page()) echo "-fluid";?> p-0">
+<div class="container<?php if (is_home() || is_front_page()) echo "-fluid"; else echo " p-0";?>">
 	<script type="text/javascript">
 		NProgress.start();
 		AOS.init({
@@ -36,7 +36,7 @@
 			}
 			dynamic_sidebar( 'content-top' );
 			
-			?><div class = "row container<?php if (is_home() or is_front_page()):?>-fluid posts-grid<?php endif; ?> mx-auto post-container"><?php
+			?><div class = "row <?php if (is_home() or is_front_page()):?> posts-grid<?php endif; ?> mx-auto post-container"><?php
 			if ( have_posts() ) {
 				/* Start the Loop */
 				$post_counter = 0;
