@@ -7,6 +7,7 @@
 get_header();
 $sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_author()
 ?>
+<div class="row">
 <main id="main" class="site-main">
 	<div class="container"><?php
 		if ( $sidebar_condition ) { ?>
@@ -24,10 +25,11 @@ $sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_author()
 			} elseif (is_post_type_archive()) {
 				$title = post_type_archive_title('', false);
 			}
-			if ($title!='') {
-			?>
-			<h1 class="text-center"><?php echo esc_html($title); ?></h1>
-			<?php }
+			if ($title!=''):?>
+			<div class="row archive-title"><h1 class="text-center"><?php echo esc_html($title); ?></h1></div>
+			
+			<?php 
+			endif;
 			if(!is_author())
 				the_archive_description('<div class="text-justify">', '</div>');
 

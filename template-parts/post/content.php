@@ -7,25 +7,8 @@
 
 ?>
 
-<?php if (!is_home() && !is_front_page()): ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class( 'panel box' . (is_single()||is_author() ? ' noavatar' : '') ); ?>>
-		<?php get_template_part( 'template-parts/part/entry-header' ); ?>
 
-		<div class="entry-content panel-body">
-		<?php get_template_part( 'template-parts/part/entry-featured' ); ?>
-		<?php
-			/* translators: %s: Name of current post */
-			the_content( '<button class="continue-read btn dark-red"><span class="fa fa-eye"></span> ' . esc_html__( 'Continue reading', 'pcworms' ) . '</button>');
-		
-			get_template_part( 'template-parts/part/entry-pagination' ); ?>
-		
-		</div><!-- .entry-content -->
-
-		<div>
-			<?php get_template_part( 'template-parts/part/entry-footer' ); ?>
-		</div>
-	</article><!-- #post-## -->
-<?php else: 
+<?php if (!$arg['grid']):
 	
 	$ID = get_the_author_meta( 'ID' );?>
 	<div class="card" onclick="window.location = '<?php echo esc_url( get_permalink() ); ?>'">
@@ -71,8 +54,25 @@
 			<p class="card-text"><small class="text-muted"><span class="author-name"><?php echo get_the_author_meta("display_name"); ?></span> &bull; <span class="date"><?php the_date('d-m-Y')?></span></small></p>
 		</div>
 	</div>
-<?php endif; ?>
-<?php
+<?php else: ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'panel box' . (is_single()||is_author() ? ' noavatar' : '') ); ?>>
+		<?php get_template_part( 'template-parts/part/entry-header' ); ?>
+
+		<div class="entry-content panel-body">
+		<?php get_template_part( 'template-parts/part/entry-featured' ); ?>
+		<?php
+			/* translators: %s: Name of current post */
+			the_content( '<button class="continue-read btn dark-red"><span class="fa fa-eye"></span> ' . esc_html__( 'Continue reading', 'pcworms' ) . '</button>');
+		
+			get_template_part( 'template-parts/part/entry-pagination' ); ?>
+		
+		</div><!-- .entry-content -->
+
+		<div>
+			<?php get_template_part( 'template-parts/part/entry-footer' ); ?>
+		</div>
+	</article><!-- #post-## -->
+<?php endif;
 
 		// If comments are open or we have at least one comment, load up the comment template.
 		if ( comments_open() || get_comments_number() ) {
