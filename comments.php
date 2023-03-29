@@ -26,8 +26,8 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) { ?>
 		<div class="row comments-title">
-			<h2 class="panel-icon float-right"><i class="fa-solid fa-comments"></i></h2>
-			<h2 class="panel-heading">
+			<h2 class="panel-icon float-right px-3 ml-3"><i class="fa-solid fa-comments"></i></h2>
+			<h2 class="panel-heading float-left">
 				<?php
 				$comments_number = get_comments_number();
 				if ( '1' === $comments_number ) {
