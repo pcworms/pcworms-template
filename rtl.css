@@ -1805,7 +1805,7 @@ code:not([class]) {
 }
 
 .comments-area .comments-title .panel-heading{
-    width: 100%;
+    width: auto;
     text-align: center;
 }
 

@@ -439,7 +439,7 @@ class Free_Template{
 		wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/assets/fancybox/jquery.fancybox.min.js', array('jquery'), '3.1.24', true);
 		
 		// font awesome css
-		wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css', array(), '4.7.0', 'all');
+		wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/font-awesome/css/all.min.css', array(), '6.4.0', 'all');
 
 		// main css
 		$version = wp_get_theme()->Version;
