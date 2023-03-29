@@ -824,7 +824,7 @@ body ::-webkit-scrollbar-thumb:active {
     min-height: 50px;
     margin-bottom: 20px;
     border-radius: 4px;
-    background-color: var(--darker-green);
+    background-color: var(--navbar);
 }
 
 .navbar ul.nav {
@@ -883,12 +883,13 @@ body ::-webkit-scrollbar-thumb:active {
 }
 
 .dropdown-menu {
-    background-color: var(--darkest-green);
+    background-color: var(--dropdown);
+    backdrop-filter: blur(5px);
     left: unset !important;
 }
 
 .dropdown-menu li a {
-    background-color: var(--gray-1) !important;
+    background-color: var(--green) !important;
     color: white;
 }
 
@@ -912,6 +913,7 @@ body ::-webkit-scrollbar-thumb:active {
 }
 
 .megamenu .dropdown-menu {
+    margin-top: -10px;
     padding-top: 10px;
 }
 

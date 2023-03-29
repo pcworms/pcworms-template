@@ -29,4 +29,6 @@
     --box-background: rgba(10, 10, 10, .85);
     --comment-background: rgb(10, 10, 10);
     --background: var(--darkest-green);
+    --navbar: rgba(0, 13, 18, .8);
+    --dropdown: rgba(0, 13, 18, .8);
 }
