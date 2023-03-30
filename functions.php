@@ -352,7 +352,7 @@ class Free_Template{
 			'name'          		=> esc_html__( 'Footer Column 1', 'pcworms' ),
 			'id'            		=> 'footer-column-1',
 			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 1.', 'pcworms' ),
-			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="fade-left">',
+			'before_widget' 	=> '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
 			'after_title'   		=> '</h4>',
@@ -362,7 +362,7 @@ class Free_Template{
 			'name'          		=> esc_html__( 'Footer Column 2', 'pcworms' ),
 			'id'            		=> 'footer-column-2',
 			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 2.', 'pcworms' ),
-			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="fade-left">',
+			'before_widget' 	=> '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
 			'after_title'   		=> '</h4>',
@@ -372,7 +372,7 @@ class Free_Template{
 			'name'          		=> esc_html__( 'Footer Column 3', 'pcworms' ),
 			'id'            		=> 'footer-column-3',
 			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 3.', 'pcworms' ),
-			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="fade-left">',
+			'before_widget' 	=> '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
 			'after_title'   		=> '</h4>',
@@ -382,7 +382,7 @@ class Free_Template{
 			'name'          		=> esc_html__( 'Footer Column 4', 'pcworms' ),
 			'id'            		=> 'footer-column-4',
 			'description'   		=> esc_html__( 'Add widgets here to appear in your footer column 4.', 'pcworms' ),
-			'before_widget' 	=> '<div id="%1$s" class="widget %2$s" data-aos="fade-left">',
+			'before_widget' 	=> '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  	=> '</div>',
 			'before_title'  	=> '<h4 class="widget-title">',
 			'after_title'   		=> '</h4>',
@@ -459,16 +459,16 @@ class Free_Template{
 		wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/assets/js/custom.js', array('jquery'), wp_get_theme()->get( 'Version' ), true);
 
 		// aos : animate on scroll
-		if ( function_exists( 'is_woocommerce' ) ){
-			// woocommerce is enabled
-			if( ! is_woocommerce() ){
-				wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.3.4', 'all');
-				wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.3.4', false);
-			}
-		}else{
-			wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.3.4', 'all');
-			wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.3.4', false);
-		}
+		// if ( function_exists( 'is_woocommerce' ) ){
+		// 	// woocommerce is enabled
+		// 	if( ! is_woocommerce() ){
+		// 		wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.3.4', 'all');
+		// 		wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.3.4', false);
+		// 	}
+		// }else{
+		// 	wp_enqueue_style( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.css', array(), '2.3.4', 'all');
+		// 	wp_enqueue_script( 'aos', get_stylesheet_directory_uri() . '/assets/aos/aos.js', array(), '2.3.4', false);
+		// }
 
 		// html5shiv js
 		wp_enqueue_script( 'html5shiv', get_stylesheet_directory_uri() . '/assets/html5shiv/html5shiv.min.js', array(), '3.7.3', true);
