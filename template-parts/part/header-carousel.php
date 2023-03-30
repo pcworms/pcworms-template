@@ -65,26 +65,27 @@ if (is_category()) {
 }
 
 if(display_header_text() || $title != ''): ?>
-	<div id="header" class="row flex-column">
-		<?php if(display_header_text()):?>
-			<div class="col-8 mx-auto">
-				<?php
-				if(has_custom_logo()): ?>
-					<div id="header-logo" class="d-inline-block"><?php the_custom_logo(); ?></div><?php
-				endif ?>
-				<div id="header-title" class="d-inline-block">
-					<h3 class="site-title"><a href="<?php echo home_url( '/' ); // xss ok ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3><?php
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo esc_html($description); ?></p><?php
-					endif ?>
+		<div id="header">
+			<?php if(display_header_text()):?>
+				<div class="row">
+					<div class="col-8 mx-auto">
+						<?php
+						if(has_custom_logo()): ?>
+							<div id="header-logo" class="d-inline-block"><?php the_custom_logo(); ?></div><?php
+						endif ?>
+						<div id="header-title" class="d-inline-block">
+							<h3 class="site-title"><a href="<?php echo home_url( '/' ); // xss ok ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3><?php
+							$description = get_bloginfo( 'description', 'display' );
+							if ( $description || is_customize_preview() ) : ?>
+								<p class="site-description"><?php echo esc_html($description); ?></p><?php
+							endif ?>
+						</div>
+					</div>
 				</div>
-			</div>
-		<?php endif;
-		if ($title!=''): ?>
-			<div class="row no-gutters pt-3 p-0 archive-header"><h3 class="title m-auto"><i class="fa-solid fa-bookmark"></i> <?php echo esc_html($title); ?></h3></div>
-		<?php endif?>
-					
-	</div>
+			<?php endif;
+			if ($title!=''): ?>
+				<div class="row pt-3 p-0 archive-header"><h3 class="title m-auto"><i class="fa-solid fa-bookmark"></i> <?php echo esc_html($title); ?></h3></div>
+			<?php endif?>
+		</div>
 <?php
 endif;

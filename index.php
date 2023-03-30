@@ -5,12 +5,12 @@
 ?>
 <?php 
 get_header();
-	$grid = !is_single() || !is_front_page();
+	$grid = is_front_page() || is_archive() || !is_single();
 	if(!is_author())
 		the_archive_description('<div class="text-justify">', '</div>');
 	$sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_single() || is_author() ; ?>
 	<main id="main" class="row site-main <?php (is_single()?'single':'') ?>">
-		<div id="primary" class="site-content content-area <?php if ($sidebar_condition) echo 'col-md-9 order-md-last pl-0'?> col-12"><?php
+		<div id="primary" class="site-content content-area <?php if ($sidebar_condition) echo 'col-md-9 order-md-last pl-md-0'?> col-12 "><?php
 				
 			if(is_home() or is_front_page()){
 				dynamic_sidebar( 'frontend-content-top' );
