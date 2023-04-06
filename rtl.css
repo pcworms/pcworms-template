@@ -913,7 +913,6 @@ body ::-webkit-scrollbar-thumb:active {
 }
 
 .megamenu .dropdown-menu {
-    margin-top: -10px;
     padding-top: 10px;
 }
 
@@ -2454,5 +2453,11 @@ code:not([class]) {
 
     .posts-grid .card {
         aspect-ratio: 1;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .megamenu .dropdown-menu{
+        margin-top: -10px !important;
     }
 }
