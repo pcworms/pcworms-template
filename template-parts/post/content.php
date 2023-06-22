@@ -18,6 +18,7 @@
 			$content_parts = get_extended( $post_field );
 			$content = $content_parts['main'];
 			$content = apply_filters( 'the_content', $content );
+			$author_id = get_the_author_ID()-1;
 			$gradients = array(
 				"gradient-1",
 				"gradient-2",
@@ -27,7 +28,7 @@
 				"gradient-6",
 				"gradient-7"
 			);
-			$gradient = $gradients[array_rand($gradients)];
+			$gradient = $gradients[$author_id];
 			?>
 			<div class="post-summary <?php echo $gradient?>"><?php echo $content; ?></div>
 			<?php if ( has_post_thumbnail() ):
@@ -48,9 +49,23 @@
 				</a>
 			</div>
 			<div class="col-10 align-self-center">
-				<?php the_title( '<h4 class="card-title d-inline-block">' . $icons . '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr(get_the_title()) . '" rel="bookmark">', '</a></h4>' ); ?>
+				<?php
+				$posttags = get_the_tags();
+				$label = "";
+				if ($posttags) {
+					foreach($posttags as $tag) {
+						if ($tag->name=='عمومی')
+							$label = "<span class='public'>عمومی</span>";
+						else if ($tag->name=='تخصصی')
+							$label = "<span class='pro'>تخصصی</span>";
+						else
+							continue;
+						break;
+					}
+				}
+				the_title( '<h4 class="card-title d-inline-block">' . $icons . '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr(get_the_title()) . '" rel="bookmark">', '</a></h4>' ); ?>
 			</div>
-			<p class="card-text"><small class="text-muted"><span class="author-name"><?php echo get_the_author_meta("display_name"); ?></span> &bull; <span class="date"><?php the_date('d-m-Y')?></span></small></p>
+			<p class="card-text"><small class="text-muted"><span class="author-name"><?php echo get_the_author_meta("display_name"); ?></span> &bull; <span class="date"><?php the_date('d-m-Y')?></span><?php if ($label!="") echo "  ".$label; ?></small></p>
 		</div>
 	</div>
 <?php else: ?>

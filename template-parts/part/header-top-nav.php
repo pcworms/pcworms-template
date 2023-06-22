@@ -3,12 +3,11 @@ $attachments = get_uploaded_header_images();
 if (has_nav_menu('primary') or get_theme_mod('display_login_link')) {
 ?>
 	<div class="navbar-wrapper container">
-		<nav id="top-menu" class="navbar navbar-expand-md navbar-dark">
-			<a
-			class="navbar-brand"
+		<nav id="top-menu" class="navbar navbar-expand-md navbar-dark sticky-top">
+			<a class="ml-2"
 			href="<?php echo home_url(); // xss ok ?>"
 			data-toggle="tooltip" data-placement="bottom"
-			title="<?php bloginfo('name'); ?>"><i class="fa fa-lg fa-home" aria-hidden="true"></i></a>
+			title="<?php bloginfo('name'); ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/pcworms-icon.svg" ?>" style="aspect-ratio:1;width:2rem"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
