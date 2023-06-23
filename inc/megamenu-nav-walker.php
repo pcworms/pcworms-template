@@ -297,9 +297,9 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$description_span = ( $item->description && 0 < $depth) ? '<span class="menu-item-description">' . $item->description . '</span>'."\n" : '';
 				$arrow_icon = '';
 				if ($depth === 1 && $args->has_children){
-					$arrow_icon = ' <i class="fa fa-angle-double-down" aria-hidden="true"></i>';
+					$arrow_icon = '<i class="fa-solid fa-caret-down" aria-hidden="true"></i> ';
 				}
-				$item_output .= $args->link_before . $title . $arrow_icon . $description_span . $args->link_after;
+				$item_output .= $args->link_before . $arrow_icon . $title . $description_span . $args->link_after;
 				$item_output .= ( $args->has_children && 0 === $depth ) ? ' <b class="caret"></b></a>' . "\n" : '</a>'."\n";
 				$item_output .= $args->after;
 
@@ -388,7 +388,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
         }
 
         if ($element && ($depth === 1)) {
-            $element->classes[] = 'col menu-col col-md-3 col-xs-12';
+            $element->classes[] = '';
         }
 
 			parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );

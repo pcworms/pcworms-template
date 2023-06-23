@@ -886,11 +886,23 @@ body ::-webkit-scrollbar-thumb:active {
     background-color: var(--dropdown);
     backdrop-filter: blur(5px);
     left: unset !important;
+    text-align: right !important;
 }
 
 .dropdown-menu li a {
-    background-color: var(--green) !important;
+    background-color: var(--dark-green) !important;
     color: white;
+}
+
+.dropdown-menu .menu-item-has-children a{
+    border-bottom-right-radius: 0;
+}
+
+.dropdown-menu .inner-menu{
+    margin-top: -5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    border-right: solid 5px var(--dark-green);
 }
 
 .navbar-brand {
@@ -914,6 +926,7 @@ body ::-webkit-scrollbar-thumb:active {
 
 .megamenu .dropdown-menu {
     padding-top: 10px;
+    direction: rtl;
 }
 
 .megamenu .dropdown-menu * {
@@ -927,6 +940,7 @@ body ::-webkit-scrollbar-thumb:active {
     font-weight: bold;
     padding-left: 0;
     padding-right: 10px;
+    display: block;
 }
 
 .dropdown-menu {
