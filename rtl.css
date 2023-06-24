@@ -1702,7 +1702,11 @@ span a .fa {
     line-height: 1.4em;
 }
 
-code {
+code , pre{
+    font-family: 'Fira Code', Consolas,
+        Monaco,
+        'Andale Mono',
+        'Ubuntu Mono', monospace !important;
     direction: ltr !important;
     text-align: left;
 }

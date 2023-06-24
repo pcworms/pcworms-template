@@ -503,6 +503,7 @@ class Free_Template{
 			wp_register_script('prismJS', get_stylesheet_directory_uri() . '/assets/prism/prism.js');
 			wp_enqueue_style('prismCSS');
 			wp_enqueue_script('prismJS');
+			wp_enqueue_style( "firacode", "https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap");
 		//}
 
 	}
