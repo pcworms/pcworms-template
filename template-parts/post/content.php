@@ -50,13 +50,13 @@
 			</div>
 			<div class="col-10 align-self-center">
 				<?php
-				$posttags = get_the_tags();
+				$postcats = get_the_category();
 				$label = "";
-				if ($posttags) {
-					foreach($posttags as $tag) {
-						if ($tag->name=='عمومی')
+				if ($postcats) {
+					foreach($postcats as $cat) {
+						if ($cat->name=='عمومی')
 							$label = "<span class='public'>عمومی</span>";
-						else if ($tag->name=='تخصصی')
+						else if ($cat->name=='تخصصی')
 							$label = "<span class='pro'>تخصصی</span>";
 						else
 							continue;
