@@ -1361,7 +1361,7 @@ span a .fa {
 
 #primary>.post-container.posts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(26.5rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(24.5rem, 1fr));
     gap: .5rem;
 }
 
@@ -2470,25 +2470,6 @@ code:not([class]) {
 }
 
 /* -------- Media --------- */
-@media screen and (max-width: 750px) {
-    .post-container.posts-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .posts-grid .card {
-        aspect-ratio: 1;
-    }
-}
-
-@media screen and (max-width: 900px) and (min-width: 750px) {
-    .post-container.posts-grid {
-        grid-template-columns: 1fr 1fr !important;
-    }
-
-    .posts-grid .card {
-        aspect-ratio: 1;
-    }
-}
 
 @media screen and (min-width: 768px) {
     .megamenu .dropdown-menu {
