@@ -5,11 +5,12 @@
 ?>
 <?php 
 get_header();
-	$grid = is_front_page() || is_archive() || !is_single();
+	$single = is_single() || is_page();
+	$grid = (is_front_page() || is_archive()) && !$single;
 	if(!is_author())
 		the_archive_description('<div class="text-justify">', '</div>');
 	$sidebar_condition = is_active_sidebar( 'sidebar-1' ) || is_single() || is_author() ; ?>
-	<main id="main" class="row site-main <?php (is_single()?'single':'') ?>">
+	<main id="main" class="row site-main <?php ($single ?'single':'') ?>">
 		<div id="primary" class="site-content content-area <?php if ($sidebar_condition) echo 'col-md-9 order-md-last pl-md-0'?> col-12 "><?php
 				
 			if(is_home() or is_front_page()){
@@ -28,7 +29,7 @@ get_header();
 					* If you want to override this in a child theme, then include a file
 					* called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					*/
-					get_template_part( 'template-parts/post/content', get_post_format(), array('post_counter' => $post_counter, 'grid'=>$grid));
+					get_template_part( 'template-parts/post/content', get_post_format(), array('post_counter' => $post_counter, 'grid'=>$grid, 'single'=>$single));
 					$post_counter++;
 				}
 				?></div><div class="row"><?php

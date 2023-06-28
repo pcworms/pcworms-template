@@ -70,7 +70,7 @@
 	</div>
 <?php else: ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'panel box' . (is_single()||is_author() ? ' noavatar' : '') ); ?>>
-		<?php get_template_part( 'template-parts/part/entry-header' ); ?>
+		<?php get_template_part( 'template-parts/part/entry-header',  args:array("single"=>$args["single"])); ?>
 
 		<div class="entry-content panel-body">
 		<?php get_template_part( 'template-parts/part/entry-featured' ); ?>
