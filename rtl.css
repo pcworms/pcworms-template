@@ -1437,6 +1437,7 @@ span a .fa {
     overflow: hidden;
     text-overflow: ellipsis;
     color: var(--white);
+    z-index: -1;
 }
 
 .posts-grid .card .post-summary a {
