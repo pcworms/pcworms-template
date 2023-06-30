@@ -1414,6 +1414,7 @@ span a .fa {
 
 .posts-grid .card .card-top .card-img {
     transition: opacity .7s .5s;
+    z-index:10
 }
 
 .posts-grid .card .card-top>* {
