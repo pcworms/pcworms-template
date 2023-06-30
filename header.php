@@ -45,31 +45,13 @@ if ($desc=="")
 </head>
 <body <?php body_class('line-numbers'); ?>>
 <script type="text/javascript">
-	NProgress.start();
-	AOS.init({
-		easing: 'ease-in-sine',
-		duration: 400
-	});
 	if (typeof navigator.canShare !== 'undefined' && navigator.canShare()) {
 		document.body.classList.add("can-share")
 	}
-	function preview(e){
-		console.log(e.target);
-		e.preventDefault();
-	}
-	window.onload = function() {
-		NProgress.done();
-		document.querySelectorAll('main .posts-grid .card').forEach(element => {
-			element.addEventListener('long-press',
-				function(e){
-					console.log(e.target);
-					e.preventDefault();
-				}
-			)
-		});
-	}
 </script>
-	<div id="loading-bar"></div>
+<?php if(is_home() or is_front_page()):
+	get_template_part( 'template-parts/part/loader' );
+endif ?>
 	<a id="back-to-top" href="#" class="btn btn-default back-to-top" role="button" title="<?php esc_attr_e('Go to top', 'pcworms'); ?>" data-toggle="tooltip" data-placement="top" >
 		<span class="glyphicon glyphicon-chevron-up"></span>
 	</a>
