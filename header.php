@@ -48,6 +48,7 @@ if ($desc=="")
 	if (typeof navigator.canShare !== 'undefined' && navigator.canShare()) {
 		document.body.classList.add("can-share")
 	}
+	Prism.plugins.autoloader.languages_path = "<?php echo get_stylesheet_directory_uri() . '/assets/prism/components/'?>";
 </script>
 <?php if(is_home() or is_front_page()):
 	get_template_part( 'template-parts/part/loader' );

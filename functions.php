@@ -393,13 +393,6 @@ class Free_Template{
 
 	public function enqueue_all(){
 
-		// nprogress css
-		wp_deregister_style( 'nprogress' );
-		wp_enqueue_style( 'nprogress', get_stylesheet_directory_uri() . '/assets/nprogress/css/nprogress.min.css', array(), '0.2.0', 'all');
-
-		// nprogress js load in header
-		//wp_enqueue_script( 'nprogress', get_stylesheet_directory_uri() . '/assets/nprogress/js/nprogress.js', array(), '0.2.0', false);
-
 		wp_enqueue_script("bodymovin","https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js");
 
 		// tether js (for tooltips , should before bootstrap) load in footer
