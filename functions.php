@@ -412,14 +412,19 @@ class Free_Template{
 
 		// bootstrap 4 js css load
 		
-		wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap4/css/bootstrap.min.css', array(), '4.1.3', 'all');
+		// wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap4/css/bootstrap.min.css', array(), '4.1.3', 'all');
 		//wp_enqueue_style( 'bootstrap-grid', get_stylesheet_directory_uri() . '/assets/bootstrap4/css/bootstrap-grid.min.css', array(), '4.1.3', 'all');
-		wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap4/js/bootstrap.bundle.min.js', array('jquery'), '4.1.3', true);
+		// wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap4/js/bootstrap.bundle.min.js', array('jquery'), '4.1.3', true);
 
 		// rtl bootstrap
 		// if ( is_rtl() ) {
 		// 	wp_enqueue_style( 'partial-bootstrap-rtl', get_stylesheet_directory_uri() . '/assets/bootstrap-rtl/css/bootstrap.rtl.css', array(), '3.3.7.2', 'all');
 		// }
+
+		wp_enqueue_style("bootstrap", "https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css", array(), "4.1.3", "all");
+		wp_enqueue_script("jquery","https://code.jquery.com/jquery-3.3.1.slim.min.js",array(),"3.3.1","all");
+		wp_enqueue_script("popper","https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js", array("jquery"), "1.14.3", "all");
+		wp_enqueue_script("bootstrap","https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js", array("jquery"), "4.1.3", "all");
 
 		if ( is_rtl() ) {
 			wp_enqueue_style( 'bootstrap-rtl', get_stylesheet_directory_uri() . '/assets/bootstrap4-rtl/bootstrap-rtl.min.css', array(), '4.1.3', 'all');
@@ -429,12 +434,13 @@ class Free_Template{
 		// wp_enqueue_script( 'bootstrap-validator', get_stylesheet_directory_uri() . '/assets/bootstrap-validator/validator.min.js', array(), '0.11.9', true);
 
 		// fancybox
-		wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/assets/fancybox/jquery.fancybox.min.css', array(), '3.1.24', 'all');
+		// wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/assets/fancybox/jquery.fancybox.min.css', array(), '3.1.24', 'all');
 		// load in footer
-		wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/assets/fancybox/jquery.fancybox.min.js', array('jquery'), '3.1.24', true);
+		// wp_enqueue_script( 'fancybox', get_stylesheet_directory_uri() . '/assets/fancybox/jquery.fancybox.min.js', array('jquery'), '3.1.24', true);
 		
 		// font awesome css
-		wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/font-awesome/css/all.min.css', array(), '6.4.0', 'all');
+		wp_enqueue_style( 'font-awesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css", array(), '6.4.0', 'all');
+		wp_enqueue_script("font-awesome","https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js",array(),"6.4.0","all");
 
 		wp_register_style('Palette', get_stylesheet_directory_uri() . '/palette.css', array(), $version, 'all');
 
@@ -571,7 +577,7 @@ class Free_Template{
 		$fields   =  array(
 			'author' => '<div class="form-group has-feedback comment-form-author">
 								<div class="input-group">
-									<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-user fa-lg"></i></div></div>
+									<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-user"></i></div></div>
 									<input placeholder="' . esc_attr__( 'Name', 'pcworms' ) .( $req ? ' *' : '' ) . '" class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your name!', 'pcworms') . '"' . $aria_req . ' />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -579,7 +585,7 @@ class Free_Template{
 							</div>',
 			'email'  => '<div class="form-group has-feedback comment-form-email">
 								<div class="input-group">
-									<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-at fa-lg"></i></div></div>
+									<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-at"></i></div></div>
 									<input placeholder="' . esc_attr__( 'Email', 'pcworms' ) . ( $req ? ' *' : '' ) . '" style="direction: ltr;" class="form-control" id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" required="required" data-error="' . esc_html__('Please enter your email address!', 'pcworms') . '"' . $aria_req . ' />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -587,7 +593,7 @@ class Free_Template{
 							</div>',
 			'url'    => '<div class="form-group has-feedback comment-form-url">
 								<div class="input-group">
-									<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-globe fa-lg"></i></div></div>
+									<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-globe"></i></div></div>
 									<input placeholder="' . esc_attr__( 'Website', 'pcworms' ) . '" style="direction: ltr;" class="form-control" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" data-error="' . esc_html__('Please enter a valid website starting with http:// on nothing!', 'pcworms') . '" />
 								</div>
 								<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -610,7 +616,7 @@ class Free_Template{
 		$args['comment_field'] = '
 			<div class="form-group has-feedback comment-form-comment">
 				<div class="input-group">
-					<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-comments fa-lg"></i></div></div>
+					<div class="input-group-prepend"><div class="input-group-text"><i class="fa fa-comments"></i></div></div>
 					<textarea placeholder="' . esc_attr__( 'Comment', 'pcworms' ) . '"
 					class="form-control" id="comment"
 					name="comment" cols="45" rows="8"
@@ -837,7 +843,7 @@ class Free_Template{
 		edit_post_link(
 			sprintf(
 				/* translators: %s: Name of current post */
-				'<i class="fa fa-pencil-square-o fa-lg" data-toggle="tooltip" data-placement="top" title="%s" aria-hidden="true"></i>',
+				'<i class="fa-solid fa-square-pen" data-toggle="tooltip" data-placement="top" title="%s" aria-hidden="true"></i>',
 				esc_attr( __('Edit ', 'pcworms') . get_the_title() )
 			),
 			'<span class="edit-link">',
@@ -875,7 +881,7 @@ class Free_Template{
 		// Finally, let's write all of this to the page.
 		?>
 		<span class="modified-on">
-			<i class="fa fa-pencil fa-lg" aria-hidden="true" title="<?php esc_attr_e('Updated on', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom"></i>
+			<i class="fa fa-pencil" aria-hidden="true" title="<?php esc_attr_e('Updated on', 'pcworms'); ?>" data-toggle="tooltip" data-placement="bottom"></i>
 			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php echo $time_string; // xss ok ?></a>
 		</span>
 		<?php
