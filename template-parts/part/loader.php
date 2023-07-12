@@ -1,6 +1,7 @@
 <div id="loader-overlay">
     <div class="loader-container">
         <div id="loader"></div>
+        <h3 style="color: var(--white)">در حال بارگزاری</h3>
     </div>
 </div>
 
