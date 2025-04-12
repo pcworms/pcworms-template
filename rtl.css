@@ -1470,6 +1470,11 @@ span a .fa {
     overflow: hidden;
     text-overflow: ellipsis;
     color: var(--white);
+    opacity: 0;
+    z-index:2;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(20px);
+    transition: opacity .5s;
 }
 
 .posts-grid .card .post-summary a {
@@ -1487,39 +1492,6 @@ span a .fa {
     background: linear-gradient(transparent 50%, rgba(0, 0, 0, .6) 90%);
     transition: opacity .5s;
     z-index: 3;
-}
-
-.post-summary.gradient-1 {
-    background: linear-gradient(140deg, rgba(46, 100, 107, 0.6), rgba(28, 47, 59, 0.3));
-
-}
-
-.post-summary.gradient-2 {
-    background: linear-gradient(140deg, rgba(151, 47, 61, 0.6), rgba(99, 5, 5, 0.3));
-}
-
-.post-summary.gradient-3 {
-    background: linear-gradient(140deg, rgba(255, 99, 99, .9), rgba(115, 52, 52, .3));
-}
-
-.post-summary.gradient-4 {
-    background: linear-gradient(140deg, rgba(189, 227, 236, .9), rgba(51, 51, 80, 0.3));
-}
-
-.post-summary.gradient-5 {
-    background: linear-gradient(140deg, rgba(89, 212, 153, .9), rgba(160, 135, 45, .3));
-}
-
-.post-summary.gradient-6 {
-    background: linear-gradient(140deg, rgba(76, 200, 200, .9), rgba(61, 61, 97, 0.3));
-}
-
-.post-summary.gradient-7 {
-    background: linear-gradient(140deg, rgba(142, 199, 251, .9), rgba(28, 85, 170, .3));
-}
-
-.post-summary.gradient-8 {
-    background: linear-gradient(140deg, rgba(255, 207, 115, .9), rgba(255, 122, 47, .3));
 }
 
 .posts-grid .card .card-body {
@@ -1543,7 +1515,6 @@ span a .fa {
 
 .posts-grid .card:hover {
     margin: 0;
-    backdrop-filter: blur(5px);
 }
 
 .posts-grid .card:hover .card-top::after {
@@ -1554,8 +1525,8 @@ span a .fa {
     opacity: .7;
 }
 
-.posts-grid .card:hover .card-top .card-img {
-    opacity: 0;
+.posts-grid .card:hover .card-top .post-summary {
+    opacity: 1;
 }
 
 .posts-grid .card:hover .card-text {
